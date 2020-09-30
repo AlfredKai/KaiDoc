@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Ubuntu - KaiDocs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Ubuntu";
+    var mkdocs_page_input_path = "System and Editor\\Linux.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> KaiDocs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Learning%20Resource/">學習資源</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/">極慢開發</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Design</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../API%20Design/readme/">API Design Resources</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Agile</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/91%20TDD/">91 TDD</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/Agile/">Agile</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/Is%20Design%20Dead/">Is Design Dead</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Database</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Database/Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/">Advanced Database Design For a Relational DB w/ MySQL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Database/MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/">MySQL 超新手入門</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Database/MySql/">MySQL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Database/readme/">Database</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Finished</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/Art%20of%20Unit%20Testing/">Art of Unit Testing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/HDFS%20Spark/">HDFS Spark</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/Learning%20How%20to%20Learn/">Learning How to Learn</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/Refactoring/">Refactoring</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/The%20Effective%20Engineer/">The Effective Engineer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/%E7%B5%A6%E5%8A%9B/">給力</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/%E8%99%95%E7%90%86%E5%95%8F%E9%A1%8C%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%A7%BF%E5%8B%A2/">處理問題的正確姿勢</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Game Development</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Game%20Development/Articles/">Articles</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Game%20Development/Unity/">Unity</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Information Security</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Information%20Security/readme/">Information Security</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Languages</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Languages/JavaScript/Asynchronous%20Programming/">Asynchronous Programming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Languages/JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/">JavaScript 設計模式</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Alembic/">alembic</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Pytest/">Pytest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/SQLAlchemy/">SQLAlchemy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Virtualenv/">Virtualenv</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/readme/">Python</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">System Design</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../System%20Design/Architect/">Architect</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../System%20Design/readme/">System Design</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">System and Editor</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../Docker/">Docker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Git%20and%20GitLab/">Git & GitLab Learning</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Internet%20Information%20Services%20%28IIS%29/">IIS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Jenkins/">Jenkins</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Jmeter/">Jmeter</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Ubuntu</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">套件管理</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#terminal">Terminal</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#call-terminal">call terminal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#clear">clear</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bash">Bash</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">串聯指令</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#disc-usage">Disc Usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#make">遠端執行 make 指令</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#env-set-export">env, set export</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#export-env-from-file">export env from file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#makefile">Makefile</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#add-ssh-private-key">Add ssh private key</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sshpass">sshpass</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cron-tab">Cron tab</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#set-static-ip">Set static IP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
+    </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Powershell/">PowerShell Notes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Vim/">Vim</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../VisualStudio/">VisualStudio</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Windows%20Cmd/">Windows Cmd</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../cmd%20vs%20bash/">Cmd vs Bash</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Web</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Web/Frontend/">Frontend</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Web/Nodejs/">Nodejs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../Web/readme/">Web Docs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Codecademy</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/codecademy/CSS/">Learn CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/codecademy/HTML/">Introduction to HTML</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">React</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/react/Modern%20React%20with%20Redux/">Modern React with Redux</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Ajax/">Ajax</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/CORS/">Cross-Origin Resource Sharing (CORS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Chrome%20Extension/">Chrome Extension</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Http%20Cookies/">HTTP cookies</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Strict%20mode/">Strict mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/THIS/">THIS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Testing/">Testing</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">KaiDocs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>System and Editor &raquo;</li>
+        
+      
+    
+    <li>Ubuntu</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="ubuntu">Ubuntu</h1>
+<h2 id="_1">套件管理</h2>
+<p>Debian 派系 →Ubuntu→Apt<br />
+Redhat 派系 →CentOS→Yum</p>
+<h2 id="terminal">Terminal</h2>
+<h3 id="call-terminal">call terminal</h3>
+<pre><code class="hotkey">ctrl + alt + t
+</code></pre>
+
+<h3 id="clear">clear</h3>
+<pre><code class="hotkey">ctrl + l
+</code></pre>
+
+<h2 id="bash">Bash</h2>
+<p><a href="http://linux.vbird.org/linux_basic/0320bash.php#set">鳥哥認識與學習BASH</a></p>
+<table>
+<thead>
+<tr>
+<th>cmd</th>
+<th>descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pwd</td>
+<td>列出目前完整路徑</td>
+</tr>
+<tr>
+<td>top</td>
+<td></td>
+</tr>
+<tr>
+<td>cp</td>
+<td>複製檔案</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>打包</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>把檔案輸出到 stdout</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>建立檔案</td>
+</tr>
+<tr>
+<td>touch "kai-\$(date +%Y%m%d)"</td>
+<td>以日期建檔</td>
+</tr>
+<tr>
+<td>usermod -aG [group][user]</td>
+<td>add user to group</td>
+</tr>
+<tr>
+<td>export VAR=value</td>
+<td>設定環境變數</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">串聯指令</h3>
+<table>
+<thead>
+<tr>
+<th>symbol</th>
+<th>descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>;</code></td>
+<td>連續下達指令</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>當指令回傳 1(成功)則執行下一個指令</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>當前指令回傳 0(失敗)執行下一指令</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>stdoutput</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>pipe</td>
+</tr>
+</tbody>
+</table>
+<p>example</p>
+<pre><code class="bash">cd /home/kai/Desktop/kaitest &amp;&amp; touch &quot;kai-$(date +%d%s)&quot;
+</code></pre>
+
+<h3 id="disc-usage">Disc Usage</h3>
+<pre><code class="bash">du -h
+</code></pre>
+
+<h3 id="make">遠端執行 make 指令</h3>
+<pre><code class="bash">make -n &gt; xxx.sh
+ssh user@host &lt; xxx.sh
+</code></pre>
+
+<p>遠端全套</p>
+<pre><code class="bash">sshpass -p $HOST_PWD ssh -o StrictHostKeyChecking=no $WORKER_NAME@$DEPLOY_MACHINE &lt; makerun.sh
+</code></pre>
+
+<p>不檢查 key，自動化好用</p>
+<pre><code class="bash">-o StrictHostKeyChecking=no
+</code></pre>
+
+<h2 id="env-set-export">env, set export</h2>
+<ul>
+<li>set: 目前shell的環境變數</li>
+<li>env: 除了是目前shell的環境變數以外，能把這些變數一起帶到目前shell發起的子程式</li>
+<li>export: 設定env變數</li>
+</ul>
+<h2 id="export-env-from-file">export env from file</h2>
+<pre><code class="bash">export $(cat env/YOUR_ENV_FILE |xargs)
+</code></pre>
+
+<h2 id="makefile">Makefile</h2>
+<p><a href="https://hackmd.io/s/SySTMXPvl">https://hackmd.io/s/SySTMXPvl</a></p>
+<ul>
+<li>特別字元</li>
+<li><strong>@</strong> 不要顯示執行的指令<ul>
+<li>因執行 make 指令後會在終端機印出正在執行的指令</li>
+</ul>
+</li>
+<li><strong>-</strong> 表示即使該行指令出錯，也不會中斷執行，而 make 只要遇到任何錯誤就會中斷執行。但像是在進行 clean 時，也許根本沒有任何檔案可以 clean，因而 rm 會傳回錯誤值，因而導致 make 中斷執行。我們可以利用-來關閉錯誤中斷功能，讓 make 不會因而中斷。</li>
+</ul>
+<h2 id="ssh">SSH</h2>
+<h3 id="add-ssh-private-key">Add ssh private key</h3>
+<pre><code class="bash">ssh-add [~/.ssh/id_rsa]
+</code></pre>
+
+<p>如果出現</p>
+<pre><code class="bash">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ WARNING: UNPROTECTED PRIVATE KEY FILE! @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</code></pre>
+
+<p>表示權限開太大</p>
+<pre><code class="bash">chmod 0600 [private key file]
+</code></pre>
+
+<h3 id="sshpass">sshpass</h3>
+<p>sshpass:不用互動遠端使用 ssh 下 command 的工具</p>
+<pre><code class="bash">sshpass -p 'mypassword' ssh myaccount@my.linux.host
+</code></pre>
+
+<h2 id="cron-tab">Cron tab</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cron -e</td>
+<td>編輯該使用者的 crontab 指令</td>
+</tr>
+<tr>
+<td>cron -l</td>
+<td>列出該使用者擁有的 crontab 指令</td>
+</tr>
+<tr>
+<td>cron -r</td>
+<td>將使用者的 crontab 全部清除！（ 小心使用 ）</td>
+</tr>
+</tbody>
+</table>
+<p>※ 下達指令請用 絕對路徑 避免錯誤</p>
+<pre><code class="bash">*/5 * * * * /home/ubuntu/test.sh：每五分鐘執行一次測試 shell script
+</code></pre>
+
+<h2 id="set-static-ip">Set static IP</h2>
+<p>用 UI 點</p>
+<h2 id="resources">Resources</h2>
+<p><a href="https://wiki.ubuntu-tw.org/index.php?title=GNU/Linux_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">GNU/Linux 常用指令</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Powershell/" class="btn btn-neutral float-right" title="PowerShell Notes">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Jmeter/" class="btn btn-neutral" title="Jmeter"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Jmeter/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Powershell/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

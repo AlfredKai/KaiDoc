@@ -1,6 +1,8 @@
-# 學習資源
+# KaiDoc
 
-## 就是各大公司的tech blog
+## 學習資源
+
+就是各大公司的tech blog
 
 其中Netflix, Uber, Facebook, Line 很值得看，其他的就 ㄏㄏ
 
