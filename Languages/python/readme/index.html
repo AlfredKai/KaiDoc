@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Python - KaiDocs</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Python";
+    var mkdocs_page_input_path = "Languages\\python\\readme.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> KaiDocs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Learning%20Resource/">學習資源</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/">極慢開發</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">API Design</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../API%20Design/readme/">API Design Resources</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Agile</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Agile/91%20TDD/">91 TDD</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Agile/Agile/">Agile</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Agile/Is%20Design%20Dead/">Is Design Dead</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Database</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Database/Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/">Advanced Database Design For a Relational DB w/ MySQL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Database/MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/">MySQL 超新手入門</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Database/MySql/">MySQL</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Database/readme/">Database</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Finished</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Finished/Art%20of%20Unit%20Testing/">Art of Unit Testing</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Finished/HDFS%20Spark/">HDFS Spark</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Finished/Learning%20How%20to%20Learn/">Learning How to Learn</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Finished/Refactoring/">Refactoring</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Finished/The%20Effective%20Engineer/">The Effective Engineer</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Finished/%E7%B5%A6%E5%8A%9B/">給力</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Finished/%E8%99%95%E7%90%86%E5%95%8F%E9%A1%8C%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%A7%BF%E5%8B%A2/">處理問題的正確姿勢</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Game Development</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Game%20Development/Articles/">Articles</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Game%20Development/Unity/">Unity</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Information Security</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Information%20Security/readme/">Information Security</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Languages</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScript</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/Asynchronous%20Programming/">Asynchronous Programming</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/">JavaScript 設計模式</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">Python</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../Alembic/">alembic</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Pytest/">Pytest</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../SQLAlchemy/">SQLAlchemy</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../Virtualenv/">Virtualenv</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">Python</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#pip">PIP</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#configuration">Configuration</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#main">main()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_1">好用套件</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#llint">Llint</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cryptography">cryptography錯誤</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#linq-in-python">Linq in python</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#decorator">Decorator</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#args-kwargs">args  *kwargs</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#r-prefix">r prefix</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#_2">兜字串</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#lists-tuples-dictionaries-sets">Lists, Tuples, Dictionaries, Sets</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tuple-unpacking">Tuple unpacking</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#list-slice-notation">List Slice Notation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#false">False</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#zip-range">zip(), range()</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#comprehensions">Comprehensions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#namespaces-and-scope">Namespaces and Scope</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#resource">Resource</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">System Design</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20Design/Architect/">Architect</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20Design/readme/">System Design</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">System and Editor</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Docker/">Docker</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Git%20and%20GitLab/">Git & GitLab Learning</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Internet%20Information%20Services%20%28IIS%29/">IIS</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Jenkins/">Jenkins</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Jmeter/">Jmeter</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Linux/">Ubuntu</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Powershell/">PowerShell Notes</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Vim/">Vim</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/VisualStudio/">VisualStudio</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/Windows%20Cmd/">Windows Cmd</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../System%20and%20Editor/cmd%20vs%20bash/">Cmd vs Bash</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Web</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Web/Frontend/">Frontend</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Web/Nodejs/">Nodejs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../../Web/readme/">Web Docs</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Codecademy</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/codecademy/CSS/">Learn CSS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/codecademy/HTML/">Introduction to HTML</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">React</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/react/Modern%20React%20with%20Redux/">Modern React with Redux</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">Topics</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/topics/Ajax/">Ajax</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/topics/CORS/">Cross-Origin Resource Sharing (CORS)</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/topics/Chrome%20Extension/">Chrome Extension</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/topics/Http%20Cookies/">HTTP cookies</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/topics/Strict%20mode/">Strict mode</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/topics/THIS/">THIS</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../Web/topics/Testing/">Testing</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">KaiDocs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Python &raquo;</li>
+        
+      
+        
+          <li>Languages &raquo;</li>
+        
+      
+    
+    <li>Python</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="python">Python</h1>
+<h2 id="pip">PIP</h2>
+<p>pip就是python的套件管理工具</p>
+<pre><code>pip freeze &gt; requirements.txt
+</code></pre>
+<p>可以把目前環境的所有套件都印出到requirements.txt</p>
+<pre><code>pip install -r requirements.txt --upgrade
+</code></pre>
+<blockquote>
+<p>ubuntu上安裝了python3之後會與python2共存，要確定現在使用的是python3還是python2，尤其在vscode console裡面，python3應該要搭配的是pip3。</p>
+</blockquote>
+<h3 id="configuration">Configuration</h3>
+<h4 id="manually-configuration">Manually Configuration</h4>
+<pre><code class="config">[global]
+extra-index-url = http://devpi.local.bridgewell.com/bridgewell/prod/+simple/
+trusted-host = devpi.local.bridgewell.com
+</code></pre>
+
+<p>Here are some common environment</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unix</td>
+<td><code>$HOME/.config/pip/pip.conf</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>$HOME/Library/Application Support/pip/pip.conf</code> or <code>$HOME/.config/pip/pip.conf</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>%APPDATA%\pip\pip.ini</code></td>
+</tr>
+</tbody>
+</table>
+<p>For other environments, check <a href="https://pip.pypa.io/en/stable/user_guide/#config-file">pip office document</a></p>
+<h4 id="one-time-command">One-time Command</h4>
+<pre><code class="config">$ pip install \
+    --extra-index-url http://devpi.local.bridgewell.com/bridgewell/prod/+simple/ \
+    --trusted-host devpi.local.bridgewell.com \
+    shutong&gt;=1.10.0
+</code></pre>
+
+<h2 id="main">main()</h2>
+<p>可以一目了然的進入點</p>
+<pre><code>if __name__ == '__main__':
+  main()
+</code></pre>
+<p>python沒有進入點，任何.py都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py被其他import的時候就可以防止執行main()。</p>
+<h2 id="_1">好用套件</h2>
+<ul>
+<li>SqlAlchemy: ORM in python</li>
+<li>logging: for log</li>
+<li>pywinrm: remote windows</li>
+<li>devpi: nuget in python</li>
+</ul>
+<h2 id="llint">Llint</h2>
+<p><strong>媽的潔癖症</strong><br />
+<a href="https://code.visualstudio.com/docs/python/linting">Linting Python in VS Code</a><br />
+<a href="https://lintlyci.github.io/Flake8Rules/">Flake8 Rules</a></p>
+<ul>
+<li>flake8-docstrings：public interfaces 需加上 docstrings。</li>
+<li>flake8-import-order：import statement 需要照 stdlib、3rd party、local packages 的順序分組。組間以空行隔開。</li>
+<li>flake8-quotes：統一單行使用單引號、多行使用雙引號。</li>
+<li>pep8-naming：命名符合 PEP8 規範。</li>
+</ul>
+<p>公司.flake8</p>
+<pre><code class="flake8">[flake8]
+max-line-length = 99
+import-order-style = pep8
+ignore = D100,D101,D102,D103,D104,D400,D401,E402,N806
+exclude =
+    .git,
+    __pycache__,
+    protobuf
+</code></pre>
+
+<h2 id="cryptography">cryptography錯誤</h2>
+<pre><code>Failed building wheel for cryptography
+</code></pre>
+<p>請安裝，我不知道這三小<br />
+<a href="https://cryptography.io/en/latest/installation/#building-cryptography-on-linux">https://cryptography.io/en/latest/installation/#building-cryptography-on-linux</a></p>
+<h2 id="linq-in-python">Linq in python</h2>
+<p><a href="http://mark-dot-net.blogspot.com/2014/03/python-equivalents-of-linq-methods.html">http://mark-dot-net.blogspot.com/2014/03/python-equivalents-of-linq-methods.html</a></p>
+<h2 id="decorator">Decorator</h2>
+<pre><code class="python">def use_logging(level):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            if level == &quot;warn&quot;:
+                logging.warn(&quot;%s is running&quot; % func.__name__)
+            elif level == &quot;info&quot;:
+                logging.info(&quot;%s is running&quot; % func.__name__)
+            return func(*args)
+        return wrapper
+    return decorator
+</code></pre>
+
+<h2 id="args-kwargs"><em>args  </em>*kwargs</h2>
+<p>不定長度參數與關鍵字參數</p>
+<h2 id="r-prefix">r prefix</h2>
+<p><code>r``''</code> or <code>r``""</code></p>
+<h2 id="_2">兜字串</h2>
+<p><a href="https://pyformat.info/">https://pyformat.info/</a></p>
+<h2 id="lists-tuples-dictionaries-sets">Lists, Tuples, Dictionaries, Sets</h2>
+<table>
+<thead>
+<tr>
+<th>List</th>
+<th>Tuple</th>
+<th>Dictionary</th>
+<th>Set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[] or list()</td>
+<td>()</td>
+<td>{}</td>
+<td>set()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tuple-unpacking">Tuple unpacking</h2>
+<pre><code class="python">row, col = cell
+</code></pre>
+
+<h2 id="list-slice-notation">List Slice Notation</h2>
+<pre><code class="python">a[start:stop]  # items start through stop-1
+a[start:]      # items start through the rest of the array
+a[:stop]       # items from the beginning through stop-1
+a[:]           # a copy of the whole array
+</code></pre>
+
+<h2 id="false">False</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>False</td>
+</tr>
+<tr>
+<td>null</td>
+<td>None</td>
+</tr>
+<tr>
+<td>zero integer</td>
+<td>0</td>
+</tr>
+<tr>
+<td>zero float</td>
+<td>0.0</td>
+</tr>
+<tr>
+<td>empty string</td>
+<td>''</td>
+</tr>
+<tr>
+<td>empty list</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>empty tuple</td>
+<td>()</td>
+</tr>
+<tr>
+<td>empty dict</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>empty set</td>
+<td>set()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="zip-range">zip(), range()</h2>
+<p>回傳為<code>iterable object</code>並不是整個實體，所以需搭配<code>for</code>或直接<code>list(), dict()</code>使用。</p>
+<h2 id="comprehensions">Comprehensions</h2>
+<p>list:</p>
+<pre><code class="python">[ expression for item in iterable ]
+[ expression for item in iterable if condition ]
+</code></pre>
+
+<p>dict:</p>
+<pre><code class="python">{ key_expression : value_expression for expression in iterable }
+</code></pre>
+
+<h2 id="namespaces-and-scope">Namespaces and Scope</h2>
+<p>修改global變數需要先宣告，不然一律視為local variable，但是<strong>讀不需要宣告</strong>(乾您娘超雷)。</p>
+<pre><code class="python">def change_and_print_global ():
+    global animal
+    animal = 'wombat'
+</code></pre>
+
+<h2 id="resource">Resource</h2>
+<p><a href="https://buzzorange.com/techorange/2018/12/21/python-list/?fbclid=IwAR3fK0h5CDINJXgyMMch0-KVgjVupWuKsQKnnL0qDgQGKWbpMd9Y5pMLEw0">GitHub 神人整理出一份 Python 開源清單</a></p>
+<p><a href="https://github.com/mahmoud/awesome-python-applications">awesome-python-applications</a></p>
+<p><a href="https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747">An A-Z of useful Python tricks</a></p>
+<p><a href="https://www.ics.uci.edu/~pattis/ICS-33/lectures/complexitypython.txt">Python Complexitipy</a></p>
+<p><a href="https://github.com/gto76/python-cheatsheet">Comprehensive Python Cheatsheet</a></p>
+<p><a href="https://docs.python-guide.org/">The Hitchhiker’s Guide to Python</a></p>
+<p><a href="https://realpython.com/">Real Python Tutorials</a></p>
+<p><a href="https://docs.quantifiedcode.com/python-anti-patterns/index.html">The Little Book of Python Anti-Patterns</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../System%20Design/Architect/" class="btn btn-neutral float-right" title="Architect">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Virtualenv/" class="btn btn-neutral" title="Virtualenv"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Virtualenv/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../System%20Design/Architect/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
