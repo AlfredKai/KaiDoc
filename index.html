@@ -1,249 +1,343 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="None">
   
   
-  <link rel="shortcut icon" href="img/favicon.ico">
-  <title>KaiDocs</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="None">
+    
+    
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>KaiDocs</title>
+    <link href="./css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="./css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="./css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
-  <link rel="stylesheet" href="css/theme.css" />
-  <link rel="stylesheet" href="css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "KaiDoc";
-    var mkdocs_page_input_path = "README.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="js/jquery-2.1.1.min.js" defer></script>
-  <script src="js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/bootstrap-3.3.7.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    
+      <script src="./js/elasticlunr.min.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '.';
+      var is_top_frame = (window === window.parent);
+        
+        var pageToc = [
+          {title: "KaiDoc", url: "#_top", children: [
+              {title: "\u5b78\u7fd2\u8cc7\u6e90", url: "#_1" },
+          ]},
+        ];
+
+    </script>
+    <script src="./js/base.js"></script> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
 
-  <div class="wy-grid-for-nav">
-
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href="." class="icon icon-home"> KaiDocs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="./search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href=".">KaiDoc</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#_1">學習資源</a>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/">極慢開發</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="API%20Design/">API Design Resources</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Agile</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="Agile/91%20TDD/">91 TDD</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Agile/Agile/">Agile</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Agile/Is%20Design%20Dead/">Is Design Dead</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Database</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="Database/">Database</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Database/Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/">Advanced Database Design For a Relational DB w/ MySQL</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Database/MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/">MySQL 超新手入門</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Database/MySql/">MySQL</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Finished</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="Finished/Art%20of%20Unit%20Testing/">Art of Unit Testing</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Finished/HDFS%20Spark/">HDFS Spark</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Finished/Learning%20How%20to%20Learn/">Learning How to Learn</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Finished/Refactoring/">Refactoring</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Finished/The%20Effective%20Engineer/">The Effective Engineer</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Finished/%E7%B5%A6%E5%8A%9B/">給力</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Finished/%E8%99%95%E7%90%86%E5%95%8F%E9%A1%8C%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%A7%BF%E5%8B%A2/">處理問題的正確姿勢</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Game Development</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="Game%20Development/Articles/">Articles</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Game%20Development/Unity/">Unity</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Information Security</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="Information%20Security/">Information Security</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Languages</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScript</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Languages/JavaScript/Asynchronous%20Programming/">Asynchronous Programming</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Languages/JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/">JavaScript 設計模式</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Languages/python/">Python</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Languages/python/Alembic/">alembic</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Languages/python/Pytest/">Pytest</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Languages/python/SQLAlchemy/">SQLAlchemy</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Languages/python/Virtualenv/">Virtualenv</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20Design/">System Design</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20Design/Architect/">Architect</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System and Editor</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Docker/">Docker</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Git%20and%20GitLab/">Git & GitLab Learning</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Internet%20Information%20Services%20%28IIS%29/">IIS</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Jenkins/">Jenkins</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Jmeter/">Jmeter</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Linux/">Ubuntu</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Powershell/">PowerShell Notes</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Vim/">Vim</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/VisualStudio/">VisualStudio</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/Windows%20Cmd/">Windows Cmd</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="System%20and%20Editor/cmd%20vs%20bash/">Cmd vs Bash</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Web</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="Web/">Web Docs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Web/Frontend/">Frontend</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Web/Nodejs/">Nodejs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Codecademy</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Web/codecademy/CSS/">Learn CSS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Web/codecademy/HTML/">Introduction to HTML</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">React</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Web/react/Modern%20React%20with%20Redux/">Modern React with Redux</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Topics</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="Web/topics/Ajax/">Ajax</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Web/topics/CORS/">Cross-Origin Resource Sharing (CORS)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Web/topics/Chrome%20Extension/">Chrome Extension</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Web/topics/Http%20Cookies/">HTTP cookies</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Web/topics/Strict%20mode/">Strict mode</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Web/topics/THIS/">THIS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="Web/topics/Testing/">Testing</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-      </div>
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
     </div>
-    </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href=".">KaiDocs</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".">Docs</a> &raquo;</li>
     
-      
+    <div class="wm-top-tool wm-vcenter pull-right wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-th-list" aria-hidden="true"></i></button>
+    </div>
+
     
-    <li>KaiDoc</li>
-    <li class="wy-breadcrumbs-aside">
+    
+
+    
+    <a href="" class="wm-top-brand wm-top-link wm-vcenter">
       
-    </li>
-  </ul>
+      <div class="wm-top-title">
+        KaiDocs<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+  <div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
   
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="kaidoc">KaiDoc</h1>
+  <ul class="wm-toctree">
+        <li class="wm-toc-li wm-toc-lev1 "><a href="" class="wm-article-link wm-toc-text">KaiDoc</a>
+</li>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/" class="wm-article-link wm-toc-text">極慢開發</a>
+</li>
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">API Design</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="API%20Design/" class="wm-article-link wm-toc-text">API Design Resources</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Agile</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Agile/91%20TDD/" class="wm-article-link wm-toc-text">91 TDD</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Agile/Agile/" class="wm-article-link wm-toc-text">Agile</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Agile/Is%20Design%20Dead/" class="wm-article-link wm-toc-text">Is Design Dead</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Database</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Database/" class="wm-article-link wm-toc-text">Database</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Database/Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="wm-article-link wm-toc-text">Advanced Database Design For a Relational DB w/ MySQL</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Database/MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/" class="wm-article-link wm-toc-text">MySQL 超新手入門</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Database/MySql/" class="wm-article-link wm-toc-text">MySQL</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Finished</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Finished/Art%20of%20Unit%20Testing/" class="wm-article-link wm-toc-text">Art of Unit Testing</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Finished/HDFS%20Spark/" class="wm-article-link wm-toc-text">HDFS Spark</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Finished/Learning%20How%20to%20Learn/" class="wm-article-link wm-toc-text">Learning How to Learn</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Finished/Refactoring/" class="wm-article-link wm-toc-text">Refactoring</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Finished/The%20Effective%20Engineer/" class="wm-article-link wm-toc-text">The Effective Engineer</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Finished/%E7%B5%A6%E5%8A%9B/" class="wm-article-link wm-toc-text">給力</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Finished/%E8%99%95%E7%90%86%E5%95%8F%E9%A1%8C%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%A7%BF%E5%8B%A2/" class="wm-article-link wm-toc-text">處理問題的正確姿勢</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Game Development</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Game%20Development/Articles/" class="wm-article-link wm-toc-text">Articles</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Game%20Development/Unity/" class="wm-article-link wm-toc-text">Unity</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Information Security</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Information%20Security/" class="wm-article-link wm-toc-text">Information Security</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Languages</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">JavaScript</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Languages/JavaScript/Asynchronous%20Programming/" class="wm-article-link wm-toc-text">Asynchronous Programming</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Languages/JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/" class="wm-article-link wm-toc-text">JavaScript 設計模式</a>
+</li>
+  </ul>
+</li>
+
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Python</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Languages/python/" class="wm-article-link wm-toc-text">Python</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Languages/python/Alembic/" class="wm-article-link wm-toc-text">alembic</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Languages/python/Pytest/" class="wm-article-link wm-toc-text">Pytest</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Languages/python/SQLAlchemy/" class="wm-article-link wm-toc-text">SQLAlchemy</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Languages/python/Virtualenv/" class="wm-article-link wm-toc-text">Virtualenv</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">System Design</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20Design/" class="wm-article-link wm-toc-text">System Design</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20Design/Architect/" class="wm-article-link wm-toc-text">Architect</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">System and Editor</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Docker/" class="wm-article-link wm-toc-text">Docker</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Git%20and%20GitLab/" class="wm-article-link wm-toc-text">Git & GitLab Learning</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Internet%20Information%20Services%20%28IIS%29/" class="wm-article-link wm-toc-text">IIS</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Jenkins/" class="wm-article-link wm-toc-text">Jenkins</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Jmeter/" class="wm-article-link wm-toc-text">Jmeter</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Linux/" class="wm-article-link wm-toc-text">Ubuntu</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Powershell/" class="wm-article-link wm-toc-text">PowerShell Notes</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Vim/" class="wm-article-link wm-toc-text">Vim</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/VisualStudio/" class="wm-article-link wm-toc-text">VisualStudio</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/Windows%20Cmd/" class="wm-article-link wm-toc-text">Windows Cmd</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="System%20and%20Editor/cmd%20vs%20bash/" class="wm-article-link wm-toc-text">Cmd vs Bash</a>
+</li>
+  </ul>
+</li>
+
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Web</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Web/" class="wm-article-link wm-toc-text">Web Docs</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Web/Frontend/" class="wm-article-link wm-toc-text">Frontend</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 "><a href="Web/Nodejs/" class="wm-article-link wm-toc-text">Nodejs</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Codecademy</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/codecademy/CSS/" class="wm-article-link wm-toc-text">Learn CSS</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/codecademy/HTML/" class="wm-article-link wm-toc-text">Introduction to HTML</a>
+</li>
+  </ul>
+</li>
+
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">React</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/react/Modern%20React%20with%20Redux/" class="wm-article-link wm-toc-text">Modern React with Redux</a>
+</li>
+  </ul>
+</li>
+
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Topics</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/topics/Ajax/" class="wm-article-link wm-toc-text">Ajax</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/topics/CORS/" class="wm-article-link wm-toc-text">Cross-Origin Resource Sharing (CORS)</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/topics/Chrome%20Extension/" class="wm-article-link wm-toc-text">Chrome Extension</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/topics/Http%20Cookies/" class="wm-article-link wm-toc-text">HTTP cookies</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/topics/Strict%20mode/" class="wm-article-link wm-toc-text">Strict mode</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/topics/THIS/" class="wm-article-link wm-toc-text">THIS</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="Web/topics/Testing/" class="wm-article-link wm-toc-text">Testing</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+    <div class="wm-content-pane">
+      <iframe class="wm-article" name="article"></iframe>
+    </div>
+  </div>
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/" class="btn btn-xs btn-link">
+        極慢開發
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="kaidoc">KaiDoc</h1>
 <h2 id="_1">學習資源</h2>
 <p>就是各大公司的tech blog</p>
 <p>其中Netflix, Uber, Facebook, Line 很值得看，其他的就 ㄏㄏ</p>
@@ -264,58 +358,39 @@ Uber: https://eng.uber.com/
 Facebook: https://code.fb.com/
 Line: https://engineering.linecorp.com/en/blog/
 </code></pre>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+  <br>
+    
+
+    
+    
       
-        <a href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/" class="btn btn-neutral float-right" title="極慢開發">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/" class="btn btn-xs btn-link">
+        極慢開發
+      </a>
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-      
-        <span style="margin-left: 15px"><a href="%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+    <br>
 </div>
-    <script>var base_url = '.';</script>
-    <script src="js/theme.js" defer></script>
-      <script src="search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
 
 </body>
 </html>
-
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2020-09-30 14:36:49.674439+00:00
+Build Date UTC : 2020-09-30 14:58:33.974044+00:00
 -->

@@ -1,495 +1,96 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Art of Unit Testing - KaiDocs</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Art of Unit Testing - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
-  <link rel="stylesheet" href="../../css/theme.css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Art of Unit Testing";
-    var mkdocs_page_input_path = "Finished\\Art of Unit Testing.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Art of Unit Testing", url: "#_top", children: [
+              {title: "About this book", url: "#about-this-book" },
+              {title: "Chapter 1: The basics of unit testing", url: "#chapter-1-the-basics-of-unit-testing" },
+              {title: "Chapter 2: A first unit test", url: "#chapter-2-a-first-unit-test" },
+              {title: "Chapter 3: Using stubs to break dependencies", url: "#chapter-3-using-stubs-to-break-dependencies" },
+              {title: "Chapter 4: Interaction testing using mock objects", url: "#chapter-4-interaction-testing-using-mock-objects" },
+              {title: "Chapter 5: Isolation(mocking) frameworks", url: "#chapter-5-isolationmocking-frameworks" },
+              {title: "Chapter 6: Digging deeper into isolation frameworks", url: "#chapter-6-digging-deeper-into-isolation-frameworks" },
+              {title: "Chapter 7: Test hierarchies and organization", url: "#chapter-7-test-hierarchies-and-organization" },
+              {title: "Chapter 8: The pillars of good unit tests", url: "#chapter-8-the-pillars-of-good-unit-tests" },
+              {title: "Chapter 9: Integrating unit testing into the organization", url: "#chapter-9-integrating-unit-testing-into-the-organization" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
 
-  <div class="wy-grid-for-nav">
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> KaiDocs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+      
+    
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../..">KaiDoc</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/">極慢開發</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../API%20Design/">API Design Resources</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Agile</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/91%20TDD/">91 TDD</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/Agile/">Agile</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/Is%20Design%20Dead/">Is Design Dead</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Database</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Database/">Database</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Database/Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/">Advanced Database Design For a Relational DB w/ MySQL</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Database/MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/">MySQL 超新手入門</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Database/MySql/">MySQL</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Finished</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Art of Unit Testing</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#about-this-book">About this book</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#whats-new-in-the-second-edition">What’s new in the second edition</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#who-should-read-this-book">Who should read this book</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#roadmap">Roadmap</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-1-the-basics-of-unit-testing">Chapter 1: The basics of unit testing</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#defining-unit-testing-step-by-step">Defining unit testing, step by step</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#properties-of-a-good-unit-test">Properties of a good unit test</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#integration-tests">Integration tests</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#what-makes-unit-tests-good">What makes unit tests good</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#a-simple-unit-test-example">A simple unit test example</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#test-driven-development">Test-driven development</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-three-core-skills-of-successful-tdd">The three core skills of successful TDD</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-2-a-first-unit-test">Chapter 2: A first unit test</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#frameworks-for-unit-testing">Frameworks for unit testing</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#introducing-the-logan-project">Introducing the LogAn project</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#first-steps-with-nunit">First steps with NUnit</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#writing-your-first-test">Writing your first test</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#the-assert-class">The Assert class</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#refactoring-to-parameterized-tests">Refactoring to parameterized tests</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#more-nunit-attributes">More NUnit attributes</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#setup-and-teardown">Setup and teardown</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#checking-for-expected-exceptions">Checking for expected exceptions</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ignoring-tests">Ignoring tests</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nunits-fluent-syntax">NUnit’s fluent syntax</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#setting-test-categories">Setting test categories</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#testing-results-that-are-system-state-changes-instead-of-return-values">Testing results that are system state changes instead of return values</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary_1">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-3-using-stubs-to-break-dependencies">Chapter 3: Using stubs to break dependencies</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#introducing-stubs">Introducing stubs</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#identifying-a-filesystem-dependency-in-logan">Identifying a filesystem dependency in LogAn</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#determining-how-to-easily-test-loganalyzer">Determining how to easily test LogAnalyzer</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#refactoring-your-design-to-be-more-testable">Refactoring your design to be more testable</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#overcoming-the-encapsulation-problem">Overcoming the encapsulation problem</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary_2">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-4-interaction-testing-using-mock-objects">Chapter 4: Interaction testing using mock objects</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#value-based-vs-state-based-vs-interaction-testing">Value-based vs. state-based vs. interaction testing</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-difference-between-mocks-and-stubs">The difference between mocks and stubs</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#a-simple-handwritten-mock-example">A simple handwritten mock example</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#using-a-mock-and-a-stub-together">Using a mock and a stub together</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#one-mock-per-test">One mock per test</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#fake-chains-stubs-that-produce-mocks-or-other-stubs">Fake chains: stubs that produce mocks or other stubs</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#the-problems-with-handwritten-mocks-and-stubs">The problems with handwritten mocks and stubs</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary_3">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-5-isolationmocking-frameworks">Chapter 5: Isolation(mocking) frameworks</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#why-use-isolation-frameworks">Why use isolation frameworks</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#dynamically-creating-a-fake-object">Dynamically creating a fake object</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#simulating-fake-values">Simulating fake values</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#testing-for-event-related-activities">Testing for event-related activities</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#current-isolation-frameworks-for-net">Current isolation frameworks for .NET</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#advantages-and-traps-of-isolation-frameworks">Advantages and traps of isolation frameworks</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary_4">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-6-digging-deeper-into-isolation-frameworks">Chapter 6: Digging deeper into isolation frameworks</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#constrained-and-unconstrained-frameworks">Constrained and unconstrained frameworks</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#constrained-frameworks">Constrained frameworks</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#recursive-fakes">Recursive fakes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#ignored-arguments-by-default">Ignored arguments by default</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#wide-faking">Wide faking</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nonstrict-behavior-of-fakes">Nonstrict behavior of fakes</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#nonstrict-mocks">Nonstrict mocks</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#isolation-framework-design-antipatterns">Isolation framework design antipatterns</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#concept-confusion">Concept confusion</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary_5">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-7-test-hierarchies-and-organization">Chapter 7: Test hierarchies and organization</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#automated-builds-running-automated-tests">Automated builds running automated tests</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mapping-out-tests-based-on-speed-and-type">Mapping out tests based on speed and type</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#the-safe-green-zone">The safe green zone</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#ensuring-tests-are-part-of-source-control">Ensuring tests are part of source control</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mapping-test-classes-to-code-under-test">Mapping test classes to code under test</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#one-test-class-per-class-or-unit-of-work-under-test">ONE TEST CLASS PER CLASS OR UNIT OF WORK UNDER TEST</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#one-test-class-per-feature">ONE TEST CLASS PER FEATURE</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#cross-cutting-concerns-injection">Cross-cutting concerns injection</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#building-a-test-api-for-your-application">Building a test API for your application</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#using-test-class-inheritance-patterns">Using test class inheritance patterns</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#creating-test-utility-classes-and-methods">Creating test utility classes and methods</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#making-your-api-known-to-developers">Making your API known to developers</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary_6">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-8-the-pillars-of-good-unit-tests">Chapter 8: The pillars of good unit tests</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#writing-trustworthy-tests">Writing trustworthy tests</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#deciding-when-to-remove-or-change-tests">Deciding when to remove or change tests</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#conflicting-or-invalid-tests">CONFLICTING OR INVALID TESTS</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#renaming-or-refactoring-tests">RENAMING OR REFACTORING TESTS</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#eliminating-duplicate-tests">ELIMINATING DUPLICATE TESTS</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#avoiding-logic-in-tests">Avoiding logic in tests</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#testing-only-one-concern">Testing only one concern</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#separate-unit-from-integration-tests">Separate unit from integration tests</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#assuring-code-review-with-code-coverage">Assuring code review with code coverage</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#writing-maintainable-tests">Writing maintainable tests</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#testing-private-or-protected-methods">Testing private or protected methods</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#removing-duplication">Removing duplication</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#using-setup-methods-in-a-maintainable-manner">Using setup methods in a maintainable manner</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#enforcing-test-isolation">Enforcing test isolation</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#avoiding-multiple-asserts-on-different-concerns">Avoiding multiple asserts on different concerns</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#comparing-objects">Comparing objects</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#avoiding-overspecification">Avoiding overspecification</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#writing-readable-tests">Writing readable tests</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#naming-unit-tests">Naming unit tests</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#naming-variables">Naming variables</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#asserting-yourself-with-meaning">Asserting yourself with meaning</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#separating-asserts-from-actions">Separating asserts from actions</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#setting-up-and-tearing-down">Setting up and tearing down</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#summary_7">Summary</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#chapter-9-integrating-unit-testing-into-the-organization">Chapter 9: Integrating unit testing into the organization</a>
-    </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../HDFS%20Spark/">HDFS Spark</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Learning%20How%20to%20Learn/">Learning How to Learn</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Refactoring/">Refactoring</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../The%20Effective%20Engineer/">The Effective Engineer</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../%E7%B5%A6%E5%8A%9B/">給力</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../%E8%99%95%E7%90%86%E5%95%8F%E9%A1%8C%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%A7%BF%E5%8B%A2/">處理問題的正確姿勢</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Game Development</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Game%20Development/Articles/">Articles</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Game%20Development/Unity/">Unity</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Information Security</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Information%20Security/">Information Security</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Languages</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScript</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/JavaScript/Asynchronous%20Programming/">Asynchronous Programming</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/">JavaScript 設計模式</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/">Python</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Alembic/">alembic</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Pytest/">Pytest</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/SQLAlchemy/">SQLAlchemy</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Virtualenv/">Virtualenv</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20Design/">System Design</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20Design/Architect/">Architect</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System and Editor</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Docker/">Docker</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Git%20and%20GitLab/">Git & GitLab Learning</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Internet%20Information%20Services%20%28IIS%29/">IIS</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Jenkins/">Jenkins</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Jmeter/">Jmeter</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Linux/">Ubuntu</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Powershell/">PowerShell Notes</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Vim/">Vim</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/VisualStudio/">VisualStudio</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Windows%20Cmd/">Windows Cmd</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/cmd%20vs%20bash/">Cmd vs Bash</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Web</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Web/">Web Docs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Web/Frontend/">Frontend</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Web/Nodejs/">Nodejs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Codecademy</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/codecademy/CSS/">Learn CSS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/codecademy/HTML/">Introduction to HTML</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">React</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/react/Modern%20React%20with%20Redux/">Modern React with Redux</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Topics</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Ajax/">Ajax</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/CORS/">Cross-Origin Resource Sharing (CORS)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Chrome%20Extension/">Chrome Extension</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Http%20Cookies/">HTTP cookies</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Strict%20mode/">Strict mode</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/THIS/">THIS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Testing/">Testing</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-      </div>
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../HDFS%20Spark/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../HDFS%20Spark/" class="btn btn-xs btn-link">
+        HDFS Spark
+      </a>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">KaiDocs</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
     
-      
-        
-          <li>Finished &raquo;</li>
-        
-      
+    <div class="wm-article-nav">
+      <a href="../../Database/MySql/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../Database/MySql/" class="btn btn-xs btn-link">
+        MySQL
+      </a>
+    </div>
     
-    <li>Art of Unit Testing</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="art-of-unit-testing">Art of Unit Testing</h1>
+  </div>
+
+    
+
+    <h1 id="art-of-unit-testing">Art of Unit Testing</h1>
 <h2 id="about-this-book">About this book</h2>
 <p>為什麼寫這本書</p>
 <blockquote>
@@ -3560,57 +3161,43 @@ public void BadAssertMessage()
 <h3 id="summary_7">Summary</h3>
 <p>阿就三本柱講一遍</p>
 <h2 id="chapter-9-integrating-unit-testing-into-the-organization">Chapter 9: Integrating unit testing into the organization</h2>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+  <br>
+    
+
+    
+    
       
-        <a href="../HDFS%20Spark/" class="btn btn-neutral float-right" title="HDFS Spark">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../../Database/MySql/" class="btn btn-neutral" title="MySQL"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../HDFS%20Spark/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../HDFS%20Spark/" class="btn btn-xs btn-link">
+        HDFS Spark
+      </a>
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
+    
+    <div class="wm-article-nav">
+      <a href="../../Database/MySql/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../Database/MySql/" class="btn btn-xs btn-link">
+        MySQL
+      </a>
+    </div>
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../../Database/MySql/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../HDFS%20Spark/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+    <br>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
 
 </body>
 </html>

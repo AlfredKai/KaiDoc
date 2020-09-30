@@ -1,435 +1,108 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
-  <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>MySQL 超新手入門 - KaiDocs</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>MySQL 超新手入門 - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
-  <link rel="stylesheet" href="../../css/theme.css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "MySQL \u8d85\u65b0\u624b\u5165\u9580";
-    var mkdocs_page_input_path = "Database\\MySQL \u8d85\u65b0\u624b\u5165\u9580.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "MySQL \u8d85\u65b0\u624b\u5165\u9580", url: "#_top", children: [
+              {title: "SELECT \u57fa\u790e\u67e5\u8a62", url: "#select" },
+              {title: "\u904b\u7b97\u5f0f\u8207\u51fd\u5f0f", url: "#_1" },
+              {title: "JOIN \u8207 UNION \u67e5\u8a62", url: "#join-union" },
+              {title: "CRUD \u8207\u8cc7\u6599\u7dad\u8b77", url: "#crud" },
+              {title: "\u5b57\u5143\u96c6\u8207\u8cc7\u6599\u5eab", url: "#_8" },
+              {title: "\u5132\u5b58\u5f15\u64ce\u8207\u8cc7\u6599\u578b\u614b", url: "#_10" },
+              {title: "\u8868\u683c\u8207\u7d22\u5f15", url: "#_17" },
+              {title: "\u5b50\u67e5\u8a62", url: "#_24" },
+              {title: "Views", url: "#views" },
+              {title: "Prepared Statement", url: "#prepared-statement" },
+              {title: "Stored Routines \u5165\u9580", url: "#stored-routines" },
+              {title: "Sotred Routines\u7684\u8b8a\u6578\u8207\u6d41\u7a0b", url: "#sotred-routines" },
+              {title: "Stored Routines\u9032\u968e", url: "#stored-routines_1" },
+              {title: "Triggers", url: "#triggers" },
+              {title: "\u67e5\u8a62 information_schema", url: "#information_schema" },
+              {title: "\u932f\u8aa4\u8655\u7406\u8207\u67e5\u8a62", url: "#_33" },
+              {title: "Non-Strict\u6a21\u5f0f", url: "#non-strict" },
+              {title: "Strict\u6a21\u5f0f\u8207IGNORE\u95dc\u9375\u5b57", url: "#strictignore" },
+              {title: "\u5176\u5b83\u8a2d\u5b9a", url: "#_34" },
+              {title: "\u67e5\u8a62\u932f\u8aa4\u8207\u8b66\u544a", url: "#_35" },
+              {title: "\u532f\u5165\u8207\u532f\u51fa\u8cc7\u6599", url: "#_36" },
+              {title: "\u6548\u7387", url: "#_37" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
 
-  <div class="wy-grid-for-nav">
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href="../.." class="icon icon-home"> KaiDocs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+      
+    
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../..">KaiDoc</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/">極慢開發</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../API%20Design/">API Design Resources</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Agile</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/91%20TDD/">91 TDD</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/Agile/">Agile</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Agile/Is%20Design%20Dead/">Is Design Dead</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Database</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../">Database</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/">Advanced Database Design For a Relational DB w/ MySQL</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">MySQL 超新手入門</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#select">SELECT 基礎查詢</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_1">運算式與函式</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_2">值與運算式</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_3">群組查詢</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#group-byhaving">GROUP BY與HAVING子句</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#join-union">JOIN 與 UNION 查詢</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#inner-join">Inner Join</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#outer-join">Outer Join</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#union">Union</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#crud">CRUD 與資料維護</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_4">新增</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_5">基礎新增敘述</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#primary-key">Primary Key</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#on-duplicate-key-update">ON DUPLICATE KEY UPDATE</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#replace">「REPLACE」敘述</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_6">修改</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_7">刪除</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_8">字元集與資料庫</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#character-setcollation">Character Set與Collation</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_9">資料庫</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_10">儲存引擎與資料型態</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_11">表格與儲存引擎</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_12">欄位資料型態</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#_13">數值與位元</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_14">字串</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_15">列舉與集合</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_16">日期與時間</a>
-    </li>
-        </ul>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_17">表格與索引</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_18">建立表格</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#timestamp">TIMESTAMP</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_19">用其他表格建新表格</a>
-    </li>
-    <li class="toctree-l4"><a class="reference internal" href="#_20">建立暫存表格</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_21">修改表格</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_22">索引介紹</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#auto_increment">AUTO_INCREMENT</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_23">查詢表格與索引資訊</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_24">子查詢</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_25">比較運算子</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#in">「IN」運算子</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_26">其他運算子</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_27">多欄位子查詢</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#select_1">SELECT子句與子查詢</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#from">FROM子句與子查詢</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_28">資料維護與子查詢</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_29">關聯子查詢</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_30">子查詢與結合查詢</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#views">Views</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#prepared-statement">Prepared Statement</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_31">使用者變數</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#prepared-statements">Prepared Statements的應用</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#stored-routines">Stored Routines 入門</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sotred-routines">Sotred Routines的變數與流程</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#stored-routines_1">Stored Routines進階</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#triggers">Triggers</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#information_schema">查詢 information_schema</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#show">SHOW指令</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_32">建立元件資訊</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#describe">DESCRIBE指令</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mysqlshow">mysqlshow</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_33">錯誤處理與查詢</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#non-strict">Non-Strict模式</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#strictignore">Strict模式與IGNORE關鍵字</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_34">其它設定</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_35">查詢錯誤與警告</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_36">匯入與匯出資料</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#sql">使用SQL敘述匯出資料</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sql_1">使用SQL敘述匯入資料</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mysqldump">使用mysqldump程式匯出資料</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#mysqlimport">使用mysqlimport程式匯入資料</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#_37">效率</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#_38">索引</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_39">判斷條件的設定</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#explain">EXPLAIN與查詢敘述</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_40">資料維護</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#limit">LIMIT子句</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_41">使用暫時表格</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#_42">儲存引擎</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../MySql/">MySQL</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Finished</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/Art%20of%20Unit%20Testing/">Art of Unit Testing</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/HDFS%20Spark/">HDFS Spark</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/Learning%20How%20to%20Learn/">Learning How to Learn</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/Refactoring/">Refactoring</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/The%20Effective%20Engineer/">The Effective Engineer</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/%E7%B5%A6%E5%8A%9B/">給力</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Finished/%E8%99%95%E7%90%86%E5%95%8F%E9%A1%8C%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%A7%BF%E5%8B%A2/">處理問題的正確姿勢</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Game Development</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Game%20Development/Articles/">Articles</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Game%20Development/Unity/">Unity</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Information Security</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Information%20Security/">Information Security</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Languages</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScript</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/JavaScript/Asynchronous%20Programming/">Asynchronous Programming</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/">JavaScript 設計模式</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/">Python</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Alembic/">alembic</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Pytest/">Pytest</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/SQLAlchemy/">SQLAlchemy</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Languages/python/Virtualenv/">Virtualenv</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20Design/">System Design</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20Design/Architect/">Architect</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System and Editor</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Docker/">Docker</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Git%20and%20GitLab/">Git & GitLab Learning</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Internet%20Information%20Services%20%28IIS%29/">IIS</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Jenkins/">Jenkins</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Jmeter/">Jmeter</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Linux/">Ubuntu</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Powershell/">PowerShell Notes</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Vim/">Vim</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/VisualStudio/">VisualStudio</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/Windows%20Cmd/">Windows Cmd</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../System%20and%20Editor/cmd%20vs%20bash/">Cmd vs Bash</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Web</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Web/">Web Docs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Web/Frontend/">Frontend</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../../Web/Nodejs/">Nodejs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Codecademy</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/codecademy/CSS/">Learn CSS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/codecademy/HTML/">Introduction to HTML</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">React</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/react/Modern%20React%20with%20Redux/">Modern React with Redux</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Topics</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Ajax/">Ajax</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/CORS/">Cross-Origin Resource Sharing (CORS)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Chrome%20Extension/">Chrome Extension</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Http%20Cookies/">HTTP cookies</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Strict%20mode/">Strict mode</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/THIS/">THIS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../../Web/topics/Testing/">Testing</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-      </div>
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../MySql/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../MySql/" class="btn btn-xs btn-link">
+        MySQL
+      </a>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../..">KaiDocs</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="../..">Docs</a> &raquo;</li>
     
-      
-        
-          <li>Database &raquo;</li>
-        
-      
+    <div class="wm-article-nav">
+      <a href="../Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-link">
+        Advanced Database Design For a Relational DB w/ MySQL
+      </a>
+    </div>
     
-    <li>MySQL 超新手入門</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="mysql">MySQL 超新手入門</h1>
+  </div>
+
+    
+
+    <h1 id="mysql">MySQL 超新手入門</h1>
 <p><a href="http://www.codedata.com.tw/database/mysql-tutorial-getting-started">MySQL 超新手入門</a></p>
 <h2 id="select">SELECT 基礎查詢</h2>
 <ul>
@@ -1422,57 +1095,43 @@ type如股是<code>const</code>，表示只有讀取一筆資料。
 <li>MyISAM儲存引擎使用的「table-level」鎖定方式，適合使用在查詢工作非常多，資料維護比較少的資料庫，這樣的資料庫運作起來的效率會比較好。</li>
 <li>InnoDB儲存引擎使用的是「row-level」的鎖定方式，InnoDB儲存引擎使用的「row-level」鎖定方式，適合使用在查詢與資料維護工作都差不多的資料庫，這樣的資料庫運作起來的效率會比較好。</li>
 </ul>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+  <br>
+    
+
+    
+    
       
-        <a href="../MySql/" class="btn btn-neutral float-right" title="MySQL">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-neutral" title="Advanced Database Design For a Relational DB w/ MySQL"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../MySql/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../MySql/" class="btn btn-xs btn-link">
+        MySQL
+      </a>
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
+    
+    <div class="wm-article-nav">
+      <a href="../Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-link">
+        Advanced Database Design For a Relational DB w/ MySQL
+      </a>
+    </div>
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../MySql/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+    <br>
 </div>
-    <script>var base_url = '../..';</script>
-    <script src="../../js/theme.js" defer></script>
-      <script src="../../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
 
 </body>
 </html>

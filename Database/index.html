@@ -1,281 +1,101 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Database - KaiDocs</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Database - KaiDocs</title>
+    <link href="../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Database";
-    var mkdocs_page_input_path = "Database\\README.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Database", url: "#_top", children: [
+              {title: "Index", url: "#index" },
+              {title: "Normalization", url: "#normalization" },
+              {title: "ACID", url: "#acid" },
+              {title: "RDBMS vs NoSQL", url: "#rdbms-vs-nosql" },
+              {title: "Execution Plan in MySql", url: "#execution-plan-in-mysql" },
+              {title: "TSDB", url: "#tsdb" },
+              {title: "CAP theorem", url: "#cap-theorem" },
+              {title: "Partition and Sharding", url: "#partition-and-sharding" },
+              {title: "Natural vs Artificial Primary Keys", url: "#natural-vs-artificial-primary-keys" },
+              {title: "Types of Keys in Relational Model(Candidate, Super, Primary, Alternate and Foreign)", url: "#types-of-keys-in-relational-modelcandidate-super-primary-alternate-and-foreign" },
+              {title: "Entity-Relationship Model", url: "#entity-relationship-model" },
+              {title: "Paging", url: "#paging" },
+              {title: "Data Domain", url: "#data-domain" },
+              {title: "DDL, DML, TCL and DCL", url: "#ddl-dml-tcl-and-dcl" },
+              {title: "Resources", url: "#resources" },
+          ]},
+        ];
+
+    </script>
+    <script src="../js/base.js"></script> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
 
-  <div class="wy-grid-for-nav">
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
 
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> KaiDocs</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+    
+      
+    
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">KaiDoc</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../%E6%A5%B5%E6%85%A2%E9%96%8B%E7%99%BC/">極慢開發</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">API Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../API%20Design/">API Design Resources</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Agile</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Agile/91%20TDD/">91 TDD</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Agile/Agile/">Agile</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Agile/Is%20Design%20Dead/">Is Design Dead</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Database</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Database</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#index">Index</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#normalization">Normalization</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#acid">ACID</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#rdbms-vs-nosql">RDBMS vs NoSQL</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#execution-plan-in-mysql">Execution Plan in MySql</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#tsdb">TSDB</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#cap-theorem">CAP theorem</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#partition-and-sharding">Partition and Sharding</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#natural-vs-artificial-primary-keys">Natural vs Artificial Primary Keys</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#types-of-keys-in-relational-modelcandidate-super-primary-alternate-and-foreign">Types of Keys in Relational Model(Candidate, Super, Primary, Alternate and Foreign)</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#entity-relationship-model">Entity-Relationship Model</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#paging">Paging</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#data-domain">Data Domain</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ddl-dml-tcl-and-dcl">DDL, DML, TCL and DCL</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#resources">Resources</a>
-    </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/">Advanced Database Design For a Relational DB w/ MySQL</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/">MySQL 超新手入門</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="MySql/">MySQL</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Finished</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Finished/Art%20of%20Unit%20Testing/">Art of Unit Testing</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Finished/HDFS%20Spark/">HDFS Spark</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Finished/Learning%20How%20to%20Learn/">Learning How to Learn</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Finished/Refactoring/">Refactoring</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Finished/The%20Effective%20Engineer/">The Effective Engineer</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Finished/%E7%B5%A6%E5%8A%9B/">給力</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Finished/%E8%99%95%E7%90%86%E5%95%8F%E9%A1%8C%E7%9A%84%E6%AD%A3%E7%A2%BA%E5%A7%BF%E5%8B%A2/">處理問題的正確姿勢</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Game Development</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Game%20Development/Articles/">Articles</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Game%20Development/Unity/">Unity</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Information Security</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Information%20Security/">Information Security</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Languages</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="#">JavaScript</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Languages/JavaScript/Asynchronous%20Programming/">Asynchronous Programming</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Languages/JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/">JavaScript 設計模式</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Python</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Languages/python/">Python</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Languages/python/Alembic/">alembic</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Languages/python/Pytest/">Pytest</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Languages/python/SQLAlchemy/">SQLAlchemy</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Languages/python/Virtualenv/">Virtualenv</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System Design</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20Design/">System Design</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20Design/Architect/">Architect</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">System and Editor</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Docker/">Docker</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Git%20and%20GitLab/">Git & GitLab Learning</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Internet%20Information%20Services%20%28IIS%29/">IIS</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Jenkins/">Jenkins</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Jmeter/">Jmeter</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Linux/">Ubuntu</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Powershell/">PowerShell Notes</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Vim/">Vim</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/VisualStudio/">VisualStudio</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/Windows%20Cmd/">Windows Cmd</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../System%20and%20Editor/cmd%20vs%20bash/">Cmd vs Bash</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Web</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Web/">Web Docs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Web/Frontend/">Frontend</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Web/Nodejs/">Nodejs</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Codecademy</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/codecademy/CSS/">Learn CSS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/codecademy/HTML/">Introduction to HTML</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">React</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/react/Modern%20React%20with%20Redux/">Modern React with Redux</a>
-                </li>
-    </ul>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="#">Topics</a>
-    <ul>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/topics/Ajax/">Ajax</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/topics/CORS/">Cross-Origin Resource Sharing (CORS)</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/topics/Chrome%20Extension/">Chrome Extension</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/topics/Http%20Cookies/">HTTP cookies</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/topics/Strict%20mode/">Strict mode</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/topics/THIS/">THIS</a>
-                </li>
-                <li class="toctree-l2"><a class="reference internal" href="../Web/topics/Testing/">Testing</a>
-                </li>
-    </ul>
-                    </li>
-                </ul>
-      </div>
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-link">
+        Advanced Database Design For a Relational DB w/ MySQL
+      </a>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">KaiDocs</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
     
-      
-        
-          <li>Database &raquo;</li>
-        
-      
+    <div class="wm-article-nav">
+      <a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-link">
+        Is Design Dead
+      </a>
+    </div>
     
-    <li>Database</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1 id="database">Database</h1>
+  </div>
+
+    
+
+    <h1 id="database">Database</h1>
 <h2 id="index">Index</h2>
 <p><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ%3D%3D&amp;mid=2651961486&amp;idx=1&amp;sn=b319a87f87797d5d662ab4715666657f">数据库索引，到底是什么做的？</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Database_index">Database index</a></p>
@@ -356,57 +176,43 @@
 <p><a href="https://www.red-gate.com/simple-talk/sql/learn-sql-server/facts-and-fallacies-about-first-normal-form/">Facts and Fallacies about First Normal Form</a></p>
 <p><a href="https://www.mysqltutorial.org/">MySQL Tutorial</a></p>
 <p><a href="https://medium.com/@henryfeng/%E5%9B%9B%E5%80%8B%E5%9C%A8%E4%BA%9E%E9%A6%AC%E9%81%9C%E5%B7%A5%E4%BD%9C%E5%BE%8C%E6%89%8D%E7%9F%A5%E9%81%93sql%E5%AF%86%E6%8A%80-e79c9c5912f5">四個在亞馬遜工作後才知道SQL密技</a></p>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+
+  <br>
+    
+
+    
+    
       
-        <a href="Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-neutral float-right" title="Advanced Database Design For a Relational DB w/ MySQL">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Agile/Is%20Design%20Dead/" class="btn btn-neutral" title="Is Design Dead"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" class="btn btn-xs btn-link">
+        Advanced Database Design For a Relational DB w/ MySQL
+      </a>
     </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
+    
+    <div class="wm-article-nav">
+      <a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-link">
+        Is Design Dead
+      </a>
+    </div>
     
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-      
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Agile/Is%20Design%20Dead/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="Advanced%20Database%20Design%20For%20a%20Relational%20DB%20w%20MySQL/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
+    <br>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
 
 </body>
 </html>
