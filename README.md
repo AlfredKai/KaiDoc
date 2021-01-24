@@ -2,7 +2,7 @@
 
 ## MkDocs
 
-Host by MkDocs.
+Host using MkDocs.
 
 For full documentation visit [mkdocs.org](https://mkdocs.readthedocs.io/en/stable/).
 
