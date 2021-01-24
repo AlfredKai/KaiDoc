@@ -2,13 +2,6 @@
 
 ## Spark RDD
 
-「請問binary tree中文是什麼？」
-面試者一臉懵逼
-「請問binary tree複雜度是多少？」
-現在不只面試者懵逼，一旁協助面試的我也懵逼，這題連我也不會
-
-我今天終於知道公司是如何被外界視為獨角獸企業的
-
 ## Superset
 
 hdfs->hive->presto->superset

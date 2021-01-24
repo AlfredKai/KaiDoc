@@ -2,15 +2,15 @@
 
 ## PIP
 
-pip就是python的套件管理工具
+pip 就是 python 的套件管理工具
 
-    pip freeze > requirements.txt
+pip freeze > requirements.txt
 
-可以把目前環境的所有套件都印出到requirements.txt
+可以把目前環境的所有套件都印出到 requirements.txt
 
-    pip install -r requirements.txt --upgrade
+pip install -r requirements.txt --upgrade
 
->ubuntu上安裝了python3之後會與python2共存，要確定現在使用的是python3還是python2，尤其在vscode console裡面，python3應該要搭配的是pip3。
+> ubuntu 上安裝了 python3 之後會與 python2 共存，要確定現在使用的是 python3 還是 python2，尤其在 vscode console 裡面，python3 應該要搭配的是 pip3。
 
 ### Configuration
 
@@ -24,11 +24,11 @@ trusted-host = devpi.local.bridgewell.com
 
 Here are some common environment
 
-|OS|path|
-|---|---|
-|Unix|`$HOME/.config/pip/pip.conf`|
-|macOS|`$HOME/Library/Application Support/pip/pip.conf` or `$HOME/.config/pip/pip.conf`|
-|Windows| `%APPDATA%\pip\pip.ini`|
+| OS      | path                                                                             |
+| ------- | -------------------------------------------------------------------------------- |
+| Unix    | `$HOME/.config/pip/pip.conf`                                                     |
+| macOS   | `$HOME/Library/Application Support/pip/pip.conf` or `$HOME/.config/pip/pip.conf` |
+| Windows | `%APPDATA%\pip\pip.ini`                                                          |
 
 For other environments, check [pip office document](https://pip.pypa.io/en/stable/user_guide/#config-file)
 
@@ -45,48 +45,10 @@ $ pip install \
 
 可以一目了然的進入點
 
-    if __name__ == '__main__':
-      main()
+if **name** == '**main**':
+main()
 
-python沒有進入點，任何.py都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py被其他import的時候就可以防止執行main()。
-
-## 好用套件
-
-- SqlAlchemy: ORM in python
-- logging: for log
-- pywinrm: remote windows
-- devpi: nuget in python
-
-## Llint
-
-**媽的潔癖症**  
-[Linting Python in VS Code](https://code.visualstudio.com/docs/python/linting)  
-[Flake8 Rules](https://lintlyci.github.io/Flake8Rules/)
-
-- flake8-docstrings：public interfaces 需加上 docstrings。
-- flake8-import-order：import statement 需要照 stdlib、3rd party、local packages 的順序分組。組間以空行隔開。
-- flake8-quotes：統一單行使用單引號、多行使用雙引號。
-- pep8-naming：命名符合 PEP8 規範。
-
-公司.flake8
-
-```flake8
-[flake8]
-max-line-length = 99
-import-order-style = pep8
-ignore = D100,D101,D102,D103,D104,D400,D401,E402,N806
-exclude =
-    .git,
-    __pycache__,
-    protobuf
-```
-
-## cryptography錯誤
-
-    Failed building wheel for cryptography
-
-請安裝，我不知道這三小  
-<https://cryptography.io/en/latest/installation/#building-cryptography-on-linux>
+python 沒有進入點，任何.py 都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py 被其他 import 的時候就可以防止執行 main()。
 
 ## Linq in python
 
@@ -107,75 +69,9 @@ def use_logging(level):
     return decorator
 ```
 
-## *args  **kwargs
-
-不定長度參數與關鍵字參數
-
-## r prefix
-
-`r``''` or `r``""`
-
-## 兜字串
-
-<https://pyformat.info/>
-
-## Lists, Tuples, Dictionaries, Sets
-
-|List|Tuple|Dictionary|Set|
-|-|-|-|-|
-|[] or list()|()|{}|set()|
-
-## Tuple unpacking
-
-```python
-row, col = cell
-```
-
-## List Slice Notation
-
-```python
-a[start:stop]  # items start through stop-1
-a[start:]      # items start through the rest of the array
-a[:stop]       # items from the beginning through stop-1
-a[:]           # a copy of the whole array
-```
-
-## False
-
-|||
-|-|-|
-|boolean        |False  |
-|null           |None   |
-|zero integer   |0      |
-|zero float     |0.0    |
-|empty string   |'' |
-|empty list     |[] |
-|empty tuple    |() |
-|empty dict     |{} |
-|empty set      |set()|
-
-## zip(), range()
-
-回傳為`iterable object`並不是整個實體，所以需搭配`for`或直接`list(), dict()`使用。
-
-## Comprehensions
-
-list:
-
-```python
-[ expression for item in iterable ]
-[ expression for item in iterable if condition ]
-```
-
-dict:
-
-```python
-{ key_expression : value_expression for expression in iterable }
-```
-
 ## Namespaces and Scope
 
-修改global變數需要先宣告，不然一律視為local variable，但是**讀不需要宣告**(乾您娘超雷)。
+修改 global 變數需要先宣告，不然一律視為 local variable，但是**讀不需要宣告**。
 
 ```python
 def change_and_print_global ():

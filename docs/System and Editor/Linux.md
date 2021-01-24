@@ -39,9 +39,9 @@ ctrl + l
 
 | symbol | descriptions                       |
 | ------ | ---------------------------------- |
-| `;`    | 連續下達指令                       |
-| `&&`   | 當指令回傳 1(成功)則執行下一個指令 |
-| `||`   | 當前指令回傳 0(失敗)執行下一指令   |
+| `;`    | 連續下達指令                        |
+| `&&`   | 當指令回傳 1(成功)則執行下一個指令   |
+| `||`   | 當前指令回傳 0(失敗)執行下一指令     |
 | `>`    | stdoutput                          |
 | `|`    | pipe                               |
 
@@ -56,6 +56,10 @@ cd /home/kai/Desktop/kaitest && touch "kai-$(date +%d%s)"
 ```bash
 du -h
 ```
+
+### Add an Existing User Account to a Group
+
+usermod -aG examplegroup exampleusername
 
 ### 遠端執行 make 指令
 

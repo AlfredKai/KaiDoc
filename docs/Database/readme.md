@@ -40,8 +40,6 @@
 
 ## RDBMS vs NoSQL
 
-
-
 ## Execution Plan in MySql
 
 [在MySQL使用Explain做SQL SELECT語法效能測試](http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html)
@@ -105,6 +103,16 @@ aka reference domain, reference table
 ## DDL, DML, TCL and DCL
 
 [DDL, DML, TCL and DCL](https://www.geeksforgeeks.org/sql-ddl-dml-tcl-dcl/)
+
+## 用 limit 跟 offset 還是需要 full scan
+
+用 limit 跟 offset 還是需要 full scan？
+
+對啊，基本知識
+
+:cry_babe:
+
+https://hackernoon.com/please-dont-use-offset-and-limit-for-your-pagination-8ux3u4y
 
 ## Resources
 

@@ -30,8 +30,7 @@
 
 [練習重構用branch](https://github.com/tdd-91-201902/tdd-accounting-team-1/tree/refactor_test)
 [參考用的 commit histor](https://github.com/tdd-91-201902/tdd-accounting-team-1/commits/refactor_practice)
-[示範影片](https://www.youtube.com/watch?v=xRE4NmrTXko&feature=youtu.be
-)
+[示範影片](https://www.youtube.com/watch?v=xRE4NmrTXko&feature=youtu.be)
 
 ### TDD
 

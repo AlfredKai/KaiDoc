@@ -1,4 +1,8 @@
-# Cmd vs Bash
+# Shell
+
+[Effective Shell](https://effective-shell.com/docs/0-introduction/)
+
+## Cmd vs Bash
 
 | Unix     | Windows | Description       | Example               |
 | -------- | ------- | ----------------- | --------------------- |

@@ -37,7 +37,7 @@ docker run -it ubuntu:18.04 /bin/bash
 | docker rmi|remove image|
 | docker network ls|List networks|
 
-## dockerfile
+## Dockerfile
 
 ### RUN vs CMD
 
@@ -46,6 +46,14 @@ docker run -it ubuntu:18.04 /bin/bash
 - RUN executes command(s) in a new layer and creates a new image. E.g., it is often used for installing software packages.
 - CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs.
 - ENTRYPOINT configures a container that will run as an executable.
+
+### 為什麼先COPY package.json再COPY source code
+
+為了cache，Dockerfile每一行都是一個cache
+
+### CMD為什麼在build之前
+
+CMD只是指示container啟動時要執行的指令，他在哪裡都可以
 
 ## Container’s config
 
