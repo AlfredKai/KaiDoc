@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Unity - KaiDocs</title>
+    <title>Shell - KaiDocs</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -32,9 +32,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Unity", url: "#_top", children: [
-              {title: "Version Control", url: "#version-control" },
-              {title: "Test Runner", url: "#test-runner" },
+          {title: "Shell", url: "#_top", children: [
+              {title: "Cmd vs Bash", url: "#cmd-vs-bash" },
+              {title: "Windows CMD", url: "#windows-cmd" },
           ]},
         ];
 
@@ -61,20 +61,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../../Information%20Security/" class="btn btn-xs btn-default pull-right">
+      <a href="../Vim/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../../Information%20Security/" class="btn btn-xs btn-link">
-        Information Security
+      <a href="../Vim/" class="btn btn-xs btn-link">
+        Vim
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Articles/" class="btn btn-xs btn-default pull-left">
+      <a href="../Powershell/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Articles/" class="btn btn-xs btn-link">
-        Articles
+        Previous</a><a href="../Powershell/" class="btn btn-xs btn-link">
+        PowerShell Notes
       </a>
     </div>
     
@@ -82,52 +82,95 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="unity">Unity</h1>
-<h2 id="version-control">Version Control</h2>
-<p><a href="https://godstamps.blogspot.com/2018/09/unity-git-2018.html">ignore參考</a></p>
-<pre><code class="gitignore"># ===========================
-# Default Collab Ignore Rules
-# ===========================
-
-# OS Generated
-# ============
-.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-[Tt]humbs.db
-[Dd]esktop.ini
-
-# Visual Studio / MonoDevelop generated
-# =====================================
-[Ee]xported[Oo]bj/
-*.userprefs
-*.csproj
-*.pidb
-*.suo
-*.sln
-*.user
-*.unityproj
-*.booproj
-
-# Unity generated
-# ===============
-[Oo]bj/
-[Bb]uild
-sysinfo.txt
-*.stackdump
-
-# Others?
-# =======
-/Temp/
-/Library/
-</code></pre>
-
-<h2 id="test-runner">Test Runner</h2>
-<p><code>Assembly Definition(asmdef)</code>:<br />
-Unity專門的reference控管檔案，在任意地方create這個file看起來可以直接吃到所有main project的script?</p>
+    <h1 id="shell">Shell</h1>
+<p><a href="https://effective-shell.com/docs/0-introduction/">Effective Shell</a></p>
+<h2 id="cmd-vs-bash">Cmd vs Bash</h2>
+<table>
+<thead>
+<tr>
+<th>Unix</th>
+<th>Windows</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd</td>
+<td>cd</td>
+<td>進入目錄</td>
+<td>cd ..</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>md</td>
+<td>開子目路</td>
+<td>mkdir hello</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>cd</td>
+<td>顯示幕前目錄</td>
+<td>pwd</td>
+</tr>
+<tr>
+<td>env</td>
+<td>set</td>
+<td>顯示幕前環境變數</td>
+<td>env</td>
+</tr>
+<tr>
+<td>setenv</td>
+<td>set</td>
+<td>設定環境變數</td>
+<td>setenv pp pwd</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>del</td>
+<td>刪除檔案</td>
+<td>rm -r hello</td>
+</tr>
+<tr>
+<td>cat/more</td>
+<td>type</td>
+<td>顯示檔案內容</td>
+<td>more .login</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>dir</td>
+<td>顯示檔案</td>
+<td>ls</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>copy</td>
+<td>複製檔案</td>
+<td>cp .login anotherfile</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>ren</td>
+<td>移動/重新命名檔案</td>
+<td>mv .login .login.orig</td>
+</tr>
+<tr>
+<td>man</td>
+<td>help</td>
+<td>線上指令查詢</td>
+<td>man ps</td>
+</tr>
+<tr>
+<td>ps</td>
+<td></td>
+<td>顯示 process</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-cmd">Windows CMD</h2>
+<p>https://ss64.com/nt/</p>
 
   <br>
     
@@ -140,20 +183,20 @@ Unity專門的reference控管檔案，在任意地方create這個file看起來�
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../../Information%20Security/" class="btn btn-xs btn-default pull-right">
+      <a href="../Vim/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../../Information%20Security/" class="btn btn-xs btn-link">
-        Information Security
+      <a href="../Vim/" class="btn btn-xs btn-link">
+        Vim
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Articles/" class="btn btn-xs btn-default pull-left">
+      <a href="../Powershell/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Articles/" class="btn btn-xs btn-link">
-        Articles
+        Previous</a><a href="../Powershell/" class="btn btn-xs btn-link">
+        PowerShell Notes
       </a>
     </div>
     

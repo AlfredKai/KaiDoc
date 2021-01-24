@@ -61,12 +61,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../Internet%20Information%20Services%20%28IIS%29/" class="btn btn-xs btn-default pull-right">
+      <a href="../Jenkins/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../Internet%20Information%20Services%20%28IIS%29/" class="btn btn-xs btn-link">
-        IIS
+      <a href="../Jenkins/" class="btn btn-xs btn-link">
+        Jenkins
       </a>
     </div>
     
@@ -230,42 +230,6 @@ sudo crontab -e
 <p>不幸版本不合你需要：</p>
 <p><a href="https://docs.gitlab.com/omnibus/update/README.html#downgrading">Downgrade</a><br />
 <a href="https://packages.gitlab.com/gitlab/">特定版本</a></p>
-<h3 id="ci-template-cs-build-and-robocopy">CI template: CS build and robocopy</h3>
-<pre><code class="yml">stages:
-    - build
-    - deploy
-
-build:
-    stage: build
-    tags:
-        - windows
-    only:
-        - branches
-    script:
-        - chcp 65001
-        - echo on
-        - '%NUGET% restore ScupioMonitor.sln'
-        - '%MSBUILD% ScupioMonitor.sln /p:Configuration=Debug'
-    artifacts:
-        name: '%CI_JOB_NAME%-%CI_COMMIT_REF_SLUG%'
-        expire_in: 1 week
-        paths:
-            - HealthChecker/bin/Debug/*.exe
-            - HealthChecker/bin/Debug/*.dll
-
-deploy:
-    stage: deploy
-    tags:
-        - windows
-    only:
-        - branches
-    script:
-        - chcp 65001
-        - echo on
-        - net use \\n046\c$\ScupioTasks /user:administrator %DEPLOY_PASS%
-        # https://stackoverflow.com/questions/44504795/how-to-stop-robocopy-from-exiting-the-build
-        - (robocopy HealthChecker/bin/Debug/ //n046/c$/ScupioTasks) ^&amp; IF %ERRORLEVEL% LSS 8 SET ERRORLEVEL = 0
-</code></pre>
 
   <br>
     
@@ -278,12 +242,12 @@ deploy:
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../Internet%20Information%20Services%20%28IIS%29/" class="btn btn-xs btn-default pull-right">
+      <a href="../Jenkins/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../Internet%20Information%20Services%20%28IIS%29/" class="btn btn-xs btn-link">
-        IIS
+      <a href="../Jenkins/" class="btn btn-xs btn-link">
+        Jenkins
       </a>
     </div>
     

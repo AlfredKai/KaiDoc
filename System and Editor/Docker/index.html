@@ -35,7 +35,7 @@
           {title: "Docker", url: "#_top", children: [
               {title: "Resource", url: "#resource" },
               {title: "Commands", url: "#commands" },
-              {title: "dockerfile", url: "#dockerfile" },
+              {title: "Dockerfile", url: "#dockerfile" },
               {title: "Container\u2019s config", url: "#containers-config" },
               {title: "How to debug", url: "#how-to-debug" },
           ]},
@@ -174,7 +174,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 </tr>
 </tbody>
 </table>
-<h2 id="dockerfile">dockerfile</h2>
+<h2 id="dockerfile">Dockerfile</h2>
 <h3 id="run-vs-cmd">RUN vs CMD</h3>
 <h4 id="in-a-nutshell">In a nutshell</h4>
 <ul>
@@ -182,6 +182,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <li>CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs.</li>
 <li>ENTRYPOINT configures a container that will run as an executable.</li>
 </ul>
+<h3 id="copy-packagejsoncopy-source-code">為什麼先COPY package.json再COPY source code</h3>
+<p>為了cache，Dockerfile每一行都是一個cache</p>
+<h3 id="cmdbuild">CMD為什麼在build之前</h3>
+<p>CMD只是指示container啟動時要執行的指令，他在哪裡都可以</p>
 <h2 id="containers-config">Container’s config</h2>
 <pre><code class="bash">/var/lib/docker/containers/[container-id]/config.json
 </code></pre>

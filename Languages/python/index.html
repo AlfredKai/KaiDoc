@@ -35,20 +35,8 @@
           {title: "Python", url: "#_top", children: [
               {title: "PIP", url: "#pip" },
               {title: "main()", url: "#main" },
-              {title: "\u597d\u7528\u5957\u4ef6", url: "#_1" },
-              {title: "Llint", url: "#llint" },
-              {title: "cryptography\u932f\u8aa4", url: "#cryptography" },
               {title: "Linq in python", url: "#linq-in-python" },
               {title: "Decorator", url: "#decorator" },
-              {title: "args  *kwargs", url: "#args-kwargs" },
-              {title: "r prefix", url: "#r-prefix" },
-              {title: "\u515c\u5b57\u4e32", url: "#_2" },
-              {title: "Lists, Tuples, Dictionaries, Sets", url: "#lists-tuples-dictionaries-sets" },
-              {title: "Tuple unpacking", url: "#tuple-unpacking" },
-              {title: "List Slice Notation", url: "#list-slice-notation" },
-              {title: "False", url: "#false" },
-              {title: "zip(), range()", url: "#zip-range" },
-              {title: "Comprehensions", url: "#comprehensions" },
               {title: "Namespaces and Scope", url: "#namespaces-and-scope" },
               {title: "Resource", url: "#resource" },
           ]},
@@ -87,10 +75,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     </div>
     
     <div class="wm-article-nav">
-      <a href="../JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/" class="btn btn-xs btn-default pull-left">
+      <a href="../../Information%20Security/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/" class="btn btn-xs btn-link">
-        JavaScript 設計模式
+        Previous</a><a href="../../Information%20Security/" class="btn btn-xs btn-link">
+        Information Security
       </a>
     </div>
     
@@ -100,14 +88,12 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     <h1 id="python">Python</h1>
 <h2 id="pip">PIP</h2>
-<p>pip就是python的套件管理工具</p>
-<pre><code>pip freeze &gt; requirements.txt
-</code></pre>
-<p>可以把目前環境的所有套件都印出到requirements.txt</p>
-<pre><code>pip install -r requirements.txt --upgrade
-</code></pre>
+<p>pip 就是 python 的套件管理工具</p>
+<p>pip freeze &gt; requirements.txt</p>
+<p>可以把目前環境的所有套件都印出到 requirements.txt</p>
+<p>pip install -r requirements.txt --upgrade</p>
 <blockquote>
-<p>ubuntu上安裝了python3之後會與python2共存，要確定現在使用的是python3還是python2，尤其在vscode console裡面，python3應該要搭配的是pip3。</p>
+<p>ubuntu 上安裝了 python3 之後會與 python2 共存，要確定現在使用的是 python3 還是 python2，尤其在 vscode console 裡面，python3 應該要搭配的是 pip3。</p>
 </blockquote>
 <h3 id="configuration">Configuration</h3>
 <h4 id="manually-configuration">Manually Configuration</h4>
@@ -149,43 +135,9 @@ trusted-host = devpi.local.bridgewell.com
 
 <h2 id="main">main()</h2>
 <p>可以一目了然的進入點</p>
-<pre><code>if __name__ == '__main__':
-  main()
-</code></pre>
-<p>python沒有進入點，任何.py都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py被其他import的時候就可以防止執行main()。</p>
-<h2 id="_1">好用套件</h2>
-<ul>
-<li>SqlAlchemy: ORM in python</li>
-<li>logging: for log</li>
-<li>pywinrm: remote windows</li>
-<li>devpi: nuget in python</li>
-</ul>
-<h2 id="llint">Llint</h2>
-<p><strong>媽的潔癖症</strong><br />
-<a href="https://code.visualstudio.com/docs/python/linting">Linting Python in VS Code</a><br />
-<a href="https://lintlyci.github.io/Flake8Rules/">Flake8 Rules</a></p>
-<ul>
-<li>flake8-docstrings：public interfaces 需加上 docstrings。</li>
-<li>flake8-import-order：import statement 需要照 stdlib、3rd party、local packages 的順序分組。組間以空行隔開。</li>
-<li>flake8-quotes：統一單行使用單引號、多行使用雙引號。</li>
-<li>pep8-naming：命名符合 PEP8 規範。</li>
-</ul>
-<p>公司.flake8</p>
-<pre><code class="flake8">[flake8]
-max-line-length = 99
-import-order-style = pep8
-ignore = D100,D101,D102,D103,D104,D400,D401,E402,N806
-exclude =
-    .git,
-    __pycache__,
-    protobuf
-</code></pre>
-
-<h2 id="cryptography">cryptography錯誤</h2>
-<pre><code>Failed building wheel for cryptography
-</code></pre>
-<p>請安裝，我不知道這三小<br />
-<a href="https://cryptography.io/en/latest/installation/#building-cryptography-on-linux">https://cryptography.io/en/latest/installation/#building-cryptography-on-linux</a></p>
+<p>if <strong>name</strong> == '<strong>main</strong>':
+main()</p>
+<p>python 沒有進入點，任何.py 都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py 被其他 import 的時候就可以防止執行 main()。</p>
 <h2 id="linq-in-python">Linq in python</h2>
 <p><a href="http://mark-dot-net.blogspot.com/2014/03/python-equivalents-of-linq-methods.html">http://mark-dot-net.blogspot.com/2014/03/python-equivalents-of-linq-methods.html</a></p>
 <h2 id="decorator">Decorator</h2>
@@ -201,103 +153,8 @@ exclude =
     return decorator
 </code></pre>
 
-<h2 id="args-kwargs"><em>args  </em>*kwargs</h2>
-<p>不定長度參數與關鍵字參數</p>
-<h2 id="r-prefix">r prefix</h2>
-<p><code>r``''</code> or <code>r``""</code></p>
-<h2 id="_2">兜字串</h2>
-<p><a href="https://pyformat.info/">https://pyformat.info/</a></p>
-<h2 id="lists-tuples-dictionaries-sets">Lists, Tuples, Dictionaries, Sets</h2>
-<table>
-<thead>
-<tr>
-<th>List</th>
-<th>Tuple</th>
-<th>Dictionary</th>
-<th>Set</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>[] or list()</td>
-<td>()</td>
-<td>{}</td>
-<td>set()</td>
-</tr>
-</tbody>
-</table>
-<h2 id="tuple-unpacking">Tuple unpacking</h2>
-<pre><code class="python">row, col = cell
-</code></pre>
-
-<h2 id="list-slice-notation">List Slice Notation</h2>
-<pre><code class="python">a[start:stop]  # items start through stop-1
-a[start:]      # items start through the rest of the array
-a[:stop]       # items from the beginning through stop-1
-a[:]           # a copy of the whole array
-</code></pre>
-
-<h2 id="false">False</h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>boolean</td>
-<td>False</td>
-</tr>
-<tr>
-<td>null</td>
-<td>None</td>
-</tr>
-<tr>
-<td>zero integer</td>
-<td>0</td>
-</tr>
-<tr>
-<td>zero float</td>
-<td>0.0</td>
-</tr>
-<tr>
-<td>empty string</td>
-<td>''</td>
-</tr>
-<tr>
-<td>empty list</td>
-<td>[]</td>
-</tr>
-<tr>
-<td>empty tuple</td>
-<td>()</td>
-</tr>
-<tr>
-<td>empty dict</td>
-<td>{}</td>
-</tr>
-<tr>
-<td>empty set</td>
-<td>set()</td>
-</tr>
-</tbody>
-</table>
-<h2 id="zip-range">zip(), range()</h2>
-<p>回傳為<code>iterable object</code>並不是整個實體，所以需搭配<code>for</code>或直接<code>list(), dict()</code>使用。</p>
-<h2 id="comprehensions">Comprehensions</h2>
-<p>list:</p>
-<pre><code class="python">[ expression for item in iterable ]
-[ expression for item in iterable if condition ]
-</code></pre>
-
-<p>dict:</p>
-<pre><code class="python">{ key_expression : value_expression for expression in iterable }
-</code></pre>
-
 <h2 id="namespaces-and-scope">Namespaces and Scope</h2>
-<p>修改global變數需要先宣告，不然一律視為local variable，但是<strong>讀不需要宣告</strong>(乾您娘超雷)。</p>
+<p>修改 global 變數需要先宣告，不然一律視為 local variable，但是<strong>讀不需要宣告</strong>。</p>
 <pre><code class="python">def change_and_print_global ():
     global animal
     animal = 'wombat'
@@ -334,10 +191,10 @@ a[:]           # a copy of the whole array
     </div>
     
     <div class="wm-article-nav">
-      <a href="../JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/" class="btn btn-xs btn-default pull-left">
+      <a href="../../Information%20Security/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../JavaScript/JavaScript%20%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F/" class="btn btn-xs btn-link">
-        JavaScript 設計模式
+        Previous</a><a href="../../Information%20Security/" class="btn btn-xs btn-link">
+        Information Security
       </a>
     </div>
     
