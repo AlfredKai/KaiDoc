@@ -52,6 +52,12 @@ nav:
 
 MkDocs will allow you to name your index pages as `README.md` instead of `index.md`. **Notice that `README.md` must be capital**.
 
+## Deploy to GitHub Pages
+
+```bat
+mkdocs gh-deploy
+```
+
 ## Themes
 
 [Themes](https://github.com/mkdocs/mkdocs/wiki/MkDocs-Themes)
