@@ -1,5 +1,7 @@
 # Topic
 
+[I Almost Got Fired for Choosing React in Our Enterprise App](https://medium.com/better-programming/i-almost-got-fired-for-choosing-react-in-our-enterprise-app-846ea840841c)
+
 ## Race condition
 
 [Handling API request race conditions in React](https://sebastienlorber.com/handling-api-request-race-conditions-in-react)

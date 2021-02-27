@@ -16,6 +16,14 @@
 
 [從防禦認識CSRF](https://www.ithome.com.tw/voice/115822)
 
+[讓我們來談談 CSRF](https://blog.techbridge.cc/2017/02/25/csrf-introduction/)
+
+[Do we need CSRF protection if CORS is disabled?](https://dev.to/iamandrewluca/comment/i187)
+
 ## Testing
 
 [Web Application Penetration Testing](https://blog.cloudboost.io/how-to-run-node-js-apps-in-the-browser-3f077f34f8a5)
+
+## License
+
+[choosealicense](https://choosealicense.com/appendix/)

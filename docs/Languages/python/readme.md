@@ -1,45 +1,8 @@
 # Python
 
-## PIP
+## Global Interpreter Lock
 
-pip 就是 python 的套件管理工具
-
-pip freeze > requirements.txt
-
-可以把目前環境的所有套件都印出到 requirements.txt
-
-pip install -r requirements.txt --upgrade
-
-> ubuntu 上安裝了 python3 之後會與 python2 共存，要確定現在使用的是 python3 還是 python2，尤其在 vscode console 裡面，python3 應該要搭配的是 pip3。
-
-### Configuration
-
-#### Manually Configuration
-
-```config
-[global]
-extra-index-url = http://devpi.local.bridgewell.com/bridgewell/prod/+simple/
-trusted-host = devpi.local.bridgewell.com
-```
-
-Here are some common environment
-
-| OS      | path                                                                             |
-| ------- | -------------------------------------------------------------------------------- |
-| Unix    | `$HOME/.config/pip/pip.conf`                                                     |
-| macOS   | `$HOME/Library/Application Support/pip/pip.conf` or `$HOME/.config/pip/pip.conf` |
-| Windows | `%APPDATA%\pip\pip.ini`                                                          |
-
-For other environments, check [pip office document](https://pip.pypa.io/en/stable/user_guide/#config-file)
-
-#### One-time Command
-
-```config
-$ pip install \
-    --extra-index-url http://devpi.local.bridgewell.com/bridgewell/prod/+simple/ \
-    --trusted-host devpi.local.bridgewell.com \
-    shutong>=1.10.0
-```
+[GIL](https://en.wikipedia.org/wiki/Global_interpreter_lock)
 
 ## main()
 
@@ -50,24 +13,9 @@ main()
 
 python 沒有進入點，任何.py 都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py 被其他 import 的時候就可以防止執行 main()。
 
-## Linq in python
-
-<http://mark-dot-net.blogspot.com/2014/03/python-equivalents-of-linq-methods.html>
-
 ## Decorator
 
-```python
-def use_logging(level):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            if level == "warn":
-                logging.warn("%s is running" % func.__name__)
-            elif level == "info":
-                logging.info("%s is running" % func.__name__)
-            return func(*args)
-        return wrapper
-    return decorator
-```
+[Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)
 
 ## Namespaces and Scope
 

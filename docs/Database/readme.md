@@ -40,6 +40,8 @@
 
 ## RDBMS vs NoSQL
 
+[SQL vs NoSQL: The Differences](https://www.kshuang.xyz/doku.php/database:sql_vs_nosql)
+
 ## Execution Plan in MySql
 
 [在MySQL使用Explain做SQL SELECT語法效能測試](http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html)
@@ -70,10 +72,6 @@
 
 [MySQL CLUSTER](https://www.mysql.com/products/cluster/mysql-cluster-datasheet.pdf)
 
-## Natural vs Artificial Primary Keys
-
-[Natural vs Artificial Primary Keys](https://sqlstudies.com/2016/08/29/natural-vs-artificial-primary-keys/#:~:text=are%20usually%20bigger.-,Artificial,the%20data%20in%20the%20row.)
-
 ## Types of Keys in Relational Model(Candidate, Super, Primary, Alternate and Foreign)
 
 [keys in DBMS](https://beginnersbook.com/2015/04/keys-in-dbms/)
@@ -90,10 +88,6 @@
 - Logical data model
 - Physical data model
 
-## Paging
-
-[Tweeter Cursoring with max_id](https://developer.twitter.com/en/docs/tweets/timelines/guides/working-with-timelines)
-
 ## Data Domain
 
 aka reference domain, reference table
@@ -103,16 +97,6 @@ aka reference domain, reference table
 ## DDL, DML, TCL and DCL
 
 [DDL, DML, TCL and DCL](https://www.geeksforgeeks.org/sql-ddl-dml-tcl-dcl/)
-
-## 用 limit 跟 offset 還是需要 full scan
-
-用 limit 跟 offset 還是需要 full scan？
-
-對啊，基本知識
-
-:cry_babe:
-
-https://hackernoon.com/please-dont-use-offset-and-limit-for-your-pagination-8ux3u4y
 
 ## Resources
 

@@ -1,13 +1,5 @@
 # Web Docs
 
-## CSS
-
-CSS in JS
-
-[styled component](https://styled-components.com/)
-
-[storybook](https://storybook.js.org/)
-
 ## Resources
 
 [MDN web docs](https://developer.mozilla.org/en-US/)
