@@ -33,9 +33,8 @@
         
         var pageToc = [
           {title: "Python", url: "#_top", children: [
-              {title: "PIP", url: "#pip" },
+              {title: "Global Interpreter Lock", url: "#global-interpreter-lock" },
               {title: "main()", url: "#main" },
-              {title: "Linq in python", url: "#linq-in-python" },
               {title: "Decorator", url: "#decorator" },
               {title: "Namespaces and Scope", url: "#namespaces-and-scope" },
               {title: "Resource", url: "#resource" },
@@ -75,10 +74,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     </div>
     
     <div class="wm-article-nav">
-      <a href="../../Information%20Security/" class="btn btn-xs btn-default pull-left">
+      <a href="../JavaScript/THIS/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../../Information%20Security/" class="btn btn-xs btn-link">
-        Information Security
+        Previous</a><a href="../JavaScript/THIS/" class="btn btn-xs btn-link">
+        THIS
       </a>
     </div>
     
@@ -87,72 +86,15 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="python">Python</h1>
-<h2 id="pip">PIP</h2>
-<p>pip 就是 python 的套件管理工具</p>
-<p>pip freeze &gt; requirements.txt</p>
-<p>可以把目前環境的所有套件都印出到 requirements.txt</p>
-<p>pip install -r requirements.txt --upgrade</p>
-<blockquote>
-<p>ubuntu 上安裝了 python3 之後會與 python2 共存，要確定現在使用的是 python3 還是 python2，尤其在 vscode console 裡面，python3 應該要搭配的是 pip3。</p>
-</blockquote>
-<h3 id="configuration">Configuration</h3>
-<h4 id="manually-configuration">Manually Configuration</h4>
-<pre><code class="config">[global]
-extra-index-url = http://devpi.local.bridgewell.com/bridgewell/prod/+simple/
-trusted-host = devpi.local.bridgewell.com
-</code></pre>
-
-<p>Here are some common environment</p>
-<table>
-<thead>
-<tr>
-<th>OS</th>
-<th>path</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Unix</td>
-<td><code>$HOME/.config/pip/pip.conf</code></td>
-</tr>
-<tr>
-<td>macOS</td>
-<td><code>$HOME/Library/Application Support/pip/pip.conf</code> or <code>$HOME/.config/pip/pip.conf</code></td>
-</tr>
-<tr>
-<td>Windows</td>
-<td><code>%APPDATA%\pip\pip.ini</code></td>
-</tr>
-</tbody>
-</table>
-<p>For other environments, check <a href="https://pip.pypa.io/en/stable/user_guide/#config-file">pip office document</a></p>
-<h4 id="one-time-command">One-time Command</h4>
-<pre><code class="config">$ pip install \
-    --extra-index-url http://devpi.local.bridgewell.com/bridgewell/prod/+simple/ \
-    --trusted-host devpi.local.bridgewell.com \
-    shutong&gt;=1.10.0
-</code></pre>
-
+<h2 id="global-interpreter-lock">Global Interpreter Lock</h2>
+<p><a href="https://en.wikipedia.org/wiki/Global_interpreter_lock">GIL</a></p>
 <h2 id="main">main()</h2>
 <p>可以一目了然的進入點</p>
 <p>if <strong>name</strong> == '<strong>main</strong>':
 main()</p>
 <p>python 沒有進入點，任何.py 都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py 被其他 import 的時候就可以防止執行 main()。</p>
-<h2 id="linq-in-python">Linq in python</h2>
-<p><a href="http://mark-dot-net.blogspot.com/2014/03/python-equivalents-of-linq-methods.html">http://mark-dot-net.blogspot.com/2014/03/python-equivalents-of-linq-methods.html</a></p>
 <h2 id="decorator">Decorator</h2>
-<pre><code class="python">def use_logging(level):
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            if level == &quot;warn&quot;:
-                logging.warn(&quot;%s is running&quot; % func.__name__)
-            elif level == &quot;info&quot;:
-                logging.info(&quot;%s is running&quot; % func.__name__)
-            return func(*args)
-        return wrapper
-    return decorator
-</code></pre>
-
+<p><a href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a></p>
 <h2 id="namespaces-and-scope">Namespaces and Scope</h2>
 <p>修改 global 變數需要先宣告，不然一律視為 local variable，但是<strong>讀不需要宣告</strong>。</p>
 <pre><code class="python">def change_and_print_global ():
@@ -191,10 +133,10 @@ main()</p>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../../Information%20Security/" class="btn btn-xs btn-default pull-left">
+      <a href="../JavaScript/THIS/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../../Information%20Security/" class="btn btn-xs btn-link">
-        Information Security
+        Previous</a><a href="../JavaScript/THIS/" class="btn btn-xs btn-link">
+        THIS
       </a>
     </div>
     

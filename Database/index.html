@@ -41,13 +41,10 @@
               {title: "TSDB", url: "#tsdb" },
               {title: "CAP theorem", url: "#cap-theorem" },
               {title: "Partition and Sharding", url: "#partition-and-sharding" },
-              {title: "Natural vs Artificial Primary Keys", url: "#natural-vs-artificial-primary-keys" },
               {title: "Types of Keys in Relational Model(Candidate, Super, Primary, Alternate and Foreign)", url: "#types-of-keys-in-relational-modelcandidate-super-primary-alternate-and-foreign" },
               {title: "Entity-Relationship Model", url: "#entity-relationship-model" },
-              {title: "Paging", url: "#paging" },
               {title: "Data Domain", url: "#data-domain" },
               {title: "DDL, DML, TCL and DCL", url: "#ddl-dml-tcl-and-dcl" },
-              {title: "\u7528 limit \u8ddf offset \u9084\u662f\u9700\u8981 full scan", url: "#limit-offset-full-scan" },
               {title: "Resources", url: "#resources" },
           ]},
         ];
@@ -127,6 +124,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p>In computer science, ACID (Atomicity, Consistency, Isolation, Durability) is a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, etc. In the context of databases, a sequence of database operations that satisfies the ACID properties (and these can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.</p>
 </blockquote>
 <h2 id="rdbms-vs-nosql">RDBMS vs NoSQL</h2>
+<p><a href="https://www.kshuang.xyz/doku.php/database:sql_vs_nosql">SQL vs NoSQL: The Differences</a></p>
 <h2 id="execution-plan-in-mysql">Execution Plan in MySql</h2>
 <p><a href="http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html">在MySQL使用Explain做SQL SELECT語法效能測試</a></p>
 <h2 id="tsdb">TSDB</h2>
@@ -147,8 +145,6 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p><a href="https://en.wikipedia.org/wiki/Shard_(database_architecture)">Shard (database architecture)</a></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/understanding-database-sharding">Understanding Database Sharding</a></p>
 <p><a href="https://www.mysql.com/products/cluster/mysql-cluster-datasheet.pdf">MySQL CLUSTER</a></p>
-<h2 id="natural-vs-artificial-primary-keys">Natural vs Artificial Primary Keys</h2>
-<p><a href="https://sqlstudies.com/2016/08/29/natural-vs-artificial-primary-keys/#:~:text=are%20usually%20bigger.-,Artificial,the%20data%20in%20the%20row.">Natural vs Artificial Primary Keys</a></p>
 <h2 id="types-of-keys-in-relational-modelcandidate-super-primary-alternate-and-foreign">Types of Keys in Relational Model(Candidate, Super, Primary, Alternate and Foreign)</h2>
 <p><a href="https://beginnersbook.com/2015/04/keys-in-dbms/">keys in DBMS</a></p>
 <ul>
@@ -163,18 +159,11 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <li>Logical data model</li>
 <li>Physical data model</li>
 </ul>
-<h2 id="paging">Paging</h2>
-<p><a href="https://developer.twitter.com/en/docs/tweets/timelines/guides/working-with-timelines">Tweeter Cursoring with max_id</a></p>
 <h2 id="data-domain">Data Domain</h2>
 <p>aka reference domain, reference table</p>
 <p><a href="https://en.wikipedia.org/wiki/Data_domain">Data Domain</a></p>
 <h2 id="ddl-dml-tcl-and-dcl">DDL, DML, TCL and DCL</h2>
 <p><a href="https://www.geeksforgeeks.org/sql-ddl-dml-tcl-dcl/">DDL, DML, TCL and DCL</a></p>
-<h2 id="limit-offset-full-scan">用 limit 跟 offset 還是需要 full scan</h2>
-<p>用 limit 跟 offset 還是需要 full scan？</p>
-<p>對啊，基本知識</p>
-<p>:cry_babe:</p>
-<p>https://hackernoon.com/please-dont-use-offset-and-limit-for-your-pagination-8ux3u4y</p>
 <h2 id="resources">Resources</h2>
 <p><a href="https://visualstudiomagazine.com/blogs/tool-tracker/2018/02/avoiding-ef-slowdown.aspx">Avoiding Entity Framework Slowdown</a></p>
 <p><a href="https://draveness.me/mysql-innodb">『浅入浅出』MySQL 和 InnoDB</a></p>

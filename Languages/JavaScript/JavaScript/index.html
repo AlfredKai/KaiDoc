@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>JavaScript - KaiDocs</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "JavaScript", url: "#_top", children: [
+              {title: "Inheritance", url: "#inheritance" },
+              {title: "Closure", url: "#closure" },
+              {title: "Scope", url: "#scope" },
+              {title: "ES6", url: "#es6" },
+              {title: "Bookmarklet", url: "#bookmarklet" },
+              {title: "Browser Support", url: "#browser-support" },
+              {title: "Javascript Prototype Chain", url: "#javascript-prototype-chain" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Strict%20mode/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Strict%20mode/" class="btn btn-xs btn-link">
+        Strict mode
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../DotNET/WCF/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../DotNET/WCF/" class="btn btn-xs btn-link">
+        WCF
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="javascript">JavaScript</h1>
+<ul>
+<li>IIFE(Immediately Invoked Function Expression)</li>
+<li>Strict Mode</li>
+<li>Prototype</li>
+<li>Polyfill</li>
+<li>Transpiler</li>
+<li>minify/uglify</li>
+</ul>
+<h2 id="inheritance">Inheritance</h2>
+<ul>
+<li>Pseudoclassical Inheritance &amp; Prototypal Inheritance</li>
+</ul>
+<h2 id="closure">Closure</h2>
+<ul>
+<li>this</li>
+<li>arrow function</li>
+</ul>
+<h2 id="scope">Scope</h2>
+<ul>
+<li>function scope &amp; block scope</li>
+<li>TDZ &amp; hoisting</li>
+</ul>
+<h2 id="es6">ES6</h2>
+<ul>
+<li>let, const</li>
+<li>Map/Set</li>
+<li>arrow function</li>
+<li>for-of</li>
+<li>class</li>
+<li>promise, async/await(ES7)</li>
+<li>symbol</li>
+<li>rest parameter/default parameter</li>
+<li>es6 module</li>
+</ul>
+<h2 id="bookmarklet">Bookmarklet</h2>
+<p><a href="http://www.dev-hq.net/posts/1--create-javascript-bookmarklet">How to Create a JavaScript Bookmarklet</a></p>
+<h3 id="html-tags">動態產生html tags</h3>
+<pre><code class="js">document.open();
+document.write();
+document.close();
+</code></pre>
+
+<pre><code class="js">iframe = document.createElement('iframe');
+iframe.src = src;
+document.appendChild(iframe);
+</code></pre>
+
+<p><a href="https://www.jotform.com/blog/html5-imports-import-html-files-into-html-files-83467/">HTML5 Imports: Import HTML Files Into HTML Files</a>
+<a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Blob">Blob</a></p>
+<h3 id="js">動態載入JS</h3>
+<pre><code class="js">source = document.createElement('script');
+source.async = true;
+source.src = src;
+</code></pre>
+
+<h3 id="iframe">與iframe互動</h3>
+<pre><code class="js">iframe.contentWindow.postMessage(message, targetOrigin);
+</code></pre>
+
+<h2 id="browser-support">Browser Support</h2>
+<p><a href="https://caniuse.com/">caniuse</a></p>
+<p><a href="http://kangax.github.io/">ECMAScript 5 compatibility table</a></p>
+<h2 id="javascript-prototype-chain">Javascript Prototype Chain</h2>
+<p><a href="https://kenneth-kin-lum.blogspot.com/2012/10/javascripts-pseudo-classical.html?showComment=1484288337339&amp;source=post_page-----54102240a8b4----------------------#c1393503225616140233">JavaScript's Pseudo Classical Inheritance diagram</a></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Strict%20mode/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Strict%20mode/" class="btn btn-xs btn-link">
+        Strict mode
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../DotNET/WCF/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../DotNET/WCF/" class="btn btn-xs btn-link">
+        WCF
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
