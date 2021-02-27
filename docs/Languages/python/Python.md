@@ -4,6 +4,8 @@
 
 [GIL](https://en.wikipedia.org/wiki/Global_interpreter_lock)
 
+[Python的GIL是什么鬼，多线程性能究竟如何](http://cenalulu.github.io/python/gil-in-python/)
+
 ## main()
 
 可以一目了然的進入點
