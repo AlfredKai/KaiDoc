@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="../../img/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>Nginx - KaiDocs</title>
+    <title>WTF z-index - KaiDocs</title>
     <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
     <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
     <link href="../../css/base.css" rel="stylesheet">
@@ -32,8 +32,9 @@
       var is_top_frame = false;
         
         var pageToc = [
-          {title: "Nginx", url: "#_top", children: [
-              {title: "Purpose", url: "#purpose" },
+          {title: "WTF z-index", url: "#_top", children: [
+              {title: "Why can't an element with a z-index value cover its child?", url: "#why-cant-an-element-with-a-z-index-value-cover-its-child" },
+              {title: "will-change", url: "#will-change" },
           ]},
         ];
 
@@ -60,20 +61,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../Performance/" class="btn btn-xs btn-default pull-right">
+      <a href="../HTTP/Ajax/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../Performance/" class="btn btn-xs btn-link">
-        Performance
+      <a href="../HTTP/Ajax/" class="btn btn-xs btn-link">
+        Ajax
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Architect/" class="btn btn-xs btn-default pull-left">
+      <a href="../Nodejs/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Architect/" class="btn btn-xs btn-link">
-        Architect
+        Previous</a><a href="../Nodejs/" class="btn btn-xs btn-link">
+        Nodejs
       </a>
     </div>
     
@@ -81,14 +82,22 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     
 
-    <h1 id="nginx">Nginx</h1>
-<h2 id="purpose">Purpose</h2>
+    <h1 id="wtf-z-index">WTF z-index</h1>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index">z-index</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context">The stacking context</a></p>
 <ul>
-<li>gzip</li>
-<li>HTTPS</li>
-<li>Caching</li>
-<li>rate limit</li>
+<li>The <code>z-index</code> CSS property sets the z-order of a <strong><em>positioned</em></strong> element and its descendants or flex items.</li>
+<li>原則：比較z-index前要先找到共同的stacking context</li>
 </ul>
+<h2 id="why-cant-an-element-with-a-z-index-value-cover-its-child">Why can't an element with a z-index value cover its child?</h2>
+<p><a href="https://stackoverflow.com/questions/54897916/why-cant-an-element-with-a-z-index-value-cover-its-child/54903621#54903621">Why can't an element with a z-index value cover its child?</a></p>
+<blockquote>
+<p>Stacking contexts formed by positioned descendants with z-indices greater than or equal to 1 in z-index order (smallest first) then tree order.</p>
+</blockquote>
+<p>positioned element設了一個<code>正</code>zIndex會創一個新的stacking context，設<code>負</code>的不會，所以當B是A的descent的時候，B設了一個zIndex不管比A小多少，只要他是正的他是疊加在A上面的新stacking context，所以A不管設多大也沒用。</p>
+<h2 id="will-change">will-change</h2>
+<p><a href="https://css-tricks.com/almanac/properties/w/will-change/">will-change</a></p>
+<p>這雷包有stacking context</p>
 
   <br>
     
@@ -101,20 +110,20 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
   <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
     
     <div class="wm-article-nav pull-right">
-      <a href="../Performance/" class="btn btn-xs btn-default pull-right">
+      <a href="../HTTP/Ajax/" class="btn btn-xs btn-default pull-right">
         Next
         <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
-      <a href="../Performance/" class="btn btn-xs btn-link">
-        Performance
+      <a href="../HTTP/Ajax/" class="btn btn-xs btn-link">
+        Ajax
       </a>
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Architect/" class="btn btn-xs btn-default pull-left">
+      <a href="../Nodejs/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Architect/" class="btn btn-xs btn-link">
-        Architect
+        Previous</a><a href="../Nodejs/" class="btn btn-xs btn-link">
+        Nodejs
       </a>
     </div>
     

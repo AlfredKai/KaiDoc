@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>TECH INTERVIEW PRO - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "TECH INTERVIEW PRO", url: "#_top", children: [
+              {title: "Systems Design", url: "#systems-design" },
+              {title: "Mobile systems design", url: "#mobile-systems-design" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../System%20and%20Editor/Docker/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../System%20and%20Editor/Docker/" class="btn btn-xs btn-link">
+        Docker
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Performance/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Performance/" class="btn btn-xs btn-link">
+        Performance
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="tech-interview-pro">TECH INTERVIEW PRO</h1>
+<h2 id="systems-design">Systems Design</h2>
+<h3 id="introduction-to-systems-design">Introduction to Systems Design</h3>
+<ul>
+<li>Doesn't always happen, it's more prevalent for senior.</li>
+<li>It's different from interviewing vs actually doing it.</li>
+<li>Get high level overview.</li>
+<li>Try to navigate toward things you know better.</li>
+<li>Research the company and get the sense of what they would ask.</li>
+<li>You may ask to do math(latency, storage size)</li>
+</ul>
+<h3 id="approach-to-systems-design">Approach to Systems Design</h3>
+<ul>
+<li>Scope it well -&gt; ask more questions</li>
+<li>Outline use cases</li>
+<li>High level design like input/output?</li>
+<li>How components work</li>
+<li>Scaling</li>
+</ul>
+<h3 id="load-balancing">Load Balancing</h3>
+<ul>
+<li>load balancer is one of the key component of any web system or backend</li>
+<li>it balances the load</li>
+<li>most simplest one: hash the request and send to the pooled peer server and the application server</li>
+<li>more complicated one: maybe do some health check</li>
+<li>most complicated one: may cache the request and result</li>
+<li>sending or re-routing request is a lot less computation power then your application probably do. That's why we can have just one computer balancing multiple request</li>
+<li>mechanism: Round Robin, least load, randomly</li>
+<li>most case single load balancer is enough but will introduce single failure point. In that case you can have two or three load balancer by using DNS with domain name.</li>
+<li>think of DNS is another load balancer</li>
+<li>the only flaw of using DNS as load balancer is clients will cache the ip</li>
+<li>the flaw of load balancer is when you scale horizantalily(adding more machine) you add more complexity(you have to write more load balancing algorithm), so some people more like verticality scale which is just pay more money and have beast machine</li>
+<li>another scenario is using microservice which each service has its own load balance</li>
+<li>you can add load balancer in any layer</li>
+</ul>
+<h3 id="caching">Caching</h3>
+<ul>
+<li>if you don't need to compute the load anymore and that is caching</li>
+<li>usually in a separately server, maybe a huge distributed cache</li>
+<li>memcached, cassandra, redis</li>
+<li>key-value store</li>
+<li>very scalable, very distributed and very fast because all data is in memory</li>
+<li>cache invalidation(for cache data outdated): set invalid when user action, add timeout</li>
+<li>write through cache: write to the cache first then change the database. disadventage is now your write operation is slower</li>
+<li>write back cache: write to the cache and update the database in each interval. disadventage is you may fail to update the database is your cache die</li>
+<li>when hit the limit of cache size: FIFO, LIFO, least recently used, most recently used(?)</li>
+<li>it is just a distributed dictonary similar to you use in your code</li>
+</ul>
+<h3 id="content-delivery-networks-cdn">Content Delivery Networks (CDN)</h3>
+<ul>
+<li>good for storing static files like: img, html, css, video</li>
+<li>distributed network of servers that will holds your files and it's global</li>
+<li>pull based: CDN will fetch data and cache</li>
+<li>push based: you upload files and push to CDN</li>
+<li>in pull based is very simple to configure just host the files and set up</li>
+<li>in push based you have to manually push the files up and keep it maintained. but it's extremley fast even for first time users</li>
+<li>push based cost money on how much you store, for pull based it cost money based on usage because there's no storage generally</li>
+<li>tag a version in javascript files to keep CDN always fresh</li>
+<li>if your website is static you can just host it on CDN</li>
+</ul>
+<h3 id="databases-and-indexing">Databases and Indexing</h3>
+<ul>
+<li>schema design tips:</li>
+<li>every table should have an id, represent that row uniquely</li>
+<li>don't store too heavy data</li>
+<li>generlly have an index on the id</li>
+<li>index drawbacks:</li>
+<li>add space requirement</li>
+<li>slow down your insertion</li>
+<li>design table always think about what kind of queries I'm going to making on this table</li>
+</ul>
+<h3 id="redundancy-and-replication">Redundancy and Replication</h3>
+<ul>
+<li>master-master and master-slave two type of replication</li>
+<li>master-slave: master for write and slave for read, not entirly consistent all the time</li>
+<li>master-master: slow down the writes, has consistent issues and more complicated. not suggest that if you can do sharding</li>
+<li>master-slave can easily backup, just choose one slave you would not slow down anything</li>
+</ul>
+<h3 id="database-sharding">Database Sharding</h3>
+<ul>
+<li>load balancer for webservier, CDN for images and replication for database and data partition is for database writing. Because master-master replication is way too complicated for scaling</li>
+<li>two form: horizontal(sharding), vertical</li>
+<li>vertical partition is very simple, just move different table to different machine</li>
+<li>if you can't slpit out a single table, that is why you horizontal partition</li>
+<li>system design is all about targeting bottlenecks and then choosing certain design such that there are trade off. And then depending on what bottlenecks we have, we choose a system for it</li>
+<li>sharding is you can write to different computers' database and these databases represent a portion of a single table</li>
+<li>if you want to read all data you have to look all of database in different computers</li>
+<li>data partitioning strategy: choose which database to be write</li>
+<li>key based example: using primary key and mod it to choose which database</li>
+<li>you can mod 100 even if you only have 3 tables. in that case, when you add another table you only need to re-assign one table to newer table instead of all tables should be re-assign if you mod 3 in 3 tables</li>
+<li><a href="https://www.interviewcake.com/concept/java/consistent-hashing">Consistent Hashing</a> can also minimize the re-assign effort when add new database</li>
+<li>list partitioning: partition by different attributes, for example, segment by loacation in dating app which users interaction with each other most</li>
+<li>range query would become difficult when using partitioning</li>
+<li>remember you always have cache solution if you don't have to keep your data persist</li>
+</ul>
+<h3 id="sql-vs-nosql">SQL vs NoSQL</h3>
+<ul>
+<li>NoSQL: usually unstructured, easily to distribute, dynamic schema</li>
+<li>consider it as cache like memcache, redis or cassandra but can keep data persist</li>
+<li>SQL use structured data so we can work on it very easy and join is very efficient</li>
+<li>SQL is ACID compliant</li>
+<li>NoSQL is stardard key-value dictionary, so it desn't have really great way to do like range query</li>
+<li>NoSQL don't follow being transactionable or atomic, it may be delay to wirte to the disk such that data don't consistent</li>
+<li>document based database like MongoDB, data stored in documents which group by collection and every document can have different structure. basically it is still key-value store</li>
+<li>wide column database: you don't need to read all the attributes which you can specify column you want to read</li>
+<li>graph database which is good for graph</li>
+<li>always think of tradoff of storage: how you store the data? schema? how you query the data? need query range? scalability? reliable? acid compliant?</li>
+<li>consistency means that when you generall like wirte to the table that you are be able to read the exactly value you just wrote into it. a lot of NoSQL database don't have consistency</li>
+<li>three different type of consistency:</li>
+<li>weak consistency: you may not get the data</li>
+<li>eventually consistency: guarantee to be able to read after some period of time</li>
+<li>strong consistency: RDBMS</li>
+</ul>
+<h3 id="api-design">API design</h3>
+<ul>
+<li>API is usually an interface for your client</li>
+<li>make it clean, simple and secure</li>
+<li>it should be very clearly about what your endpoint do</li>
+<li>think the flow of your application like CURD.</li>
+<li>make input/ouput clear, like using id to update somthing instead of using name. And think of how you can get the id</li>
+<li>think what type of input/output should be and you don't want to put more redundant data you don't need to</li>
+<li>use pagination for feed-driven application</li>
+<li>use cursor, an indicator to the next set of result, to gurarantee you don't miss any item</li>
+<li>server-driven API interface: the client doesn't dictate too much, all logic you want to put on server side such you can control logic base on server. for example just tell the server the button is be tapped. it is especially for mobile development which you have to wait for approve by app store</li>
+<li>think the performance</li>
+<li>how many requests does client need to make</li>
+<li>does it make a single request that is heavy</li>
+<li>can you show user something quickly when the first request back so that you can do other background requests</li>
+<li>APIs are user for abstract to the all detail staff so that the client can use whatever you made a lot easier.</li>
+<li>How errors return? For example, json is a great output format. Having error code return 0 when it's success.</li>
+</ul>
+<h2 id="mobile-systems-design">Mobile systems design</h2>
+<ul>
+<li>experience is your best preparation</li>
+<li>design patterns</li>
+<li>how is navigation and communication between portions of the pages going to happen</li>
+<li>how you break up the dependency of pages</li>
+<li>use common dependency library which you can register events, register pages, actions, controllers</li>
+<li>communication pattern<ul>
+<li>don't use notification service it's going to be mass</li>
+<li>one common technic is publish susbscribe event listener, it can also do well in screen freshness</li>
+</ul>
+</li>
+<li>how the network handle offline access and caching: use centralize network to abstract all network</li>
+<li>use dependency injection to get the singletons not to persist all the time</li>
+<li>use server-driven API if you can</li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../System%20and%20Editor/Docker/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../System%20and%20Editor/Docker/" class="btn btn-xs btn-link">
+        Docker
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Performance/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Performance/" class="btn btn-xs btn-link">
+        Performance
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

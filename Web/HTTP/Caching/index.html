@@ -33,6 +33,11 @@
         
         var pageToc = [
           {title: "Caching", url: "#_top", children: [
+              {title: "Cacheable", url: "#cacheable" },
+              {title: "Cache Control", url: "#cache-control" },
+              {title: "Revved resources (Cache Busting)", url: "#revved-resources-cache-busting" },
+              {title: "Validation", url: "#validation" },
+              {title: "Misc", url: "#misc" },
           ]},
         ];
 
@@ -82,12 +87,38 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 
     <h1 id="caching">Caching</h1>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching">HTTP caching</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">Cache-Control</a></p>
-<p><a href="https://www.keycdn.com/support/what-is-cache-busting">Cache Busting</a></p>
+<p><a href="https://web.dev/http-cache/">Prevent unnecessary network requests with the HTTP Cache</a></p>
+<p><a href="https://developers.google.com/web/fundamentals/performance/get-started/httpcaching-6">HTTP Caching</a></p>
+<h2 id="cacheable">Cacheable</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Glossary/cacheable">Cacheable</a></p>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304">304 Not Modified</a></p>
-<p>ETags / Last-Modified is for Cache validation not for cache busting.</p>
+<h2 id="cache-control">Cache Control</h2>
+<ul>
+<li>no-store / no-cache</li>
+<li>public / private</li>
+</ul>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">Cache-Control</a></p>
+<h2 id="revved-resources-cache-busting">Revved resources (Cache Busting)</h2>
+<p><a href="https://www.keycdn.com/support/what-is-cache-busting">What Is Cache Busting?</a></p>
+<h3 id="query-string">Query String</h3>
+<p>Query strings on the other hand, have been known to cause caching issues. Some proxies or CDNs aren't even able to cache files that contain query strings and it is recommended not to use them.</p>
+<h2 id="validation">Validation</h2>
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Conditional_requests">HTTP conditional requests</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304">304 Not Modified</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Last-Modified">Last-Modified</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETag</a></p>
+<ul>
+<li>Last-Modified with If-Modified-Since</li>
+<li>weak ETag with If-None-Match</li>
+<li>ETag with If-Match</li>
+<li>If-None-Match &gt; If-Modified-Since</li>
+</ul>
+<h2 id="misc">Misc</h2>
+<ul>
+<li>default "好像是" <strong>Private</strong></li>
+<li>第一個request會被加上max-age=0看來是無法使用private cache</li>
+<li>public, max-age=0與no-cache感覺沒甚麼不同</li>
+<li>如何產生e-tag沒有明確的規範</li>
+</ul>
 
   <br>
     

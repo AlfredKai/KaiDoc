@@ -33,18 +33,13 @@
         
         var pageToc = [
           {title: "Database", url: "#_top", children: [
+              {title: "RDBMS", url: "#rdbms" },
+              {title: "NoSQL", url: "#nosql" },
+              {title: "Time Series Database", url: "#time-series-database" },
+              {title: "ACID / CAP", url: "#acid-cap" },
               {title: "Index", url: "#index" },
-              {title: "Normalization", url: "#normalization" },
-              {title: "ACID", url: "#acid" },
-              {title: "RDBMS vs NoSQL", url: "#rdbms-vs-nosql" },
-              {title: "Execution Plan in MySql", url: "#execution-plan-in-mysql" },
-              {title: "TSDB", url: "#tsdb" },
-              {title: "CAP theorem", url: "#cap-theorem" },
-              {title: "Partition and Sharding", url: "#partition-and-sharding" },
-              {title: "Types of Keys in Relational Model(Candidate, Super, Primary, Alternate and Foreign)", url: "#types-of-keys-in-relational-modelcandidate-super-primary-alternate-and-foreign" },
-              {title: "Entity-Relationship Model", url: "#entity-relationship-model" },
-              {title: "Data Domain", url: "#data-domain" },
-              {title: "DDL, DML, TCL and DCL", url: "#ddl-dml-tcl-and-dcl" },
+              {title: "Monitoring", url: "#monitoring" },
+              {title: "DAO and Leaky Abstraction", url: "#dao-and-leaky-abstraction" },
               {title: "Resources", url: "#resources" },
           ]},
         ];
@@ -94,40 +89,47 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     
 
     <h1 id="database">Database</h1>
-<h2 id="index">Index</h2>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ%3D%3D&amp;mid=2651961486&amp;idx=1&amp;sn=b319a87f87797d5d662ab4715666657f">数据库索引，到底是什么做的？</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Database_index">Database index</a></p>
-<h2 id="normalization">Normalization</h2>
-<p><a href="https://support.microsoft.com/zh-tw/help/283878/description-of-the-database-normalization-basics">資料庫正規化</a></p>
-<p>第一正規形式</p>
+<h2 id="rdbms">RDBMS</h2>
+<h3 id="types-of-keys">Types of Keys</h3>
+<p><a href="https://beginnersbook.com/2015/04/keys-in-dbms/">keys in DBMS</a></p>
 <ul>
-<li>刪除各個資料表中的重複群組。</li>
-<li>為每一組關聯的資料建立不同的資料表。</li>
-<li>使用主索引鍵識別每一組關聯的資料。</li>
+<li>Primary Key – A primary is a column or set of columns in a table that uniquely identifies tuples (rows) in that table.</li>
+<li>Super Key – A super key is a set of one of more columns (attributes) to uniquely identify rows in a table.</li>
+<li>Candidate Key – A super key with no redundant attribute is known as candidate key</li>
+<li>Alternate Key</li>
+<li>Foreign Key</li>
 </ul>
-<p>不要在單一資料表中使用多重欄位儲存類似的資料。</p>
-<p>第二正規形式</p>
+<h3 id="normalization">Normalization</h3>
 <ul>
-<li>為可套用於多筆記錄的多組值建立不同的資料表。</li>
-<li>使用外部索引鍵，讓這些資料表產生關聯。</li>
+<li>First normal form (1NF)</li>
+<li>Eliminate repeating groups in individual tables</li>
+<li>Create a separate table for each set of related data</li>
+<li>Identify each set of related data with a primary key</li>
+<li>Second normal form (2NF)</li>
+<li>It is in first normal form.</li>
+<li>It does not have any non-prime attribute that is functionally dependent on any proper subset of any candidate key of the relation. <strong>A non-prime attribute</strong> of a relation is an attribute that is not a part of any candidate key of the relation.</li>
+<li>Third normal form (3NF)</li>
+<li>The relation R (table) is in second normal form (2NF).</li>
+<li>Every non-prime attribute of R is non-transitively dependent on every key of R.</li>
 </ul>
-<p>記錄不應依賴資料表主索引鍵之外的索引鍵，但是必要時可使用複合索引鍵。</p>
-<p>第三正規形式</p>
+<h3 id="entity-relationship-model">Entity-Relationship Model</h3>
+<p><a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">Entity–relationship model</a></p>
 <ul>
-<li>刪除不依賴索引鍵的欄位。</li>
+<li>Conceptual data model</li>
+<li>Logical data model</li>
+<li>Physical data model</li>
+<li><a href="https://www.geeksforgeeks.org/sql-ddl-dml-tcl-dcl/">DDL, DML, TCL and DCL</a></li>
 </ul>
-<p>理論上，正規化值得追求。 但是太多小型資料表可能會降低效能，或超過可開啟的檔案與記憶體容量。
-比較可行的方法是只針對變更頻繁的資料運用第三正規形式。 如果保留某些相依的欄位，請將應用程式設計為要求使用者在欄位變更時，驗證所有相關聯的欄位。</p>
-<h2 id="acid">ACID</h2>
-<p><a href="https://zh.wikipedia.org/wiki/ACID">ACID compliant</a></p>
-<blockquote>
-<p>In computer science, ACID (Atomicity, Consistency, Isolation, Durability) is a set of properties of database transactions intended to guarantee validity even in the event of errors, power failures, etc. In the context of databases, a sequence of database operations that satisfies the ACID properties (and these can be perceived as a single logical operation on the data) is called a transaction. For example, a transfer of funds from one bank account to another, even involving multiple changes such as debiting one account and crediting another, is a single transaction.</p>
-</blockquote>
-<h2 id="rdbms-vs-nosql">RDBMS vs NoSQL</h2>
+<h3 id="data-domain">Data Domain</h3>
+<p>aka reference domain, reference table</p>
+<p><a href="https://en.wikipedia.org/wiki/Data_domain">Data Domain</a></p>
+<h2 id="nosql">NoSQL</h2>
+<p>"Not only SQL"</p>
 <p><a href="https://www.kshuang.xyz/doku.php/database:sql_vs_nosql">SQL vs NoSQL: The Differences</a></p>
-<h2 id="execution-plan-in-mysql">Execution Plan in MySql</h2>
-<p><a href="http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html">在MySQL使用Explain做SQL SELECT語法效能測試</a></p>
-<h2 id="tsdb">TSDB</h2>
+<ul>
+<li>靠著<code>denormalization</code>達成可以輕易<code>scale-out</code>來增加performance，缺點是無法join且update變得困難</li>
+</ul>
+<h2 id="time-series-database">Time Series Database</h2>
 <p><a href="https://en.wikipedia.org/wiki/Time_series_database">Time series database</a></p>
 <ul>
 <li>數據結構簡單</li>
@@ -138,32 +140,30 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <li>很少更新：數據寫入之後，不會更新</li>
 <li>區塊（bulk）刪除：基本沒有隨機刪除，多數是從一個時間點開始到某一時間點結束的整段數據刪除。比如刪除上個月，或者7天前的數據。很少出現刪除單獨某個指標的數據，或者跳躍時間段的數據</li>
 </ul>
-<h2 id="cap-theorem">CAP theorem</h2>
+<h2 id="acid-cap">ACID / CAP</h2>
+<p><a href="https://zh.wikipedia.org/wiki/ACID">ACID compliant</a></p>
 <p><a href="https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86">CAP theorem</a></p>
-<h2 id="partition-and-sharding">Partition and Sharding</h2>
+<ul>
+<li>NoSQL可能不滿足ACID</li>
+<li>CAP的C為<a href="https://en.wikipedia.org/wiki/Eventual_consistency">Eventual consistency</a></li>
+</ul>
+<h2 id="index">Index</h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ%3D%3D&amp;mid=2651961486&amp;idx=1&amp;sn=b319a87f87797d5d662ab4715666657f">数据库索引，到底是什么做的？</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Database_index">Database index</a></p>
+<h3 id="string-as-index">String as Index</h3>
+<p><a href="https://www.xarg.org/2012/07/optimal-index-size-for-variable-text-in-mysql/">Optimal index size for variable text in MySQL</a></p>
+<h3 id="execution-plan-in-mysql">Execution Plan in MySql</h3>
+<p><a href="http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html">在MySQL使用Explain做SQL SELECT語法效能測試</a></p>
+<h3 id="partition-and-sharding">Partition and Sharding</h3>
 <p><a href="https://en.wikipedia.org/wiki/Partition_(database)">Partition (database)</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Shard_(database_architecture)">Shard (database architecture)</a></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/understanding-database-sharding">Understanding Database Sharding</a></p>
 <p><a href="https://www.mysql.com/products/cluster/mysql-cluster-datasheet.pdf">MySQL CLUSTER</a></p>
-<h2 id="types-of-keys-in-relational-modelcandidate-super-primary-alternate-and-foreign">Types of Keys in Relational Model(Candidate, Super, Primary, Alternate and Foreign)</h2>
-<p><a href="https://beginnersbook.com/2015/04/keys-in-dbms/">keys in DBMS</a></p>
-<ul>
-<li>Primary Key – A primary is a column or set of columns in a table that uniquely identifies tuples (rows) in that table.</li>
-<li>Super Key – A super key is a set of one of more columns (attributes) to uniquely identify rows in a table.</li>
-<li>Candidate Key – A super key with no redundant attribute is known as candidate key</li>
-</ul>
-<h2 id="entity-relationship-model">Entity-Relationship Model</h2>
-<p><a href="https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model">Entity–relationship model</a></p>
-<ul>
-<li>Conceptual data model</li>
-<li>Logical data model</li>
-<li>Physical data model</li>
-</ul>
-<h2 id="data-domain">Data Domain</h2>
-<p>aka reference domain, reference table</p>
-<p><a href="https://en.wikipedia.org/wiki/Data_domain">Data Domain</a></p>
-<h2 id="ddl-dml-tcl-and-dcl">DDL, DML, TCL and DCL</h2>
-<p><a href="https://www.geeksforgeeks.org/sql-ddl-dml-tcl-dcl/">DDL, DML, TCL and DCL</a></p>
+<h2 id="monitoring">Monitoring</h2>
+<p><a href="https://www.percona.com/doc/percona-monitoring-and-management/2.x/index.html">PMM</a></p>
+<h2 id="dao-and-leaky-abstraction">DAO and Leaky Abstraction</h2>
+<p><a href="https://en.wikipedia.org/wiki/Data_access_object">Data access object</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Leaky_abstraction">Leaky abstraction</a></p>
 <h2 id="resources">Resources</h2>
 <p><a href="https://visualstudiomagazine.com/blogs/tool-tracker/2018/02/avoiding-ef-slowdown.aspx">Avoiding Entity Framework Slowdown</a></p>
 <p><a href="https://draveness.me/mysql-innodb">『浅入浅出』MySQL 和 InnoDB</a></p>
@@ -171,6 +171,7 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p><a href="https://www.red-gate.com/simple-talk/sql/learn-sql-server/facts-and-fallacies-about-first-normal-form/">Facts and Fallacies about First Normal Form</a></p>
 <p><a href="https://www.mysqltutorial.org/">MySQL Tutorial</a></p>
 <p><a href="https://medium.com/@henryfeng/%E5%9B%9B%E5%80%8B%E5%9C%A8%E4%BA%9E%E9%A6%AC%E9%81%9C%E5%B7%A5%E4%BD%9C%E5%BE%8C%E6%89%8D%E7%9F%A5%E9%81%93sql%E5%AF%86%E6%8A%80-e79c9c5912f5">四個在亞馬遜工作後才知道SQL密技</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/34069821?fbclid=IwAR1wuQ7B-35x-gm3Tl4XC9VN6TcICBegv5QHMFBdvXhTnzZCKBKgdPmwF5Y">脚踏两只船的困惑 - Memcached与Redis</a></p>
 
   <br>
     

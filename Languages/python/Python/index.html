@@ -96,6 +96,20 @@ main()</p>
 <p>python 沒有進入點，任何.py 都可獨立執行，所以這個寫法可以增加可讀性一眼就看出進入點，另一個優點是當這個.py 被其他 import 的時候就可以防止執行 main()。</p>
 <h2 id="decorator">Decorator</h2>
 <p><a href="https://realpython.com/primer-on-python-decorators/">Primer on Python Decorators</a></p>
+<p>The decorator</p>
+<ul>
+<li>They can be reused.</li>
+<li>They can decorate functions with arguments and return values.</li>
+<li>They can use @functools.wraps to look more like the decorated function.</li>
+</ul>
+<p>Types of decorators</p>
+<ul>
+<li>Decorate classes</li>
+<li>Nest decorators</li>
+<li>Add arguments to decorators</li>
+<li>Keep state within decorators</li>
+<li>Use classes as decorators</li>
+</ul>
 <h2 id="namespaces-and-scope">Namespaces and Scope</h2>
 <p>修改 global 變數需要先宣告，不然一律視為 local variable，但是<strong>讀不需要宣告</strong>。</p>
 <pre><code class="python">def change_and_print_global ():
