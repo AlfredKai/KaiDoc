@@ -1,5 +1,15 @@
 # Web Docs
 
+[Playwright](https://github.com/microsoft/playwright)
+
+[Koajs](https://koajs.com/)
+
+[fakejs](https://github.com/marak/Faker.js/)
+
+[Lorem Picsum](https://picsum.photos/)
+
+[MirageJS](https://miragejs.com/)
+
 ## Resources
 
 [MDN web docs](https://developer.mozilla.org/en-US/)

@@ -9,3 +9,7 @@
 [Google Code Review Developer Guide](https://google.github.io/eng-practices/review/)
 
 [遺留代碼經濟學 - Terry Yin](https://hackmd.io/c/MW18/%2FefTkc1AFRK-eYdXOOylmfQ)
+
+[软件开发管理的 11 条真理](https://www.infoq.cn/article/o30A0jLaMgXqRuNaomVI)
+
+[一窩蜂驅動開發](https://franknine.github.io/posts/hype-driven-development/)

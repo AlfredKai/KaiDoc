@@ -20,6 +20,10 @@
 
 [Do we need CSRF protection if CORS is disabled?](https://dev.to/iamandrewluca/comment/i187)
 
+## Authentication
+
+[Authentication for Web Applications](https://pwp.stevecassidy.net/advanced/authentication.html)
+
 ## Testing
 
 [Web Application Penetration Testing](https://blog.cloudboost.io/how-to-run-node-js-apps-in-the-browser-3f077f34f8a5)

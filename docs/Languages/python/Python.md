@@ -19,6 +19,20 @@ python 沒有進入點，任何.py 都可獨立執行，所以這個寫法可以
 
 [Primer on Python Decorators](https://realpython.com/primer-on-python-decorators/)
 
+The decorator
+
+- They can be reused.
+- They can decorate functions with arguments and return values.
+- They can use @functools.wraps to look more like the decorated function.
+
+Types of decorators
+
+- Decorate classes
+- Nest decorators
+- Add arguments to decorators
+- Keep state within decorators
+- Use classes as decorators
+
 ## Namespaces and Scope
 
 修改 global 變數需要先宣告，不然一律視為 local variable，但是**讀不需要宣告**。

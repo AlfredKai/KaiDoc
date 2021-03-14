@@ -4,6 +4,14 @@
 
 [什麼是REST跟RESTful?](https://ihower.tw/blog/archives/1542)
 
+[Best Practices for Designing a Pragmatic RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
+
+[HATEOAS](https://restfulapi.net/hateoas/)
+
+[REST: Good Practices for API Design](https://medium.com/hashmapinc/rest-good-practices-for-api-design-881439796dc9)
+
+[Web API design ](https://docs.microsoft.com/en-us/azure/architecture/best-practices/api-design)
+
 ## Versioning
 
 [Best practices for API versioning?](https://stackoverflow.com/questions/389169/best-practices-for-api-versioning)
@@ -17,6 +25,8 @@
 [should I use PUT method for update, if I also update a timestamp attribute](https://stackoverflow.com/questions/5686671/should-i-use-put-method-for-update-if-i-also-update-a-timestamp-attribute)
 
 ## Idempotency and Safety
+
+## Nesting
 
 ## deleting a bunch of items
 
