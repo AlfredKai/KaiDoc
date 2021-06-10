@@ -36,6 +36,9 @@
 
 ## Put vs Patch and Partial Update
 
+## Partial Response
+
+[RESTful API Design: can your API give developers just the information they need?](https://cloud.google.com/blog/products/api-management/restful-api-design-can-your-api-give-developers-just-information-they-need)
 
 ## RESTful Resources
 

@@ -40,6 +40,10 @@ aka reference domain, reference table
 
 [Data Domain](https://en.wikipedia.org/wiki/Data_domain)
 
+## Database isolation level
+
+[Database isolation level](https://www.facebook.com/groups/616369245163622/permalink/2096040563863142/)
+
 ## NoSQL
 
 "Not only SQL"
@@ -66,24 +70,16 @@ aka reference domain, reference table
 
 [CAP theorem](https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86)
 
+[分散式系統 - 在分散的世界中保持一致](https://ithelp.ithome.com.tw/users/20121042/ironman/2792)
+
 - NoSQL可能不滿足ACID
 - CAP的C為[Eventual consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
 
-## Index
-
-[数据库索引，到底是什么做的？](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ%3D%3D&mid=2651961486&idx=1&sn=b319a87f87797d5d662ab4715666657f)
-
-[Database index](https://en.wikipedia.org/wiki/Database_index)
-
-### String as Index
-
-[Optimal index size for variable text in MySQL](https://www.xarg.org/2012/07/optimal-index-size-for-variable-text-in-mysql/)
-
-### Execution Plan in MySql
+## Execution Plan in MySql
 
 [在MySQL使用Explain做SQL SELECT語法效能測試](http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html)
 
-### Partition and Sharding
+## Partition and Sharding
 
 [Partition (database)](https://en.wikipedia.org/wiki/Partition_(database))
 
@@ -92,6 +88,16 @@ aka reference domain, reference table
 [Understanding Database Sharding](https://www.digitalocean.com/community/tutorials/understanding-database-sharding)
 
 [MySQL CLUSTER](https://www.mysql.com/products/cluster/mysql-cluster-datasheet.pdf)
+
+[MySQL Partitioning 優化之路](https://medium.com/17media-tech/mysql-partitioning-%E5%84%AA%E5%8C%96%E4%B9%8B%E8%B7%AF-fd8e8480789b)
+
+## Nested set model
+
+[Nested set model](https://en.wikipedia.org/wiki/Nested_set_model)
+
+## Cross Database Transactions
+
+[二阶段提交](https://blog.csdn.net/lengxiao1993/article/details/88290514)
 
 ## Monitoring
 

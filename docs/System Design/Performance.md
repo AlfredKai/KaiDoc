@@ -26,6 +26,8 @@
 
 [Measure](https://web.dev/measure/)
 
+[重新學習瀏覽器資源載入機制，這些年努力改善電商網站效能的旅程](https://jason-memo.dev/posts/relearn-browser-loading-resoure-improve-ec-site-performance-journey/)
+
 ## QPS vs Latency
 
 [Latency vs Throughput](https://www.comparitech.com/net-admin/latency-vs-throughput/)

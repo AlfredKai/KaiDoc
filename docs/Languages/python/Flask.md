@@ -91,3 +91,7 @@ DB_PASS = _get_env_var('DB_PASS')
 ```py
 app.config.from_object('app.config')
 ```
+
+## Use Flask and SQLalchemy, not Flask-SQLAlchemy!
+
+[Use Flask and SQLalchemy, not Flask-SQLAlchemy!](https://towardsdatascience.com/use-flask-and-sqlalchemy-not-flask-sqlalchemy-5a64fafe22a4)

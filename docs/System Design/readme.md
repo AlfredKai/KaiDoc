@@ -39,6 +39,10 @@
 
 [The Path to Becoming a Software Architect](https://medium.com/@nvashanin/the-path-to-becoming-a-software-architect-de53f1cb310a)
 
+[The Architecture of Open Source Applications](http://www.aosabook.org/en/index.html)
+
+[Architectural pattern](https://en.wikipedia.org/wiki/Architectural_pattern)
+
 ### Books
 
 - Software Architecture in Practice (3rd Edition) (SEI Series in Software Engineering)

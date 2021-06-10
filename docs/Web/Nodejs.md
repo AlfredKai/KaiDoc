@@ -61,6 +61,10 @@ A downside of this model is that if a message takes too long to complete, the we
 
 [A testing guide for Express with request and response mocking/stubbing using Jest or sinon](https://codewithhugo.com/express-request-response-mocking/)
 
+## Tools
+
+[JOI](https://github.com/sideway/joi)
+
 ## 其他主題
 
 挑戰瀏覽器極限  

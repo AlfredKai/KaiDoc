@@ -10,6 +10,10 @@
 
 [MirageJS](https://miragejs.com/)
 
+[D3.js](https://d3js.org/)
+
+[Oberservable](https://observablehq.com/)
+
 ## Resources
 
 [MDN web docs](https://developer.mozilla.org/en-US/)

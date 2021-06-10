@@ -31,3 +31,7 @@
 ## License
 
 [choosealicense](https://choosealicense.com/appendix/)
+
+## References
+
+[2021 CYBERSEC 資安大會 — DevSecOps/ Container 筆記整理](https://harryuan-65.medium.com/2021-cybersec-%E8%B3%87%E5%AE%89%E5%A4%A7%E6%9C%83-devsecops-container-%E5%B0%8F%E8%A8%98-dd66690a7c08)
