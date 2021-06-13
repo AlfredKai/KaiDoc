@@ -1,5 +1,7 @@
 # KaiDoc
 
+[Traversy Media](https://www.youtube.com/c/TraversyMedia/videos)
+
 ## 學習資源
 
 就是各大公司的tech blog
