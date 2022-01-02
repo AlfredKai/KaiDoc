@@ -70,3 +70,4 @@ docker info
 ```
 
 看你的container裝在哪邊，裡面會有這一行 `Docker Root Dir:`，可以到這路徑底下找container，裡面應有盡有
+   

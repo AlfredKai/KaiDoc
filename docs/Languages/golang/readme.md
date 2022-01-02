@@ -1,4 +1,4 @@
-# Resources
+# golang
 
 by Kai Yu https://docs.google.com/document/d/1QINMzs3EfrIW-4uvomqTTqeYneSvZ2zrmrAWE-QWmF8/edit#heading=h.o3k712vezc02
 

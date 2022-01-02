@@ -1,4 +1,6 @@
-# Kai Cheat Sheet
+# Cheat Sheet
+
+[mac terminal](https://github.com/0nn0/terminal-mac-cheatsheet)
 
 ## Docker Mariah DB
 

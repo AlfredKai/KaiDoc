@@ -2876,7 +2876,7 @@ public void ProductionLogicProblem()
 }
 ```
 
-在測試的世界`hardcod`才是王道。
+在測試的世界`hardcode`才是王道。
 
 #### Testing only one concern
 
@@ -3414,4 +3414,3 @@ public void BadAssertMessage()
 阿就三本柱講一遍
 
 ## Chapter 9: Integrating unit testing into the organization
-

@@ -74,7 +74,7 @@ metaphor and analogy
 
 Imposter Syndrome
 
-Having a somewhat smaller working memory means you can more easily generalize your learning into new, more creative combinations. 
+Having a somewhat smaller working memory means you can more easily generalize your learning into new, more creative combinations.
 
 Hard Start - Jump to Easy
 
