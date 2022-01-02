@@ -12,7 +12,7 @@
 
 ### Cacheability
 
-Responses must, implicitly or explicitly, define themselves as either cacheable or non-cacheable to prevent clients from providing stale or inappropriate data in response to further requests.
+**Responses** must, implicitly or explicitly, define themselves as either cacheable or non-cacheable to prevent clients from providing stale or inappropriate data in response to further requests.
 
 Since REST uses `URL` as a `resource identifier`, it's easy to leverage browser cache.
 Only `GET` will be cache by browser. In other API paradigm like GraphQL which only uses `POST`, you have to something to use browser cache. ref: [GraphQL & Caching: The Elephant in the Room](https://www.apollographql.com/blog/backend/caching/graphql-caching-the-elephant-in-the-room/)

@@ -13,3 +13,5 @@
 [软件开发管理的 11 条真理](https://www.infoq.cn/article/o30A0jLaMgXqRuNaomVI)
 
 [一窩蜂驅動開發](https://franknine.github.io/posts/hype-driven-development/)
+
+[2021 前端工程師薪水調查](https://www.hexschool.com/2021/12/09/2021-12-09-2021-frontend-salary/?fbclid=IwAR1pM_sZwu__fvT_QFo1-snj_x_lCIdcsFvuLKaPfUxh-TgYymawjB4vLoA)
