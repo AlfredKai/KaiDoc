@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>REST - KaiDocs</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "REST", url: "#_top", children: [
+              {title: "REST vs RESTful", url: "#rest-vs-restful" },
+              {title: "HTTP vs REST", url: "#http-vs-rest" },
+              {title: "Architectural Constraints", url: "#architectural-constraints" },
+              {title: "Difficulties", url: "#difficulties" },
+              {title: "Misc", url: "#misc" },
+              {title: "RESTful Resources", url: "#restful-resources" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../Message%20Queue/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../Message%20Queue/" class="btn btn-xs btn-link">
+        Index
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../" class="btn btn-xs btn-link">
+        API Design
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="rest">REST</h1>
+<p><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">Representational state transfer</a></p>
+<p><a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">Representational State Transfer (REST)</a></p>
+<p><a href="https://www.infoq.cn/article/understanding-restful-style/">理解本真的 REST 架构风格</a></p>
+<p><a href="https://smartbear.com/learn/api-design/what-is-hypermedia/">What Is Hypermedia?</a></p>
+<h2 id="rest-vs-restful">REST vs RESTful</h2>
+<p>REST is a software architectural style, not API paradigm. A web API that obeys the REST constraints is informally described as RESTful. RESTful web APIs are typically loosely based on HTTP methods to access resources via URL-encoded parameters and the use of JSON or XML to transmit data.</p>
+<h2 id="http-vs-rest">HTTP vs REST</h2>
+<blockquote>
+<p>在互联网行业，实践总是走在理论的前面。Web 发展到了 1995 年，在 CGI、ASP 等技术出现之后，沿用了多年、主要面向静态文档的 HTTP/1.0 协议已经无法满足 Web 应用的开发需求，因此需要设计新版本的 HTTP 协议。在 HTTP/1.0 协议专家组之中，有一位年轻人脱颖而出，显示出了不凡的洞察力，后来他成为了 HTTP/1.1 协议专家组的负责人。这位年轻人就是 Apache HTTP 服务器的核心开发者 Roy Fielding，他还是 Apache 软件基金会的合作创始人。</p>
+<p>HTTP/1.1 协议设计的极为成功，以至于发布之后整整 10 年时间里，都没有多少人认为有修订的必要。用来指导 HTTP/1.1 协议设计的这套理论框架，最初是以备忘录的形式在专家组成员之间交流，除了 IETF/W3C 的专家圈子，并没有在外界广泛流传。Fielding 在完成 HTTP/1.1 协议的设计工作之后，回到了加州大学欧文分校继续攻读自己的博士学位。第二年（2000 年）在他的博士学位论文 Architectural Styles and the Design of Network-based Software Architectures 中，Fielding 更为系统、严谨地阐述了这套理论框架，并且使用这套理论框架推导出了一种新的架构风格，并且为这种架构风格取了一个令人轻松愉快的名字“REST”——Representational State Transfer（表述性状态转移）的缩写。</p>
+</blockquote>
+<p><strong>REST</strong> is the way <strong>HTTP</strong> should be used.</p>
+<h2 id="architectural-constraints">Architectural Constraints</h2>
+<blockquote>
+<p>在论文的前三章中，Fielding 在批判性继承前人研究成果的基础上，建立起来一整套研究和评价软件架构的方法论。这套方法论的核心是“架构风格”这个概念。架构风格是一种研究和评价软件架构设计的方法，它是比架构更加抽象的概念。一种架构风格是由一组相互协作的架构约束来定义的。架构约束是指软件的运行环境施加在架构设计之上的约束。
+ --理解本真的 REST 架构风格</p>
+</blockquote>
+<h3 id="clientserver-architecture">Client–server architecture</h3>
+<p>Separation of concerns is the principle behind the client-server constraints. By separating the user interface concerns from the data storage concerns, we improve the portability of the user interface across multiple platforms and improve scalability by simplifying the server components.</p>
+<h3 id="statelessness">Statelessness</h3>
+<p>Each request from client to server must contain all of the information necessary to understand the request, and cannot take advantage of any stored context on the server. <strong>Session state is therefore kept entirely on the client</strong>.</p>
+<ul>
+<li>Visibility is improved because a monitoring system does not have to look beyond a single request datum in order to determine the full nature of the request.</li>
+<li>Reliability is improved because it eases the task of recovering from partial failures.</li>
+<li>Scalability is improved because not having to store state between requests allows the server component to quickly free resources.</li>
+</ul>
+<h3 id="cacheability">Cacheability</h3>
+<p><strong>Responses</strong> must, implicitly or explicitly, define themselves as either cacheable or non-cacheable to prevent clients from providing stale or inappropriate data in response to further requests.</p>
+<p>Since REST uses <code>URL</code> as a <code>resource identifier</code>, it's easy to leverage browser cache.
+Only <code>GET</code> will be cache by browser. In other API paradigm like GraphQL which only uses <code>POST</code>, you have to something to use browser cache. ref: <a href="https://www.apollographql.com/blog/backend/caching/graphql-caching-the-elephant-in-the-room/">GraphQL &amp; Caching: The Elephant in the Room</a></p>
+<h3 id="layered-system">Layered system</h3>
+<p>The layered system style allows an architecture to be composed of hierarchical layers by constraining component behavior such that each component cannot "see" beyond the immediate layer with which they are interacting. By restricting knowledge of the system to a single layer, we place a bound on the overall system complexity and promote substrate independence. Layers can be used to encapsulate legacy services and to protect new services from legacy clients, simplifying components by moving infrequently used functionality to a shared intermediary. Intermediaries can also be used to improve system scalability by enabling load balancing of services across multiple networks and processors.</p>
+<p>The primary disadvantage of layered systems is that they add overhead and latency to the processing of data, reducing user-perceived performance. For a network-based system that supports cache constraints, this can be offset by the benefits of shared caching at intermediaries.</p>
+<p>The combination of layered system and uniform interface constraints induces architectural properties similar to those of the uniform pipe-and-filter style. Within REST, intermediary components can actively transform the content of messages because the messages are self-descriptive and their semantics are visible to intermediaries.</p>
+<h3 id="uniform-interface">Uniform interface</h3>
+<p>By applying the software engineering principle of generality to the component interface, the overall system architecture is simplified and the visibility of interactions is improved. Implementations are decoupled from the services they provide, which encourages independent evolvability. The trade-off, though, is that a uniform interface degrades efficiency, since information is transferred in a standardized form rather than one which is specific to an application's needs.</p>
+<p><strong>The REST interface is designed to be efficient for large-grain hypermedia data transfer, optimizing for the common case of the Web, but resulting in an interface that is not optimal for other forms of architectural interaction.</strong></p>
+<ul>
+<li>identification of resources</li>
+<li>manipulation of resources through representations</li>
+<li>self-descriptive messages</li>
+<li>hypermedia as the engine of application state</li>
+</ul>
+<h4 id="identification-of-resources">identification of resources</h4>
+<h4 id="manipulation-of-resources-through-representations">manipulation of resources through representations</h4>
+<h4 id="self-descriptive-messages">self-descriptive messages</h4>
+<h4 id="hypermedia-as-the-engine-of-application-state">hypermedia as the engine of application state</h4>
+<p><a href="https://en.wikipedia.org/wiki/HATEOAS">HATEOAS</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Richardson_Maturity_Model">Richardson Maturity Model</a></p>
+<p><a href="https://www.ithome.com.tw/voice/128528">你的REST不是REST？</a></p>
+<p><a href="https://jeffknupp.com/blog/2014/06/03/why-i-hate-hateoas/">Why I Hate HATEOAS</a></p>
+<p><a href="https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">REST APIs must be hypertext-driven</a></p>
+<h3 id="code-on-demand-optional">Code on demand (optional)</h3>
+<p>REST allows client functionality to be extended by downloading and executing code in the form of applets or scripts. This simplifies clients by reducing the number of features required to be pre-implemented. Allowing features to be downloaded after deployment improves system extensibility. However, it also reduces visibility, and thus is only an optional constraint within REST.</p>
+<h2 id="difficulties">Difficulties</h2>
+<h3 id="versioning">Versioning</h3>
+<p><a href="https://stackoverflow.com/questions/389169/best-practices-for-api-versioning">Best practices for API versioning?</a></p>
+<p><a href="https://dzone.com/articles/your-api-versioning-wrong">Your API Versioning is Wrong</a></p>
+<h3 id="bulkpartial-operations">Bulk/Partial Operations</h3>
+<p><a href="https://stackoverflow.com/questions/2421595/restful-way-for-deleting-a-bunch-of-items/41539479#41539479">Restful way for deleting a bunch of items</a></p>
+<p><a href="https://blog.darkthread.net/blog/is-restful-required/">閒聊 - Web API 是否一定要 RESTful?</a></p>
+<p><a href="https://cloud.google.com/blog/products/api-management/restful-api-design-can-your-api-give-developers-just-information-they-need">RESTful API Design: can your API give developers just the information they need?</a></p>
+<p><a href="https://swagger.io/docs/specification/serialization/?sbsearch=nested%20parameters">Parameter Serialization</a></p>
+<h3 id="_1">??</h3>
+<ul>
+<li>统一接口 + 超文本驱动，带来了最大限度的松耦合。允许服务器端和客户端程序在很大范围内，相对独立地进化。对于设计面向企业内网的 API 来说，松耦合并不是一个很重要的设计关注点。</li>
+<li>http status code/content-type/method are all customizable (6.3.1.2 Extensible Protocol Elements)</li>
+<li>Besides HTTP(s), Websocket is another protocol supported by the browser.</li>
+<li>why we need uniform interface</li>
+<li>https://stackoverflow.com/questions/25172600/rest-what-exactly-is-meant-by-uniform-interface</li>
+<li>Intermediaries can also be used to improve system scalability by enabling load balancing of services across multiple networks and processors.</li>
+<li>intermediaries no need to be updated before a new method can be deployed</li>
+<li>know how to cache</li>
+</ul>
+<h2 id="misc">Misc</h2>
+<p><a href="https://stackoverflow.com/questions/5686671/should-i-use-put-method-for-update-if-i-also-update-a-timestamp-attribute">should I use PUT method for update, if I also update a timestamp attribute</a></p>
+<h2 id="restful-resources">RESTful Resources</h2>
+<p><a href="https://github.com/TritonHo/slides/blob/master/Taipei%202019-06%20talk/RESTful%20API%20Design-tw-2.2.pdf">真。淺談RESTful API by TritonHo</a></p>
+<p><a href="https://www.taniarascia.com/rest-api-sorting-filtering-pagination/">REST API: Sorting, Filtering, and Pagination</a></p>
+<p><a href="https://www.infoq.cn/article/rest-introduction/">深入浅出 REST</a></p>
+<p><a href="https://blog.devgenius.io/best-practice-and-cheat-sheet-for-rest-api-design-6a6e12dfa89f">Principles &amp; Best practices of REST API Design</a></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../../Message%20Queue/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../../Message%20Queue/" class="btn btn-xs btn-link">
+        Index
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../" class="btn btn-xs btn-link">
+        API Design
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

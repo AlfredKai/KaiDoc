@@ -34,7 +34,8 @@
         var pageToc = [
           {title: "Nodejs", url: "#_top", children: [
               {title: "Pros and Cons", url: "#pros-and-cons" },
-              {title: "\u8a08\u6642", url: "#_1" },
+              {title: "Performance", url: "#performance" },
+              {title: "Profiling", url: "#profiling" },
               {title: "/usr/bin/env", url: "#usrbinenv" },
               {title: "./bin/www", url: "#binwww" },
               {title: "race condition", url: "#race-condition" },
@@ -43,7 +44,8 @@
               {title: "Blocking vs Non-Blocking", url: "#blocking-vs-non-blocking" },
               {title: "Error handling", url: "#error-handling" },
               {title: "Testing", url: "#testing" },
-              {title: "\u5176\u4ed6\u4e3b\u984c", url: "#_2" },
+              {title: "Tools", url: "#tools" },
+              {title: "\u5176\u4ed6\u4e3b\u984c", url: "#_1" },
           ]},
         ];
 
@@ -80,10 +82,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Chrome%20Extension/" class="btn btn-xs btn-default pull-left">
+      <a href="../CSS/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Chrome%20Extension/" class="btn btn-xs btn-link">
-        Chrome Extension
+        Previous</a><a href="../CSS/" class="btn btn-xs btn-link">
+        UI
       </a>
     </div>
     
@@ -96,11 +98,16 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <p><a href="https://beforesemicolon.medium.com/10-nodejs-things-you-should-know-master-to-be-a-pro-bdfdb5620c0b">10 NodeJs Things You Should Know &amp; Master to be a Pro</a></p>
 <h2 id="pros-and-cons">Pros and Cons</h2>
 <p><a href="https://www.altexsoft.com/blog/engineering/the-good-and-the-bad-of-node-js-web-app-development/">The Good and the Bad of Node.js Web App Development</a></p>
-<h2 id="_1">計時</h2>
+<h2 id="performance">Performance</h2>
 <pre><code class="js">console.time('timer name')
 console.timeEnd('timer name')
+
+performance.now()
 </code></pre>
 
+<h2 id="profiling">Profiling</h2>
+<p><a href="https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html">Finding And Fixing Node.js Memory Leaks: A Practical Guide</a></p>
+<p><a href="https://github.com/remy/nodemon/issues/1565">--inspect in ts-node issue</a></p>
 <h2 id="usrbinenv">/usr/bin/env</h2>
 <p><a href="https://stackoverflow.com/questions/33509816/what-exactly-does-usr-bin-env-node-do-at-the-beginning-of-node-files">What exactly does “/usr/bin/env node” do at the beginning of node files?</a></p>
 <h2 id="binwww">./bin/www</h2>
@@ -126,7 +133,9 @@ console.timeEnd('timer name')
 <p><a href="https://nodejs.org/en/knowledge/errors/what-are-the-error-conventions/">error conventions</a></p>
 <h2 id="testing">Testing</h2>
 <p><a href="https://codewithhugo.com/express-request-response-mocking/">A testing guide for Express with request and response mocking/stubbing using Jest or sinon</a></p>
-<h2 id="_2">其他主題</h2>
+<h2 id="tools">Tools</h2>
+<p><a href="https://github.com/sideway/joi">JOI</a></p>
+<h2 id="_1">其他主題</h2>
 <p>挑戰瀏覽器極限<br />
 <a href="https://experiments.withgoogle.com/collection/chrome">Chrome Experiments</a></p>
 <p>JS Linux VM<br />
@@ -158,10 +167,10 @@ console.timeEnd('timer name')
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Chrome%20Extension/" class="btn btn-xs btn-default pull-left">
+      <a href="../CSS/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Chrome%20Extension/" class="btn btn-xs btn-link">
-        Chrome Extension
+        Previous</a><a href="../CSS/" class="btn btn-xs btn-link">
+        UI
       </a>
     </div>
     

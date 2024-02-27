@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>alembic - KaiDocs</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "alembic", url: "#_top", children: [
+              {title: "Running our First Migration", url: "#running-our-first-migration" },
+              {title: "Auto Generating Migrations", url: "#auto-generating-migrations" },
+              {title: "Relative Migration Identifiers", url: "#relative-migration-identifiers" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Flask/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Flask/" class="btn btn-xs btn-link">
+        Flask
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../JavaScript/readme/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../JavaScript/readme/" class="btn btn-xs btn-link">
+        JavaScript
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="alembic">alembic</h1>
+<p><a href="https://alembic.sqlalchemy.org/en/latest/index.html">Alembic</a></p>
+<p><a href="https://medium.com/@acer1832a/%E4%BD%BF%E7%94%A8-alembic-%E4%BE%86%E9%80%B2%E8%A1%8C%E8%B3%87%E6%96%99%E5%BA%AB%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86-32d949f7f2c6">使用 Alembic 來進行資料庫版本管理</a></p>
+<h2 id="running-our-first-migration">Running our First Migration</h2>
+<p>The process which occurred here included that Alembic first checked if the database had a table called <code>alembic_version</code>, and if not, created it.</p>
+<h2 id="auto-generating-migrations">Auto Generating Migrations</h2>
+<pre><code class="bash">alembic revision --autogenerate -m &quot;Added account table&quot;
+</code></pre>
+
+<h2 id="relative-migration-identifiers">Relative Migration Identifiers</h2>
+<pre><code class="bash">alembic upgrade +2
+
+alembic downgrade -1
+
+alembic upgrade head
+</code></pre>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Flask/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Flask/" class="btn btn-xs btn-link">
+        Flask
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../../JavaScript/readme/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../../JavaScript/readme/" class="btn btn-xs btn-link">
+        JavaScript
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

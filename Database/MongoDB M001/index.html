@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>MongoDB M001 - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "MongoDB M001", url: "#_top", children: [
+              {title: "Chapter 1: What is MongoDB?", url: "#chapter-1-what-is-mongodb" },
+              {title: "Chapter 2: Importing, Exporting and Querying Data", url: "#chapter-2-importing-exporting-and-querying-data" },
+              {title: "Chapter 3: Creating and Manipulating Documents", url: "#chapter-3-creating-and-manipulating-documents" },
+              {title: "Chapter 4: Advanced CRUD Operations", url: "#chapter-4-advanced-crud-operations" },
+              {title: "Chapter 5: Indexing and Aggregation Pipeline", url: "#chapter-5-indexing-and-aggregation-pipeline" },
+              {title: "Chapter 6: Next Steps", url: "#chapter-6-next-steps" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/" class="btn btn-xs btn-link">
+        MySQL 超新手入門
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Database%20in%20Programming/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Database%20in%20Programming/" class="btn btn-xs btn-link">
+        Database in Programming
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="mongodb-m001">MongoDB M001</h1>
+<h2 id="chapter-1-what-is-mongodb">Chapter 1: What is MongoDB?</h2>
+<p>MongoDB is an noSQL <strong>document</strong> database.</p>
+<p>Document - a way to organize and store data as a set of field-value pairs.</p>
+<p>Field - a unique identifier for a datapoint.</p>
+<p>Value - data related to a given identifier.</p>
+<p>Collection - an organized store of documents in MongoDB, usually with common fields between documents. There can be many collections per database and many documents per collection.</p>
+<h2 id="chapter-2-importing-exporting-and-querying-data">Chapter 2: Importing, Exporting and Querying Data</h2>
+<p>MongoDB stores data in BSON, internally and over the network.</p>
+<table>
+<thead>
+<tr>
+<th>JSON</th>
+<th>BSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UTF-8 String</td>
+<td>Binary</td>
+</tr>
+<tr>
+<td>String, Boolean, Number, Array</td>
+<td>String, Boolean, Number(Integer, Long, Float,...), Array, Date, Raw Binary</td>
+</tr>
+<tr>
+<td>Readability: Human and Machine</td>
+<td>Readability: Machine Only</td>
+</tr>
+<tr>
+<td>mongoimport/mongoexport</td>
+<td>mongoredtore/mongodump</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.mongodb.com/json-and-bson">JSON and BSON</a></p>
+<p>Find Command</p>
+<ul>
+<li>Use <code>show dbs</code> and <code>show collections</code> for available namespaces.</li>
+<li><code>find()</code> returns a cursor with documents that match the find query.</li>
+<li><code>count()</code> returns the number of documents that match the find query.</li>
+<li><code>pretty()</code> format the documents in the cursor.</li>
+</ul>
+<h2 id="chapter-3-creating-and-manipulating-documents">Chapter 3: Creating and Manipulating Documents</h2>
+<p><code>_id</code> unique identifier for a document in a collection.
+<code>_id</code> required in every MongoDB document.
+<code>ObjectId()</code> is the default value for the <code>_id</code> field unless otherwise specified.</p>
+<p>Identical documents can exist in the same collection as long as their <code>_id</code> values are different.
+MongoDB has schema validation functionality allows you to enforce document structure.</p>
+<p>Insert multiple documents by using an array:
+<code>db.collection.insert([{&lt;doc1&gt;}, {&lt;doc2&gt;}])</code></p>
+<p>Use <code>{"ordered": false}</code> to disable the default ordered insert.</p>
+<p>Collections and databases are created when they are being used:
+<code>use tools</code> followed by <code>db.tractors.insert({&lt;tractor doc&gt;})</code>
+create the <code>tools.tractors</code> namespace.</p>
+<p><code>{"$inc": {"pop": 10, "&lt;field2&gt;": &lt;increment value&gt;, ...}}</code>
+increments field value by a specified amount.</p>
+<p><code>{"$set": {"pop": 17630, "&lt;field2&gt;": &lt;new value&gt;, ...}}</code>
+sets field value to a new specified value.</p>
+<p><code>{ $push: { &lt;field1&gt;: &lt;value1&gt;, ...}}</code>
+adds an element to an array field.</p>
+<p><code>db.&lt;collection&gt;.drop()</code> deleted the given collection.
+<code>deleteOne(), deleteMany()</code> deletes documents that match a given query.
+After these commands is issued the <strong>data is GONE.</strong></p>
+<h2 id="chapter-4-advanced-crud-operations">Chapter 4: Advanced CRUD Operations</h2>
+<p>Query operators provide additional ways to locate data within the database.</p>
+<p>Comparison operators specifically allow us to find data within a certain range.
+<code>{ &lt;field&gt;: { &lt;operator&gt;: &lt;value&gt; } }</code></p>
+<p><code>$eq</code> is used as the default operator when an operator is not specified.</p>
+<p>Logic operators allow us to be more granular in our search for data.</p>
+<p>Syntax
+<code>{ "$&lt;operator&gt;": [{ &lt;clause1&gt; }, {&lt;clause2&gt;}, ...]}</code>
+Syntax for <code>$not</code>:
+<code>{ "$not": {&lt;clause&gt;}}</code></p>
+<p><code>$and</code> is used as the default operator when an operator is not specified.</p>
+<p>Allows for more complex queries and for comparing fields within a document.</p>
+<p>The <code>$</code> can be used to access the field value.</p>
+<p>Syntax for comparison operators using aggregation:
+<code>{ &lt;operator&gt;: { &lt;field&gt;, &lt;value&gt; } }</code></p>
+<p><code>{&lt;array field&gt; : { "$size": &lt;number&gt;}}</code>
+Returns a cursor with all documents where the specified array field is exactly the given length.</p>
+<p><code>{&lt;array field&gt;: { "$all": &lt;array&gt;}}</code>
+Returns a cursor with all documents in which the specified array field contains all the given elements regardless of their order in the array.</p>
+<p><strong>Querying an array field using</strong>
+An array returns only exact array matches.
+A single element will return all documents where the specified array field contains this given element.</p>
+<p><code>db.&lt;collection&gt;.find({ &lt;query&gt; }, { **&lt;projection&gt;**})</code>
+Specifies which fields should or should not be included in the result cursor.
+Do <strong>not</strong> combine <code>1s</code> and <code>0s</code> in a projection.</p>
+<ul>
+<li>Except for <code>{ "_id: 0", &lt;field&gt;: 1}</code></li>
+</ul>
+<p><code>{&lt;field&gt; : { "$elemMatch": { &lt;field&gt;: &lt;value&gt; }}}</code>
+Matches documents that contain an array field with at least one element that matches the specified query criteria.</p>
+<p><strong>or</strong></p>
+<p>Projects only the array elements with at least one element that matches the specified criteria.</p>
+<p>MQL uses dot-notation to specify the address of nested elements in a document</p>
+<p>To use dot-notation in arrays specify the position of the element in the array.</p>
+<p><code>db.collection.find({"field 1.other field.also a field": "value"})</code></p>
+<h2 id="chapter-5-indexing-and-aggregation-pipeline">Chapter 5: Indexing and Aggregation Pipeline</h2>
+<h3 id="aggregation-framework">Aggregation Framework</h3>
+<ul>
+<li>Agg Framework &gt; MQL</li>
+<li>Pipeline stages in order</li>
+<li>
+<p>Syntax</p>
+</li>
+<li>
+<p>Agg Framework</p>
+</li>
+<li><code>$group</code></li>
+<li>compute</li>
+<li>reshape</li>
+<li>MQL</li>
+<li>filter</li>
+<li>update</li>
+</ul>
+<h3 id="cursor-methods">Cursor Methods</h3>
+<p>Cursor is not apply to the data stored in the database, it is instead applied to the result set that lives in the cursor.</p>
+<ul>
+<li>sort()</li>
+<li>limit()</li>
+<li>pretty()</li>
+<li>count()</li>
+</ul>
+<p>MongoDB assumes that when you use <code>sort()</code> and <code>limit()</code>, you always mean to sort first, regardless of the order in which you type these methods.</p>
+<p><code>cursor.limit().sort()</code> == <code>cursor.sort().limit()</code></p>
+<h3 id="indexes">Indexes</h3>
+<ul>
+<li>Single field index</li>
+<li>Compound Index</li>
+</ul>
+<h3 id="data-modeling-with-mongodb">Data modeling with MongoDB</h3>
+<p>Data that is <strong>used</strong> together should be <strong>stored</strong> together.
+Evolving application implies an evolving data model.</p>
+<p>"MongoDB is built for quick data model changes sand evolution"</p>
+<h3 id="upsert">Upsert</h3>
+<p>Everything in MQL that is used to locate a document in a collection can also be used to <strong>modify</strong> this document.</p>
+<p><code>db.collection.updateOne({&lt;query to locate&gt;}, {&lt;**update**&gt;})</code>
+ Upsert is a hybrid of update and insert, it should only be used when it is needed.</p>
+<p><code>db.collection.updateOne({&lt;query&gt;}, {&lt;update&gt;}, {**"upsert": true**})</code></p>
+<p><code>Upsert:true</code></p>
+<p><strong>Be mindful</strong></p>
+<p>Is <code>{&lt;update&gt;}</code> enough to create a new document?</p>
+<p>Will the document have the same or similar form to other documents in the collection?</p>
+<h2 id="chapter-6-next-steps">Chapter 6: Next Steps</h2>
+<h3 id="atlas-data-explorer">Atlas Data Explorer</h3>
+<ul>
+<li>Performance Advisory</li>
+<li>Aggregation Builder</li>
+<li>Anti-Pattern Advisory</li>
+<li>Advanced Text Search</li>
+</ul>
+<h3 id="atlas-products">Atlas Products</h3>
+<ul>
+<li>Billing is at organization level</li>
+<li>Projects are within organization</li>
+<li>Teams assigned to projects</li>
+<li>Clusters have unique names</li>
+</ul>
+<h3 id="mongodb-compass">MongoDB Compass</h3>
+<ul>
+<li>Connection</li>
+<li>Documents</li>
+<li>Schema</li>
+<li>Indexes</li>
+</ul>
+<h3 id="mongodb-compass-part-2">MongoDB Compass Part 2</h3>
+<ul>
+<li>Explain</li>
+<li>Validation</li>
+<li>Schema</li>
+</ul>
+<h3 id="why-mongodb">Why MongoDB?</h3>
+<p>At this point you have learned enough to start having a meaningful conversation about why developers, DBAs, and companies choose MongoDB as their database.</p>
+<p>This can also help you decide whether MongoDB is the right choice for you.</p>
+<p>To help you learn more about specific use cases, we put together case studies and articles about some of our customers and community members.</p>
+<p>We also added a link to the MongoDB Developer Hub and Community Forums where you can ask questions, learn new things, and connect with others who are diving into MongoDB content and products.</p>
+<p>Take a look and feel free to browse for more information.</p>
+<ul>
+<li><a href="https://developer.mongodb.com/">MongoDB Developer Hub</a></li>
+<li><a href="https://developer.mongodb.com/community/forums/">MongoDB Community Forums</a></li>
+<li><a href="https://www.mongodb.com/customers/bosch">Case study: Bosch Leads Charge into Internet of Things</a></li>
+<li><a href="https://www.mongodb.com/blog/post/forbes-cloud-migration-helps-worlds-biggest-media-brand-continue-standard-digital-innovation">Case study: Forbes</a></li>
+<li><a href="https://www.mongodb.com/blog/post/sega-hardlight-migrates-to-mongodb-atlas-simplify-ops-improve-experience-mobile-gamers">Case study: SEGA</a></li>
+<li><a href="https://www.mongodb.com/industries/financial-services">How the Financial Sector Uses MongoDB</a></li>
+</ul>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../MySQL%20%E8%B6%85%E6%96%B0%E6%89%8B%E5%85%A5%E9%96%80/" class="btn btn-xs btn-link">
+        MySQL 超新手入門
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Database%20in%20Programming/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Database%20in%20Programming/" class="btn btn-xs btn-link">
+        Database in Programming
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

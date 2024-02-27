@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Ubuntu - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Ubuntu", url: "#_top", children: [
+              {title: "\u5957\u4ef6\u7ba1\u7406", url: "#_1" },
+              {title: "Terminal", url: "#terminal" },
+              {title: "Bash", url: "#bash" },
+              {title: "env, set export", url: "#env-set-export" },
+              {title: "export env from file", url: "#export-env-from-file" },
+              {title: "Makefile", url: "#makefile" },
+              {title: "SSH", url: "#ssh" },
+              {title: "Cron tab", url: "#cron-tab" },
+              {title: "Set static IP", url: "#set-static-ip" },
+              {title: "Resources", url: "#resources" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Powershell/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Powershell/" class="btn btn-xs btn-link">
+        PowerShell Notes
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Jmeter/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Jmeter/" class="btn btn-xs btn-link">
+        Jmeter
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="ubuntu">Ubuntu</h1>
+<h2 id="_1">套件管理</h2>
+<p>Debian 派系 →Ubuntu→Apt<br />
+Redhat 派系 →CentOS→Yum</p>
+<h2 id="terminal">Terminal</h2>
+<h3 id="call-terminal">call terminal</h3>
+<pre><code class="hotkey">ctrl + alt + t
+</code></pre>
+
+<h3 id="clear">clear</h3>
+<pre><code class="hotkey">ctrl + l
+</code></pre>
+
+<h2 id="bash">Bash</h2>
+<p><a href="http://linux.vbird.org/linux_basic/0320bash.php#set">鳥哥認識與學習BASH</a></p>
+<table>
+<thead>
+<tr>
+<th>cmd</th>
+<th>descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pwd</td>
+<td>列出目前完整路徑</td>
+</tr>
+<tr>
+<td>top</td>
+<td></td>
+</tr>
+<tr>
+<td>cp</td>
+<td>複製檔案</td>
+</tr>
+<tr>
+<td>tar</td>
+<td>打包</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>把檔案輸出到 stdout</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>建立檔案</td>
+</tr>
+<tr>
+<td>touch "kai-\$(date +%Y%m%d)"</td>
+<td>以日期建檔</td>
+</tr>
+<tr>
+<td>usermod -aG [group][user]</td>
+<td>add user to group</td>
+</tr>
+<tr>
+<td>export VAR=value</td>
+<td>設定環境變數</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">串聯指令</h3>
+<table>
+<thead>
+<tr>
+<th>symbol</th>
+<th>descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>;</code></td>
+<td>連續下達指令</td>
+</tr>
+<tr>
+<td><code>&amp;&amp;</code></td>
+<td>當指令回傳 1(成功)則執行下一個指令</td>
+</tr>
+<tr>
+<td><code>||</code></td>
+<td>當前指令回傳 0(失敗)執行下一指令</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>stdoutput</td>
+</tr>
+<tr>
+<td><code>|</code></td>
+<td>pipe</td>
+</tr>
+</tbody>
+</table>
+<p>example</p>
+<pre><code class="bash">cd /home/kai/Desktop/kaitest &amp;&amp; touch &quot;kai-$(date +%d%s)&quot;
+</code></pre>
+
+<h3 id="disc-usage">Disc Usage</h3>
+<pre><code class="bash">du -h
+</code></pre>
+
+<h3 id="add-an-existing-user-account-to-a-group">Add an Existing User Account to a Group</h3>
+<p>usermod -aG examplegroup exampleusername</p>
+<h3 id="make">遠端執行 make 指令</h3>
+<pre><code class="bash">make -n &gt; xxx.sh
+ssh user@host &lt; xxx.sh
+</code></pre>
+
+<p>遠端全套</p>
+<pre><code class="bash">sshpass -p $HOST_PWD ssh -o StrictHostKeyChecking=no $WORKER_NAME@$DEPLOY_MACHINE &lt; makerun.sh
+</code></pre>
+
+<p>不檢查 key，自動化好用</p>
+<pre><code class="bash">-o StrictHostKeyChecking=no
+</code></pre>
+
+<h2 id="env-set-export">env, set export</h2>
+<ul>
+<li>set: 目前shell的環境變數</li>
+<li>env: 除了是目前shell的環境變數以外，能把這些變數一起帶到目前shell發起的子程式</li>
+<li>export: 設定env變數</li>
+</ul>
+<h2 id="export-env-from-file">export env from file</h2>
+<pre><code class="bash">export $(cat env/YOUR_ENV_FILE |xargs)
+</code></pre>
+
+<h2 id="makefile">Makefile</h2>
+<p><a href="https://hackmd.io/s/SySTMXPvl">https://hackmd.io/s/SySTMXPvl</a></p>
+<ul>
+<li>特別字元</li>
+<li><strong>@</strong> 不要顯示執行的指令<ul>
+<li>因執行 make 指令後會在終端機印出正在執行的指令</li>
+</ul>
+</li>
+<li><strong>-</strong> 表示即使該行指令出錯，也不會中斷執行，而 make 只要遇到任何錯誤就會中斷執行。但像是在進行 clean 時，也許根本沒有任何檔案可以 clean，因而 rm 會傳回錯誤值，因而導致 make 中斷執行。我們可以利用-來關閉錯誤中斷功能，讓 make 不會因而中斷。</li>
+</ul>
+<h2 id="ssh">SSH</h2>
+<h3 id="add-ssh-private-key">Add ssh private key</h3>
+<pre><code class="bash">ssh-add [~/.ssh/id_rsa]
+</code></pre>
+
+<p>如果出現</p>
+<pre><code class="bash">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ WARNING: UNPROTECTED PRIVATE KEY FILE! @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</code></pre>
+
+<p>表示權限開太大</p>
+<pre><code class="bash">chmod 0600 [private key file]
+</code></pre>
+
+<h3 id="sshpass">sshpass</h3>
+<p>sshpass:不用互動遠端使用 ssh 下 command 的工具</p>
+<pre><code class="bash">sshpass -p 'mypassword' ssh myaccount@my.linux.host
+</code></pre>
+
+<h2 id="cron-tab">Cron tab</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cron -e</td>
+<td>編輯該使用者的 crontab 指令</td>
+</tr>
+<tr>
+<td>cron -l</td>
+<td>列出該使用者擁有的 crontab 指令</td>
+</tr>
+<tr>
+<td>cron -r</td>
+<td>將使用者的 crontab 全部清除！（ 小心使用 ）</td>
+</tr>
+</tbody>
+</table>
+<p>※ 下達指令請用 絕對路徑 避免錯誤</p>
+<pre><code class="bash">*/5 * * * * /home/ubuntu/test.sh：每五分鐘執行一次測試 shell script
+</code></pre>
+
+<h2 id="set-static-ip">Set static IP</h2>
+<p>用 UI 點</p>
+<h2 id="resources">Resources</h2>
+<p><a href="https://wiki.ubuntu-tw.org/index.php?title=GNU/Linux_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4">GNU/Linux 常用指令</a></p>
+<p>https://en.wikipedia.org/wiki/Sed</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Powershell/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Powershell/" class="btn btn-xs btn-link">
+        PowerShell Notes
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Jmeter/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Jmeter/" class="btn btn-xs btn-link">
+        Jmeter
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

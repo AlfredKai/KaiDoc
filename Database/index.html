@@ -34,10 +34,15 @@
         var pageToc = [
           {title: "Database", url: "#_top", children: [
               {title: "RDBMS", url: "#rdbms" },
+              {title: "Database isolation level", url: "#database-isolation-level" },
               {title: "NoSQL", url: "#nosql" },
               {title: "Time Series Database", url: "#time-series-database" },
               {title: "ACID / CAP", url: "#acid-cap" },
-              {title: "Index", url: "#index" },
+              {title: "Isolation Level", url: "#isolation-level" },
+              {title: "Execution Plan in MySql", url: "#execution-plan-in-mysql" },
+              {title: "Partition and Sharding", url: "#partition-and-sharding" },
+              {title: "Nested set model", url: "#nested-set-model" },
+              {title: "Cross Database Transactions", url: "#cross-database-transactions" },
               {title: "Monitoring", url: "#monitoring" },
               {title: "DAO and Leaky Abstraction", url: "#dao-and-leaky-abstraction" },
               {title: "Resources", url: "#resources" },
@@ -77,10 +82,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-default pull-left">
+      <a href="../Agile/The%20State%20of%20Agile%20Software%20in%202018%2C%20Martin%20Fowler/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-link">
-        Is Design Dead
+        Previous</a><a href="../Agile/The%20State%20of%20Agile%20Software%20in%202018%2C%20Martin%20Fowler/" class="btn btn-xs btn-link">
+        Agile
       </a>
     </div>
     
@@ -123,6 +128,8 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h3 id="data-domain">Data Domain</h3>
 <p>aka reference domain, reference table</p>
 <p><a href="https://en.wikipedia.org/wiki/Data_domain">Data Domain</a></p>
+<h2 id="database-isolation-level">Database isolation level</h2>
+<p><a href="https://www.facebook.com/groups/616369245163622/permalink/2096040563863142/">Database isolation level</a></p>
 <h2 id="nosql">NoSQL</h2>
 <p>"Not only SQL"</p>
 <p><a href="https://www.kshuang.xyz/doku.php/database:sql_vs_nosql">SQL vs NoSQL: The Differences</a></p>
@@ -143,22 +150,26 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
 <h2 id="acid-cap">ACID / CAP</h2>
 <p><a href="https://zh.wikipedia.org/wiki/ACID">ACID compliant</a></p>
 <p><a href="https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86">CAP theorem</a></p>
+<p><a href="https://ithelp.ithome.com.tw/users/20121042/ironman/2792">分散式系統 - 在分散的世界中保持一致</a></p>
 <ul>
 <li>NoSQL可能不滿足ACID</li>
 <li>CAP的C為<a href="https://en.wikipedia.org/wiki/Eventual_consistency">Eventual consistency</a></li>
 </ul>
-<h2 id="index">Index</h2>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ%3D%3D&amp;mid=2651961486&amp;idx=1&amp;sn=b319a87f87797d5d662ab4715666657f">数据库索引，到底是什么做的？</a></p>
-<p><a href="https://en.wikipedia.org/wiki/Database_index">Database index</a></p>
-<h3 id="string-as-index">String as Index</h3>
-<p><a href="https://www.xarg.org/2012/07/optimal-index-size-for-variable-text-in-mysql/">Optimal index size for variable text in MySQL</a></p>
-<h3 id="execution-plan-in-mysql">Execution Plan in MySql</h3>
+<h2 id="isolation-level">Isolation Level</h2>
+<p><a href="https://medium.com/@chester.yw.chu/%E5%B0%8D%E6%96%BC-mysql-repeatable-read-isolation-%E5%B8%B8%E8%A6%8B%E7%9A%84%E4%B8%89%E5%80%8B%E8%AA%A4%E8%A7%A3-7a9afbac65af">對於 MySQL Repeatable Read Isolation 常見的三個誤解</a></p>
+<p><a href="https://medium.com/analytics-vidhya/understanding-mysql-transaction-isolation-levels-by-example-1d56fce66b3d">Understanding MySQL Transaction Isolation Levels by Example</a></p>
+<h2 id="execution-plan-in-mysql">Execution Plan in MySql</h2>
 <p><a href="http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html">在MySQL使用Explain做SQL SELECT語法效能測試</a></p>
-<h3 id="partition-and-sharding">Partition and Sharding</h3>
+<h2 id="partition-and-sharding">Partition and Sharding</h2>
 <p><a href="https://en.wikipedia.org/wiki/Partition_(database)">Partition (database)</a></p>
 <p><a href="https://en.wikipedia.org/wiki/Shard_(database_architecture)">Shard (database architecture)</a></p>
 <p><a href="https://www.digitalocean.com/community/tutorials/understanding-database-sharding">Understanding Database Sharding</a></p>
 <p><a href="https://www.mysql.com/products/cluster/mysql-cluster-datasheet.pdf">MySQL CLUSTER</a></p>
+<p><a href="https://medium.com/17media-tech/mysql-partitioning-%E5%84%AA%E5%8C%96%E4%B9%8B%E8%B7%AF-fd8e8480789b">MySQL Partitioning 優化之路</a></p>
+<h2 id="nested-set-model">Nested set model</h2>
+<p><a href="https://en.wikipedia.org/wiki/Nested_set_model">Nested set model</a></p>
+<h2 id="cross-database-transactions">Cross Database Transactions</h2>
+<p><a href="https://blog.csdn.net/lengxiao1993/article/details/88290514">二阶段提交</a></p>
 <h2 id="monitoring">Monitoring</h2>
 <p><a href="https://www.percona.com/doc/percona-monitoring-and-management/2.x/index.html">PMM</a></p>
 <h2 id="dao-and-leaky-abstraction">DAO and Leaky Abstraction</h2>
@@ -194,10 +205,10 @@ if (is_top_frame) { $('body').addClass('wm-top-page'); }
     </div>
     
     <div class="wm-article-nav">
-      <a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-default pull-left">
+      <a href="../Agile/The%20State%20of%20Agile%20Software%20in%202018%2C%20Martin%20Fowler/" class="btn btn-xs btn-default pull-left">
         <i class="fa fa-chevron-left" aria-hidden="true"></i>
-        Previous</a><a href="../Agile/Is%20Design%20Dead/" class="btn btn-xs btn-link">
-        Is Design Dead
+        Previous</a><a href="../Agile/The%20State%20of%20Agile%20Software%20in%202018%2C%20Martin%20Fowler/" class="btn btn-xs btn-link">
+        Agile
       </a>
     </div>
     

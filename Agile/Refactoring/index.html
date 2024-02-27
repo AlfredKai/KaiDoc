@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Refactoring - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Refactoring", url: "#_top", children: [
+              {title: "Chapter 1 Refactoring: A First Example", url: "#chapter-1-refactoring-a-first-example" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Specification%20by%20Example/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Specification%20by%20Example/" class="btn btn-xs btn-link">
+        Specification by Example
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Is%20Design%20Dead/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Is%20Design%20Dead/" class="btn btn-xs btn-link">
+        Is Design Dead
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="refactoring">Refactoring</h1>
+<h2 id="chapter-1-refactoring-a-first-example">Chapter 1 Refactoring: A First Example</h2>
+<blockquote>
+<p>When you have to add a feature to a program but the code is not structured in a convenient way, first refactor the program to make it easy to add the feature, then add the feature.</p>
+</blockquote>
+<p>注意一切都是因為"改動"的需求造成需要重構，如果程式碼運作正常且不需要改動，也沒有人需要看，那麼"It's perfectly fine to leave it alone."</p>
+<blockquote>
+<p>Before you start refactoring, make sure you have a solid suite of tests. These tests must be self-checking.</p>
+</blockquote>
+<p>測試必須要self-checking，這樣才不會托慢速度，才會頻繁執行。</p>
+<p>重構長函式通常先找尋可以分離行為的地方。</p>
+<p>每次的小更動結束都跑一次測試，這也代表一旦發現錯誤你尋找他的範圍就很小，這就是重構的根本：小改動而每次改動完跑測試。</p>
+<blockquote>
+<p>Refactoring changes the programs in small steps, so if you make a mistake, it is easy to find where the bug is.</p>
+</blockquote>
+<p>使用版控，每次的重構都使用private commit，最後push之前再squash changes.</p>
+<blockquote>
+<p>Any fool can write code that a computer can understand. Good programmers write code that humans can understand.</p>
+</blockquote>
+<p>大多時候重構不太會造成效能問題，而且聰明的編譯器或現代快取機制也會影響我們對程式碼實際的效能判斷，通常軟體的效能只取決於一部分的程式碼。但總有例外的時候，如果重夠確實造成了效能問題，那就重構之後再開始調教效能，儘管有可能回復到重構之前的狀態，但大多時候因為重構的關係你可以把效能調教得更好，最後得到效能好又簡潔的程式碼。<br />
+所以整體而言重構對效能的建議是：忽略大部分的情況，如果真的遇上了就先重構再調效能。</p>
+<blockquote>
+<p>I prefer to treat data as immutable as much as I can-mutable state quickly becomes something rotten.</p>
+</blockquote>
+<p>跟重構前的程式相比多了很多行，但這讓邏輯更佳清楚且新增功能更方便</p>
+<blockquote>
+<p>Brevity is the soul of wit, but clarity is the soul of evolvable software.</p>
+</blockquote>
+<p>我總是要在我能做的所有重構和添加新功能之間取得平衡。目前，大多數人都沒有優先考慮重構 - 但仍然存在平衡</p>
+<blockquote>
+<p>When programming, follow the camping rule: Always leave the code base healthier than when you found it.</p>
+</blockquote>
+<p>很多人喜歡討論好的程式碼應該長甚麼樣子，但真正該關心的是如何改善而不是個人口味</p>
+<blockquote>
+<p>The true test of good code is how easy it is to change it.</p>
+</blockquote>
+<h3 id="javascript">Javascript小技巧</h3>
+<ol>
+<li>使用extract function可以利用nested function，這樣就不用傳遞參數</li>
+<li>在動態型別的語言，把default parameter名稱加上型別名稱</li>
+<li>利用複製物件新增資訊達到盡量使資料immutable</li>
+</ol>
+<p>複製物件</p>
+<pre><code class="javascript">Object.assign({}, data)
+</code></pre>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Specification%20by%20Example/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Specification%20by%20Example/" class="btn btn-xs btn-link">
+        Specification by Example
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Is%20Design%20Dead/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Is%20Design%20Dead/" class="btn btn-xs btn-link">
+        Is Design Dead
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

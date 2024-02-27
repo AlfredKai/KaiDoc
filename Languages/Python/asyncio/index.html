@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>asyncio - KaiDocs</title>
+    <link href="../../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "asyncio", url: "#_top", children: [
+              {title: "Refs", url: "#refs" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../readme/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../readme/" class="btn btn-xs btn-link">
+        Python
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../SQLAlchemy/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../SQLAlchemy/" class="btn btn-xs btn-link">
+        SQLAlchemy
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="asyncio">asyncio</h1>
+<p>一直以來python在web方面都被nodejs屌打，為什麼multi-thread會被single-thread屌打？當然是因為GIL，有了GIL你沒了multi-thread的好處還加上要context switch，當然被屌打。</p>
+<p>nodejs怎麼達成single-thread非同步的？靠的是non-blocking I/O，在nodejs裡面有一個東西叫event loop，當nodejs執行遇到需要I/O的時候，nodejs的main thread會把任務交給kernel處理然後自己去做別的事情，當執行完一些callbacks再回來檢查I/O任務完成沒，而kernel，當然就是multi-thread。這樣做有兩個好處，第一因為是single-thread效能極佳，第二因為執行以callback為單位，不會有race condition(其實硬要搞還是搞得出來，就不討論了)，缺點是你有需要消耗大量CPU資源的callback時會直接卡死event loop。</p>
+<p>情況一直到python 3.5有了改善，python迎來了與nodejs相同機制的event loop，比較新的python框架如fastapi靠著async性能屌打flask，並號稱某些情況甚至不輸GO。自此python終於可以與nodejs平起平坐。</p>
+<p>lane  7 hours ago
+async/await 在 C# 是 task (比 thread 還要小)
+task 是由 task engine 執行, task engine 一般而言是 threadpool.
+所以嚴格來說介於 eventloop , thread 之間</p>
+<h2 id="refs">Refs</h2>
+<p><a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/">Nodejs Event Loop</a></p>
+<p><a href="https://studygolang.com/articles/25842?fbclid=IwAR1FdYhfrujtowf50npJRrQNN8BA5-hDGf-2yJfog7LCZRk1KgP3qNTiF6A">FastAPI、Flask、Golang性能测试</a></p>
+<p><a href="https://realpython.com/async-io-python/">Async IO in Python: A Complete Walkthrough</a></p>
+<p><a href="https://lotabout.me/2017/understand-python-asyncio/">理解 Python asyncio</a></p>
+<p><a href="https://medium.com/%E9%AB%92%E6%A1%B6%E5%AD%90/aysnc-await-%E6%95%99%E5%AD%B8%E7%AD%86%E8%A8%98-debabdb9db0e">async await 學習筆記</a></p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../readme/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../readme/" class="btn btn-xs btn-link">
+        Python
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../SQLAlchemy/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../SQLAlchemy/" class="btn btn-xs btn-link">
+        SQLAlchemy
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

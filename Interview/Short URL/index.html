@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Short URL - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Short URL", url: "#_top", children: [
+              {title: "Requirements", url: "#requirements" },
+              {title: "How will shortened URLs be generated? (DB)", url: "#how-will-shortened-urls-be-generated-db" },
+              {title: "Database Design", url: "#database-design" },
+              {title: "API Design", url: "#api-design" },
+              {title: "How to implement the redirect servers? (Restful)", url: "#how-to-implement-the-redirect-servers-restful" },
+              {title: "How are click stats stored?", url: "#how-are-click-stats-stored" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../backend/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../backend/" class="btn btn-xs btn-link">
+        Backend
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../" class="btn btn-xs btn-link">
+        Interview Guide
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="short-url">Short URL</h1>
+<p>https://medium.com/system-design-concepts/tinyurl-system-design-16868b5435de</p>
+<p>https://kknews.cc/zh-tw/tech/nlrxkq2.html</p>
+<p>https://stackoverflow.com/questions/3538021/why-do-we-use-base64</p>
+<h2 id="requirements">Requirements</h2>
+<p>The total number of unique domains registering redirect URLs is on the order of 10s of thousands
+New URL registrations are on the order of 10,000,000/day (100/sec)
+Redirect requests are on the order of 10B/day (100,000/sec)
+Remind candidates that those are average numbers - during peak traffic (either driven by time, such as 'as people come home from work' or by outside events, such as 'during the super bowl) they may be much higher.
+Recent stats (within the current day) should be aggregated and available with a 5 minute lag time
+Long look-back stats can be computed daily</p>
+<h2 id="how-will-shortened-urls-be-generated-db">How will shortened URLs be generated? (DB)</h2>
+<p>ID vs hash, how to create a hash in DB
+How do we generate keys?
+How to check collision. If we need to query the database to check collision, how can we improve it?
+How to store the mappings?</p>
+<ul>
+<li>auto-increment key or timestamp</li>
+<li>waste charater space</li>
+<li>security problem</li>
+<li>random</li>
+<li>collision</li>
+<li>how to generate random key</li>
+<li>UUID or HASH</li>
+<li>can't avoid collision</li>
+<li>collision vs. length of URL is a trade-off</li>
+<li>counter and zookeeper</li>
+<li>need to be encoded</li>
+<li>to solve potential security issue in counter based key<ul>
+<li>encoding algorithm can be shuffled based on salt</li>
+<li>add some random bits</li>
+</ul>
+</li>
+<li>example lib: https://hashids.org/</li>
+</ul>
+<p>database for storing counter: any CP service is good</p>
+<h2 id="database-design">Database Design</h2>
+<p>Sql/NoSql
+Lifespan</p>
+<h2 id="api-design">API Design</h2>
+<p>How server responds to a user (ask cache &amp; API)
+What happens when a cache miss
+Cache control
+Cache Penetration
+What if we have space limitations in redis? (cache eviction policies)
+CDN can cache 301, 302</p>
+<h2 id="how-to-implement-the-redirect-servers-restful">How to implement the redirect servers? (Restful)</h2>
+<p>301 vs 302
+Location header
+Get vs Post
+Http methods (idempotent)</p>
+<h2 id="how-are-click-stats-stored">How are click stats stored?</h2>
+<p>Message queue
+Large scale questions
+If we have a load balancer, how can we do for DBS in a distributed system
+How many master/replicas
+Sharding?
+How to deal with the consistency about keys
+What else do you think you can improve this system</p>
+<p>Generate a random tiny URL</p>
+<p>randomness is good</p>
+<p>timestamp issue: collision, waste char</p>
+<p>generally, you should avoid hashing to guarantee uniqueueness, as you are trying to map a bigger value set to a smaller value set so you WILL have collisions.</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../backend/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../backend/" class="btn btn-xs btn-link">
+        Backend
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../" class="btn btn-xs btn-link">
+        Interview Guide
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

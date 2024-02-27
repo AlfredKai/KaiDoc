@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Docker - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Docker", url: "#_top", children: [
+              {title: "Resource", url: "#resource" },
+              {title: "Commands", url: "#commands" },
+              {title: "Dockerfile", url: "#dockerfile" },
+              {title: "Container\u2019s config", url: "#containers-config" },
+              {title: "How to debug", url: "#how-to-debug" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Git%20and%20GitLab/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Git%20and%20GitLab/" class="btn btn-xs btn-link">
+        Git & GitLab Learning
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../" class="btn btn-xs btn-link">
+        DevOps
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="docker">Docker</h1>
+<p><a href="https://docs.docker.com/">Docker Documentation</a></p>
+<h2 id="resource">Resource</h2>
+<p><a href="https://philipzheng.gitbooks.io/docker_practice/content/dockerfile/instructions.html">https://philipzheng.gitbooks.io/docker_practice/content/dockerfile/instructions.html</a></p>
+<p><a href="https://rancher.com/learning-paths/how-to-build-and-run-your-own-container-images/">How to Build and Run Your Own Container Images</a></p>
+<h2 id="commands">Commands</h2>
+<p><a href="https://github.com/wsargent/docker-cheat-sheet">Cheet sheet</a><br />
+<a href="https://docs.docker.com/engine/reference/commandline/cli/">Docker CLIs</a></p>
+<pre><code class="bash">docker run -it ubuntu:18.04 /bin/bash
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>cmd</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>docker ps</td>
+<td>List containers注意如果沒container沒在執行中不會顯示，請下參數’--all’或’-a’</td>
+</tr>
+<tr>
+<td>docker start/docker stop</td>
+<td>Start one or more stopped containers / Stop one or more running containers</td>
+</tr>
+<tr>
+<td>docker logs</td>
+<td>Fetch the logs of a container</td>
+</tr>
+<tr>
+<td>docker logs -f —tail</td>
+<td>這邊是紀錄stdout的logs</td>
+</tr>
+<tr>
+<td>docker exec</td>
+<td>Run a command in a running container</td>
+</tr>
+<tr>
+<td>docker exec -it ubuntu_bash bash</td>
+<td>This will create a new Bash session in the container <code>ubuntu_bash</code>. Next, set an environment variable in the current bash session.<code>exit</code> <strong>to quit</strong></td>
+</tr>
+<tr>
+<td>docker exec -it [container] /bin/bash</td>
+<td>執行container中的bash，如同進入container中的shell</td>
+</tr>
+<tr>
+<td>docker inspect</td>
+<td>Return low-level information on Docker objects可以檢查進入點、config等等資訊running中的container才可以看</td>
+</tr>
+<tr>
+<td>docker info</td>
+<td>Display system-wide information</td>
+</tr>
+<tr>
+<td>service docker restart</td>
+<td>restart docker service</td>
+</tr>
+<tr>
+<td>docker create</td>
+<td>creates a container but does not start it.</td>
+</tr>
+<tr>
+<td>docker start</td>
+<td>starts a container so it is running.</td>
+</tr>
+<tr>
+<td>docker run</td>
+<td>creates and starts a container in one operation.</td>
+</tr>
+<tr>
+<td>docker run -d</td>
+<td>Run container in background and print container ID</td>
+</tr>
+<tr>
+<td>docker rm</td>
+<td>remove container</td>
+</tr>
+<tr>
+<td>docker rmi</td>
+<td>remove image</td>
+</tr>
+<tr>
+<td>docker network ls</td>
+<td>List networks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dockerfile">Dockerfile</h2>
+<h3 id="run-vs-cmd">RUN vs CMD</h3>
+<h4 id="in-a-nutshell">In a nutshell</h4>
+<ul>
+<li>RUN executes command(s) in a new layer and creates a new image. E.g., it is often used for installing software packages.</li>
+<li>CMD sets default command and/or parameters, which can be overwritten from command line when docker container runs.</li>
+<li>ENTRYPOINT configures a container that will run as an executable.</li>
+</ul>
+<h3 id="copy-packagejsoncopy-source-code">為什麼先COPY package.json再COPY source code</h3>
+<p>為了cache，Dockerfile每一行都是一個cache</p>
+<h3 id="cmdbuild">CMD為什麼在build之前</h3>
+<p>CMD只是指示container啟動時要執行的指令，他在哪裡都可以</p>
+<h2 id="containers-config">Container’s config</h2>
+<pre><code class="bash">/var/lib/docker/containers/[container-id]/config.json
+</code></pre>
+
+<p>這是container的config位置，只要知道container id就可以找到他進行修改，注意這不是官方建議作法，不是所有參數都能修改，Evn好像還可以，修改之後重啟container是沒效的，必須重啟docker: <code>service docker restart</code></p>
+<h2 id="how-to-debug">How to debug</h2>
+<pre><code class="bash">docker info
+</code></pre>
+
+<p>看你的container裝在哪邊，裡面會有這一行 <code>Docker Root Dir:</code>，可以到這路徑底下找container，裡面應有盡有</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Git%20and%20GitLab/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Git%20and%20GitLab/" class="btn btn-xs btn-link">
+        Git & GitLab Learning
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../" class="btn btn-xs btn-link">
+        DevOps
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>

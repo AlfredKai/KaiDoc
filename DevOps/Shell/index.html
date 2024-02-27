@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    <link rel="shortcut icon" href="../../img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Shell - KaiDocs</title>
+    <link href="../../css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/bootstrap-3.3.7.min.js"></script>
+    <script src="../../js/highlight.pack.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '../..';
+      var is_top_frame = false;
+        
+        var pageToc = [
+          {title: "Shell", url: "#_top", children: [
+              {title: "Cmd vs Bash", url: "#cmd-vs-bash" },
+              {title: "Windows CMD", url: "#windows-cmd" },
+          ]},
+        ];
+
+    </script>
+    <script src="../../js/base.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Vim/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Vim/" class="btn btn-xs btn-link">
+        Vim
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Powershell/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Powershell/" class="btn btn-xs btn-link">
+        PowerShell Notes
+      </a>
+    </div>
+    
+  </div>
+
+    
+
+    <h1 id="shell">Shell</h1>
+<p><a href="https://effective-shell.com/docs/0-introduction/">Effective Shell</a>
+<a href="https://sharats.me/posts/shell-script-best-practices/?fbclid=IwAR2RDdqchedzxI5sRbNu2_J7BaGDe24he9Py4nag88hyDDEgn0x9ludkCQI">Shell Script Best Practices</a></p>
+<h2 id="cmd-vs-bash">Cmd vs Bash</h2>
+<table>
+<thead>
+<tr>
+<th>Unix</th>
+<th>Windows</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cd</td>
+<td>cd</td>
+<td>進入目錄</td>
+<td>cd ..</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>md</td>
+<td>開子目路</td>
+<td>mkdir hello</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>cd</td>
+<td>顯示幕前目錄</td>
+<td>pwd</td>
+</tr>
+<tr>
+<td>env</td>
+<td>set</td>
+<td>顯示幕前環境變數</td>
+<td>env</td>
+</tr>
+<tr>
+<td>setenv</td>
+<td>set</td>
+<td>設定環境變數</td>
+<td>setenv pp pwd</td>
+</tr>
+<tr>
+<td>rm</td>
+<td>del</td>
+<td>刪除檔案</td>
+<td>rm -r hello</td>
+</tr>
+<tr>
+<td>cat/more</td>
+<td>type</td>
+<td>顯示檔案內容</td>
+<td>more .login</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>dir</td>
+<td>顯示檔案</td>
+<td>ls</td>
+</tr>
+<tr>
+<td>cp</td>
+<td>copy</td>
+<td>複製檔案</td>
+<td>cp .login anotherfile</td>
+</tr>
+<tr>
+<td>mv</td>
+<td>ren</td>
+<td>移動/重新命名檔案</td>
+<td>mv .login .login.orig</td>
+</tr>
+<tr>
+<td>man</td>
+<td>help</td>
+<td>線上指令查詢</td>
+<td>man ps</td>
+</tr>
+<tr>
+<td>ps</td>
+<td></td>
+<td>顯示 process</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h2 id="windows-cmd">Windows CMD</h2>
+<p>https://ss64.com/nt/</p>
+
+  <br>
+    
+
+    
+    
+      
+    
+
+  <div class="row wm-article-nav-buttons" role="navigation" aria-label="navigation">
+    
+    <div class="wm-article-nav pull-right">
+      <a href="../Vim/" class="btn btn-xs btn-default pull-right">
+        Next
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+      <a href="../Vim/" class="btn btn-xs btn-link">
+        Vim
+      </a>
+    </div>
+    
+    <div class="wm-article-nav">
+      <a href="../Powershell/" class="btn btn-xs btn-default pull-left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        Previous</a><a href="../Powershell/" class="btn btn-xs btn-link">
+        PowerShell Notes
+      </a>
+    </div>
+    
+  </div>
+
+    <br>
+</div>
+
+<footer class="container-fluid wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="https://github.com/gristlabs/mkdocs-windmill">Windmill</a> theme by Grist Labs.</p>
+</footer>
+
+</body>
+</html>
