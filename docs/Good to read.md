@@ -6,8 +6,6 @@
 前端工程師崩崩記
 [I DON'T WANT TO DO FRONT-END ANYMORE](https://soynomm.com/blog/i-dont-want-to-do-frontend-anymore/)
 
-[Google Code Review Developer Guide](https://google.github.io/eng-practices/review/)
-
 [遺留代碼經濟學 - Terry Yin](https://hackmd.io/c/MW18/%2FefTkc1AFRK-eYdXOOylmfQ)
 
 [软件开发管理的 11 条真理](https://www.infoq.cn/article/o30A0jLaMgXqRuNaomVI)

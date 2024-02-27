@@ -16,3 +16,7 @@ Solr doc: https://solr.apache.org/guide/8_8/solr-tutorial.html
 https://www.6aiq.com/member/Emma 
 
 [喬叔直播](https://fb.watch/5Lu_qRoHNs/)
+
+https://en.wikipedia.org/wiki/Locality-sensitive_hashing
+
+https://en.wikipedia.org/wiki/Named-entity_recognition

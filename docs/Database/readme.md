@@ -75,6 +75,12 @@ aka reference domain, reference table
 - NoSQL可能不滿足ACID
 - CAP的C為[Eventual consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
 
+## Isolation Level
+
+[對於 MySQL Repeatable Read Isolation 常見的三個誤解](https://medium.com/@chester.yw.chu/%E5%B0%8D%E6%96%BC-mysql-repeatable-read-isolation-%E5%B8%B8%E8%A6%8B%E7%9A%84%E4%B8%89%E5%80%8B%E8%AA%A4%E8%A7%A3-7a9afbac65af)
+
+[Understanding MySQL Transaction Isolation Levels by Example](https://medium.com/analytics-vidhya/understanding-mysql-transaction-isolation-levels-by-example-1d56fce66b3d)
+
 ## Execution Plan in MySql
 
 [在MySQL使用Explain做SQL SELECT語法效能測試](http://blog.kejyun.com/2012/12/Using-EXPLAIN-SQL-To-Analysis-Efficient-On-MySQL.html)

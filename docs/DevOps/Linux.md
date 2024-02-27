@@ -152,3 +152,5 @@ sshpass -p 'mypassword' ssh myaccount@my.linux.host
 ## Resources
 
 [GNU/Linux 常用指令](https://wiki.ubuntu-tw.org/index.php?title=GNU/Linux_%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4)
+
+https://en.wikipedia.org/wiki/Sed

@@ -8,12 +8,20 @@
 
 [The Good and the Bad of Node.js Web App Development](https://www.altexsoft.com/blog/engineering/the-good-and-the-bad-of-node-js-web-app-development/)
 
-## 計時
+## Performance
 
 ```js
 console.time('timer name')
 console.timeEnd('timer name')
+
+performance.now()
 ```
+
+## Profiling
+
+[Finding And Fixing Node.js Memory Leaks: A Practical Guide](https://marmelab.com/blog/2018/04/03/how-to-track-and-fix-memory-leak-with-nodejs.html)
+
+[--inspect in ts-node issue](https://github.com/remy/nodemon/issues/1565)
 
 ## /usr/bin/env
 

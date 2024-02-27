@@ -1,6 +1,7 @@
 # Shell
 
 [Effective Shell](https://effective-shell.com/docs/0-introduction/)
+[Shell Script Best Practices](https://sharats.me/posts/shell-script-best-practices/?fbclid=IwAR2RDdqchedzxI5sRbNu2_J7BaGDe24he9Py4nag88hyDDEgn0x9ludkCQI)
 
 ## Cmd vs Bash
 

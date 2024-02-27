@@ -8,6 +8,14 @@
 
 比起building, deploying，scaling才是重點，如果你的瓶頸只在一個小地方卻為了scaling而需要跑好幾個monolithic service是痛苦的
 
+## Pending
+
+[Pattern: Database per service](https://microservices.io/patterns/data/database-per-service.html)
+
+[Pattern: API Composition](https://microservices.io/patterns/data/api-composition.html)
+
+[Microservices with Node JS and React](https://www.udemy.com/course/microservices-with-node-js-and-react/learn/lecture/19098890?start=0#overview)
+
 ## References
 
 [微服務基礎建設 - Service Discovery](https://columns.chicken-house.net/2017/12/31/microservice9-servicediscovery/)

@@ -9,3 +9,5 @@
 [Why Scrum sucks](https://techbeacon.com/app-dev-testing/why-scrum-sucks)
 
 [消失的敏捷教练](https://mp.weixin.qq.com/s?__biz=MzAxNDExMDE5NA%3D%3D&mid=2247498225&idx=1&sn=bd0a4bc386365d315bfc521aa463feeb&chksm=9b9ae56caced6c7aa1fe883cb112f71d9bbab22218ad31fc50b0b24bea9ced0f6d4cddf096c3&fbclid=IwAR3UD_j2WE2Utft4bV5XJP6kVTuEl1z0VC0Ry9Bk6Ne8SnExlA3p7WCtoF4)
+
+[被全球过度炒作的Spotify敏捷部落制，连Spotify公司自己都不用](https://mp.weixin.qq.com/s?__biz=MzAxNDExMDE5NA==&mid=2247499394&idx=1&sn=1c3fb3ad97a51805ab5aac64eea5c384&chksm=9b9ae21faced6b093cd346b299a9853585e1d90071bc460ae8eacd1c10f7a689b515d24c619a)

@@ -77,3 +77,13 @@ iframe.contentWindow.postMessage(message, targetOrigin);
 ## Javascript Prototype Chain
 
 [JavaScript's Pseudo Classical Inheritance diagram](https://kenneth-kin-lum.blogspot.com/2012/10/javascripts-pseudo-classical.html?showComment=1484288337339&source=post_page-----54102240a8b4----------------------#c1393503225616140233)
+
+## Ref
+
+[前端工程研究：關於 JavaScript 中 Date 型別的常見地雷與建議作法](https://blog.miniasp.com/post/2016/09/25/JavaScript-Date-usage-in-details?fbclid=IwAR2_iFWOr169yBq1gyTILy6g88MhowknH6C6ehAuEJzhc8GgQOXXpPFqcgk)
+
+## Tools
+
+- command
+- hygen
+- gluegun

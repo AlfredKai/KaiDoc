@@ -5,6 +5,18 @@
 - 速度不夠快就cache，一千零一招LRU
 - Load Balancer: 就RR，高級一點就把loading考慮進來
 
+## Methodology
+
+### The C4 Model
+
+https://c4model.com/
+
+https://en.wikipedia.org/wiki/C4_model
+
+### The Twelve-Factor App
+
+https://12factor.net/
+
 ## TODO
 
 排行榜
@@ -46,7 +58,11 @@
 
 [Patterns](https://www.patterns.dev/)
 
+[System Design Blueprint: The Ultimate Guide](https://blog.bytebytego.com/p/ep56-system-design-blueprint-the)
+
 ## Resources
+
+[System Design](https://www.karanpratapsingh.com/courses/system-design)
 
 [Grokking the System Design Interview](https://www.educative.io/courses/grokking-the-system-design-interview)
 
