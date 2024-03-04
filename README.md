@@ -1,4 +1,4 @@
-# Kai 學習筆記
+# Kai Notes
 
 ## MkDocs
 
